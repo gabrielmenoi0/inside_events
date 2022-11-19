@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:inside_events/login/loginteste.dart';
@@ -69,9 +67,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             title: "Full Screen Page",
             body:
                 "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
-            footer: Image.network(
-              'https://image.shutterstock.com/image-illustration/3d-rendering-4k-image-abstract-260nw-1807917784.jpg',
-            ),
+            footer: Image.asset("assets/fundu.png"),
             decoration: pageDecoration.copyWith(
               fullScreen: false,
               footerPadding:
@@ -82,8 +78,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           PageViewModel(
             title: "titulo encapetado reverso",
             bodyWidget: Center(
-                child: Image.network(
-                    'https://image.shutterstock.com/image-illustration/3d-rendering-4k-image-abstract-260nw-1807917784.jpg')),
+              child: Image.asset("assets/fundu.png"),
+            ),
             footer: const Text(
                 'Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.',
                 textAlign: TextAlign.center),
@@ -98,8 +94,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             title: "Full Screen Page",
             body:
                 "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
-            footer: Image.network(
-                'https://image.shutterstock.com/image-illustration/3d-rendering-4k-image-abstract-260nw-1807917784.jpg'),
+            footer: Image.asset("assets/fundu.png"),
             decoration: pageDecoration.copyWith(
               fullScreen: false,
               footerPadding:
@@ -110,15 +105,15 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           PageViewModel(
             title: "titulo encapetado reverso",
             bodyWidget: Center(
-                child: Image.network(
-                    'https://image.shutterstock.com/image-illustration/3d-rendering-4k-image-abstract-260nw-1807917784.jpg')),
+              child: Image.asset("assets/fundu.png"),
+            ),
             footer: const Text(
                 'Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.',
                 textAlign: TextAlign.center),
             decoration: pageDecoration.copyWith(
-              bodyAlignment: Alignment.center,
+              bodyAlignment: Alignment.topCenter,
               footerPadding: const EdgeInsets.only(top: 20),
-              titlePadding: const EdgeInsets.only(bottom: 40),
+              titlePadding: const EdgeInsets.only(bottom: 80, top: 20),
             ),
             reverse: true,
           ),
@@ -147,31 +142,45 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         ],
         onDone: () => _onIntroEnd(context),
         showSkipButton: true,
-        skipOrBackFlex: 0,
-        nextFlex: 0,
+        skipOrBackFlex: 2,
+        nextFlex: 3,
+        dotsFlex: 5,
         showBackButton: false,
         back: const Icon(Icons.arrow_back),
+        nextStyle: TextButton.styleFrom(
+          textStyle: const TextStyle(color: Colors.transparent),
+          backgroundColor: const Color(0xff2B4F71),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+        ),
+        doneStyle: TextButton.styleFrom(
+          padding: const EdgeInsets.all(10),
+          textStyle: const TextStyle(color: Colors.green),
+          backgroundColor: const Color(0xff2B4F71),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+        ),
         skip: const Text(
           'Pular',
           style: TextStyle(
             fontWeight: FontWeight.w600,
             color: Color(0xff2B4F71),
-            backgroundColor: Color(0xff657A97),
-            fontSize: 20,
           ),
         ),
         next: const Text(
-          'Proximo',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            color: Color(0xff2B4F71),
-          ),
-        ),
-        done: const Text(
           'Avançar',
           style: TextStyle(
             fontWeight: FontWeight.w600,
-            color: Color(0xff2B4F71),
+            color: Color(0xffFFFFFF),
+          ),
+        ),
+        done: const Text(
+          'Feito!',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: Color(0xffFFFFFF),
           ),
         ),
         curve: Curves.fastLinearToSlowEaseIn,
@@ -190,12 +199,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             ),
           ),
         ),
-        // dotsContainerDecorator: const ShapeDecoration(
-        //   color: Colors.green,
-        //   shape: RoundedRectangleBorder(
-        //     borderRadius: BorderRadius.all(Radius.circular(8.0)),
-        //   ),
-        // ),
+        dotsContainerDecorator: const ShapeDecoration(
+          color: Colors.green,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          ),
+        ),
       ),
     );
   }
