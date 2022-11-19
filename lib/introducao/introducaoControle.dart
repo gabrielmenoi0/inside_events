@@ -67,7 +67,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             title: "Full Screen Page",
             body:
                 "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
-            footer: Image.asset("assets/fundu.png"),
+            footer: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset("assets/fundu.png"),
+            ),
             decoration: pageDecoration.copyWith(
               fullScreen: false,
               footerPadding:
@@ -76,9 +79,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             reverse: true,
           ),
           PageViewModel(
-            title: "titulo encapetado reverso",
+            title: "titulo reverso",
             bodyWidget: Center(
-              child: Image.asset("assets/fundu.png"),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset("assets/fundu.png"),
+              ),
             ),
             footer: const Text(
                 'Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.',
@@ -87,7 +93,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               bodyAlignment: Alignment.topCenter,
               footerPadding:
                   const EdgeInsets.only(top: 20, left: 10, right: 10),
-              titlePadding: const EdgeInsets.only(bottom: 80, top: 20),
+              titlePadding: const EdgeInsets.only(bottom: 70, top: 20),
             ),
             reverse: true,
           ),
@@ -95,7 +101,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             title: "Full Screen Page",
             body:
                 "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
-            footer: Image.asset("assets/fundu.png"),
+            footer: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset("assets/fundu.png"),
+            ),
             decoration: pageDecoration.copyWith(
               fullScreen: false,
               footerPadding:
@@ -104,9 +113,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             reverse: true,
           ),
           PageViewModel(
-            title: "titulo encapetado reverso",
+            title: "titulo reverso",
             bodyWidget: Center(
-              child: Image.asset("assets/fundu.png"),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset("assets/fundu.png"),
+              ),
             ),
             footer: const Text(
                 'Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.',
@@ -115,7 +127,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               bodyAlignment: Alignment.topCenter,
               footerPadding:
                   const EdgeInsets.only(top: 20, left: 10, right: 10),
-              titlePadding: const EdgeInsets.only(bottom: 80, top: 20),
+              titlePadding: const EdgeInsets.only(bottom: 70, top: 20),
             ),
             reverse: true,
           ),
@@ -146,10 +158,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         showSkipButton: true,
         skipOrBackFlex: 2,
         nextFlex: 3,
-        dotsFlex: 5,
+        dotsFlex: 7,
         showBackButton: false,
         back: const Icon(Icons.arrow_back),
         nextStyle: TextButton.styleFrom(
+          elevation: 900,
           padding: const EdgeInsets.all(5.0),
           textStyle: const TextStyle(color: Colors.transparent),
           backgroundColor: const Color(0xff2B4F71),
@@ -186,13 +199,15 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             color: Color(0xffFFFFFF),
           ),
         ),
-        curve: Curves.fastLinearToSlowEaseIn,
-        controlsMargin: const EdgeInsets.only(bottom: 25, left: 16, right: 16),
+        curve: Curves.easeInOut,
+
+        controlsMargin: const EdgeInsets.only(bottom: 20, left: 16, right: 16),
         controlsPadding: kIsWeb
             ? const EdgeInsets.all(12.0)
             : const EdgeInsets.fromLTRB(12, 12, 12, 12),
         dotsDecorator: const DotsDecorator(
-          size: Size(10.0, 10.0),
+          spacing: EdgeInsets.all(8),
+          size: Size(12.0, 12.0),
           color: Color(0xff657A97),
           activeSize: Size(15.0, 15.0),
           activeColor: Color(0xff2B4F71),
