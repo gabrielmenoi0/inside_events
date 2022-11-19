@@ -54,11 +54,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         key: introKey,
         globalBackgroundColor: const Color(0xffC9CFDF),
         // globalHeader: Align(
-        //   alignment: Alignment.topRight,
+        //   alignment: Alignment.topLeft,
         //   child: SafeArea(
         //     child: Padding(
-        //       padding: const EdgeInsets.only(top: 16, right: 16),
-        //       child: _buildImage('flutter.png', 100),
+        //       padding: const EdgeInsets.only(top: 100, left: 40),
+        //       child: Text('1'),
         //     ),
         //   ),
         // ),
@@ -85,7 +85,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 textAlign: TextAlign.center),
             decoration: pageDecoration.copyWith(
               bodyAlignment: Alignment.topCenter,
-              footerPadding: const EdgeInsets.only(top: 20),
+              footerPadding:
+                  const EdgeInsets.only(top: 20, left: 10, right: 10),
               titlePadding: const EdgeInsets.only(bottom: 80, top: 20),
             ),
             reverse: true,
@@ -112,7 +113,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 textAlign: TextAlign.center),
             decoration: pageDecoration.copyWith(
               bodyAlignment: Alignment.topCenter,
-              footerPadding: const EdgeInsets.only(top: 20),
+              footerPadding:
+                  const EdgeInsets.only(top: 20, left: 10, right: 10),
               titlePadding: const EdgeInsets.only(bottom: 80, top: 20),
             ),
             reverse: true,
@@ -148,18 +150,19 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         showBackButton: false,
         back: const Icon(Icons.arrow_back),
         nextStyle: TextButton.styleFrom(
+          padding: const EdgeInsets.all(5.0),
           textStyle: const TextStyle(color: Colors.transparent),
           backgroundColor: const Color(0xff2B4F71),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
+            borderRadius: BorderRadius.circular(100.0),
           ),
         ),
         doneStyle: TextButton.styleFrom(
-          padding: const EdgeInsets.all(10),
-          textStyle: const TextStyle(color: Colors.green),
+          padding: const EdgeInsets.all(2),
+          textStyle: const TextStyle(color: Colors.transparent),
           backgroundColor: const Color(0xff2B4F71),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
+            borderRadius: BorderRadius.circular(100.0),
           ),
         ),
         skip: const Text(
@@ -184,10 +187,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
         ),
         curve: Curves.fastLinearToSlowEaseIn,
-        controlsMargin: const EdgeInsets.all(16),
+        controlsMargin: const EdgeInsets.only(bottom: 25, left: 16, right: 16),
         controlsPadding: kIsWeb
             ? const EdgeInsets.all(12.0)
-            : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
+            : const EdgeInsets.fromLTRB(12, 12, 12, 12),
         dotsDecorator: const DotsDecorator(
           size: Size(10.0, 10.0),
           color: Color(0xff657A97),
@@ -200,7 +203,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
         ),
         dotsContainerDecorator: const ShapeDecoration(
-          color: Colors.green,
+          color: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(8.0)),
           ),
