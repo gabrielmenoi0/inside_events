@@ -2,22 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:inside_events/login/loginteste.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(const IntroducaoControle());
-
-class IntroducaoControle extends StatelessWidget {
-  const IntroducaoControle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Introduction screen',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
-      home: const OnBoardingPage(),
-    );
-  }
-}
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -34,10 +20,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       MaterialPageRoute(builder: (_) => const LoginPage()),
     );
   }
-
-  @override
-  Widget build(BuildContext context) {
-    const pageDecoration = PageDecoration(
+     PageDecoration  pageDecoration = const PageDecoration(
       titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
       bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       pageColor: Color(0xffC9CFDF),
@@ -46,6 +29,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         top: 110,
       ),
     );
+
+  @override
+  Widget build(BuildContext context) {
 
     return Scaffold(
       extendBody: true,
@@ -63,7 +49,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         //   ),
         // ),
         pages: [
-          PageViewModel(
+          PageViewModel( 
             title: "Full Screen Page",
             body:
                 "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
@@ -158,24 +144,23 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         showSkipButton: true,
         skipOrBackFlex: 2,
         nextFlex: 3,
-        dotsFlex: 7,
+        dotsFlex: 5,
         showBackButton: false,
         back: const Icon(Icons.arrow_back),
-        nextStyle: TextButton.styleFrom(
-          elevation: 900,
+        nextStyle: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(5.0),
           textStyle: const TextStyle(color: Colors.transparent),
           backgroundColor: const Color(0xff2B4F71),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100.0),
+            borderRadius: BorderRadius.circular(50),
           ),
         ),
-        doneStyle: TextButton.styleFrom(
+        doneStyle: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(2),
           textStyle: const TextStyle(color: Colors.transparent),
           backgroundColor: const Color(0xff2B4F71),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100.0),
+            borderRadius: BorderRadius.circular(50),
           ),
         ),
         skip: const Text(
@@ -200,8 +185,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
         ),
         curve: Curves.easeInOut,
-
-        controlsMargin: const EdgeInsets.only(bottom: 20, left: 16, right: 16),
+        controlsMargin: const EdgeInsets.only(bottom: 20, left: 10, right: 10),
         controlsPadding: kIsWeb
             ? const EdgeInsets.all(12.0)
             : const EdgeInsets.fromLTRB(12, 12, 12, 12),
