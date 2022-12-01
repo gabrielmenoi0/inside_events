@@ -7,7 +7,7 @@ import 'package:carousel_slider/carousel_options.dart';
 class Card1 extends StatefulWidget {
   Card1({Key? key, required this.imagensCard}) : super(key: key);
 
-  late List<String> imagensCard = imagensCard;
+  late List<Image> imagensCard = imagensCard;
 
   @override
   _Card1State createState() => _Card1State();
@@ -36,35 +36,24 @@ class _Card1State extends State<Card1> {
             top: 0,
             left: 2,
             child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                elevation: 10,
-                child: Container(
-                  height: 170,
-                  width: 160,
-                  child: CarouselSlider(
-                    options: CarouselOptions(
-                      viewportFraction: 3,
-                      autoPlay: true,
-                      autoPlayInterval: Duration(seconds: 2),
-                    ),
-                    items: widget.imagensCard
-                        .map(
-                          (item) => Container(
-                            color: Colors.green,
-                            child: Center(
-                              child: Image.network(
-                                item,
-                                fit: BoxFit.fill,
-                                width: 200,
-                              ),
-                            ),
-                          ),
-                        )
-                        .toList(),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              elevation: 10,
+              child: Container(
+                color: Colors.transparent,
+                height: 170,
+                width: 160,
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                    viewportFraction: 3,
+                    autoPlay: true,
+                    autoPlayInterval: const Duration(seconds: 2),
                   ),
-                )),
+                  items: widget.imagensCard.map((Image) => Image).toList(),
+                ),
+              ),
+            ),
           ),
           Positioned(
             top: 40,

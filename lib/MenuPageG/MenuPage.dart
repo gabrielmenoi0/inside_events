@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:inside_events/MenuPageG/cards/card1.dart';
+import 'package:inside_events/MenuPageG/cards/card2.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({Key? key, required this.title}) : super(key: key);
@@ -25,10 +26,13 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
-    late List<String> imagens = [
-      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fbrasil.elpais.com%2Fesportes%2F2021-09-26%2F100-vitorias-de-hamilton-na-formula-1.html&psig=AOvVaw1AI0gmjAJMttVsRgTDdGbw&ust=1668956253604000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCPCM_MfAuvsCFQAAAAAdAAAAABAD',
-      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fbrasil.elpais.com%2Fesportes%2F2021-09-26%2F100-vitorias-de-hamilton-na-formula-1.html&psig=AOvVaw1AI0gmjAJMttVsRgTDdGbw&ust=1668956253604000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCPCM_MfAuvsCFQAAAAAdAAAAABAD',
-      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fbrasil.elpais.com%2Fesportes%2F2021-09-26%2F100-vitorias-de-hamilton-na-formula-1.html&psig=AOvVaw1AI0gmjAJMttVsRgTDdGbw&ust=1668956253604000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCPCM_MfAuvsCFQAAAAAdAAAAABAD'
+    late List<Image> imagens = [
+      Image.network(
+          'https://www.keeperformaturas.com.br/blog/wp-content/uploads/2019/07/O-que-observar-ao-visitar-uma-festa-de-formatura.jpg'),
+      Image.network(
+          'https://alphaconvites.com.br/wp-content/uploads/2020/12/festa-antes-formatura-scaled.jpg'),
+      Image.network(
+          'https://wegoout.com.br/wp-content/uploads/2022/06/295699262_763192505101723_309887737909331421_n.jpg'),
     ];
 
     return Scaffold(
@@ -119,56 +123,61 @@ class _MenuPageState extends State<MenuPage> {
           ],
         ),
       ),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: const Color(0xff2b4f71),
-        actions: <Widget>[
-          Container(
-            width: 250,
-            padding: const EdgeInsets.only(
-              top: 11,
-              bottom: 11,
-            ),
-            child: TextField(
-              decoration: InputDecoration(
-                isDense: true,
-                prefixIcon: const Icon(Icons.search),
-                contentPadding: const EdgeInsets.symmetric(vertical: 5.0),
-                filled: true,
-                fillColor: Colors.white,
-                focusedBorder: OutlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: Color(0xffe9edf8), width: 1.0),
-                  borderRadius: BorderRadius.circular(5.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: Color(0xffe9edf8), width: 1.0),
-                  borderRadius: BorderRadius.circular(5.0),
-                ),
-                hintText: 'Pesquise eventos ou locais',
-                hintStyle: const TextStyle(fontSize: 14.3),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(80),
+        child: AppBar(
+          elevation: 0,
+          backgroundColor: const Color(0xff2b4f71),
+          actions: <Widget>[
+            Container(
+              width: 250,
+              padding: const EdgeInsets.only(
+                top: 11,
+                bottom: 11,
               ),
-            ),
-          ),
-          const Padding(padding: EdgeInsets.all(5)),
-          Container(
-            child: IconButton(
-              icon: const Icon(
-                Icons.qr_code_scanner,
-                color: Color(0xffe9edf8),
-              ),
-              tooltip: 'Verificar QR CODE',
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('QR CODE'),
+              child: TextField(
+                decoration: InputDecoration(
+                  isDense: true,
+                  prefixIcon: const Icon(Icons.search),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 5.0),
+                  filled: true,
+                  fillColor: Colors.white,
+                  focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        const BorderSide(color: Color(0xffe9edf8), width: 1.0),
+                    borderRadius: BorderRadius.circular(5.0),
                   ),
-                );
-              },
+                  enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        const BorderSide(color: Color(0xffe9edf8), width: 1.0),
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  hintText: 'Pesquise eventos ou locais',
+                  hintStyle: const TextStyle(fontSize: 14.3),
+                ),
+              ),
             ),
-          ),
-        ],
+            const Padding(
+              padding: EdgeInsets.all(5),
+            ),
+            Container(
+              child: IconButton(
+                icon: const Icon(
+                  Icons.qr_code_scanner,
+                  color: Color(0xffe9edf8),
+                ),
+                tooltip: 'Verificar QR CODE',
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('QR CODE'),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
       body: ListView(
         scrollDirection: Axis.vertical,
@@ -192,7 +201,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
           Container(
             alignment: Alignment.center,
-            child: Card1(imagensCard: imagens),
+            child: Card2(imagensCard: imagens),
           ),
           const SizedBox(
             height: 6,
@@ -206,7 +215,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
           Container(
             alignment: Alignment.center,
-            child: Card1(imagensCard: imagens),
+            child: Card2(imagensCard: imagens),
           ),
           const SizedBox(
             height: 6,
@@ -216,61 +225,6 @@ class _MenuPageState extends State<MenuPage> {
             child: Card1(imagensCard: imagens),
           ),
         ],
-        // child: SingleChildScrollView(
-        // child: Column(
-        // children: <Widget>[
-        //   Padding(
-        //     padding: EdgeInsets.only(top: 30, bottom: 30),
-        //     child: Text(
-        //       "EVENTOS EM ALTA!!",
-        //       style: GoogleFonts.montserrat(),
-        //     ),
-        //   ),
-        //   Card1(imagensCard: imagens),
-        // ListView(
-        //   scrollDirection: Axis.horizontal,
-        //   children: [
-        //     Container(
-        //       width: 200,
-        //       color: Colors.purple[600],
-        //       child: const Center(
-        //           child: Text(
-        //         'Item 1',
-        //         style: TextStyle(fontSize: 18, color: Colors.white),
-        //       )),
-        //     ),
-        //     Container(
-        //       width: 200,
-        //       color: Colors.purple[500],
-        //       child: const Center(
-        //           child: Text(
-        //         'Item 2',
-        //         style: TextStyle(fontSize: 18, color: Colors.white),
-        //       )),
-        //     ),
-        //     Container(
-        //       width: 200,
-        //       color: Colors.purple[400],
-        //       child: const Center(
-        //           child: Text(
-        //         'Item 3',
-        //         style: TextStyle(fontSize: 18, color: Colors.white),
-        //       )),
-        //     ),
-        //     Container(
-        //       width: 200,
-        //       color: Colors.purple[300],
-        //       child: const Center(
-        //           child: Text(
-        //         'Item 4',
-        //         style: TextStyle(fontSize: 18, color: Colors.white),
-        //       )),
-        //     ),
-        //   ],
-        // ),
-        // ],
-        // ),
-        // ),
       ),
     );
   }

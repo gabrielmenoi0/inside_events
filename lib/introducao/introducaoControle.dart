@@ -5,7 +5,9 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnBoardingPage extends StatefulWidget {
-  const OnBoardingPage({super.key,});
+  const OnBoardingPage({
+    super.key,
+  });
 
   @override
   _OnBoardingPageState createState() => _OnBoardingPageState();
@@ -15,8 +17,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => const MenuPage(title: '',)));
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const MenuPage(
+                  title: '',
+                )));
   }
 
   PageDecoration pageDecoration = const PageDecoration(
