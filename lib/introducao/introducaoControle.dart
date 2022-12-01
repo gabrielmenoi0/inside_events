@@ -1,12 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:inside_events/login/loginteste.dart';
+import 'package:inside_events/MenuPageG/MenuPage.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class OnBoardingPage extends StatefulWidget {
-  const OnBoardingPage({super.key});
+  const OnBoardingPage({super.key,});
 
   @override
   _OnBoardingPageState createState() => _OnBoardingPageState();
@@ -16,23 +15,22 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const LoginPage()),
-    );
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const MenuPage(title: '',)));
   }
-     PageDecoration  pageDecoration = const PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Color(0xffC9CFDF),
-      imagePadding: EdgeInsets.zero,
-      contentMargin: EdgeInsets.only(
-        top: 110,
-      ),
-    );
+
+  PageDecoration pageDecoration = const PageDecoration(
+    titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
+    bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+    pageColor: Color(0xffC9CFDF),
+    imagePadding: EdgeInsets.zero,
+    contentMargin: EdgeInsets.only(
+      top: 110,
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       extendBody: true,
       backgroundColor: const Color(0xff657A97),
@@ -49,7 +47,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         //   ),
         // ),
         pages: [
-          PageViewModel( 
+          PageViewModel(
             title: "Full Screen Page",
             body:
                 "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
