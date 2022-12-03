@@ -18,11 +18,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   void _onIntroEnd(context) {
     Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => const MenuPage(
-                  title: '',
-                )));
+      context,
+      MaterialPageRoute(
+        builder: (context) => const MenuPage(
+          title: '',
+        ),
+      ),
+    );
   }
 
   PageDecoration pageDecoration = const PageDecoration(

@@ -5,6 +5,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:inside_events/MenuPageG/cards/card1.dart';
 import 'package:inside_events/MenuPageG/cards/card2.dart';
+import 'package:inside_events/QrPage/QrPage.dart';
+import '';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({Key? key, required this.title}) : super(key: key);
@@ -26,6 +28,13 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
+    void _QrPagina(context) {
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (_) => QrPage()),
+      );
+      const Icon(Icons.arrow_back_ios_new_outlined);
+    }
+
     late List<Image> imagens = [
       Image.network(
           'https://www.keeperformaturas.com.br/blog/wp-content/uploads/2019/07/O-que-observar-ao-visitar-uma-festa-de-formatura.jpg'),
@@ -124,7 +133,7 @@ class _MenuPageState extends State<MenuPage> {
         ),
       ),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80),
+        preferredSize: const Size.fromHeight(80),
         child: AppBar(
           elevation: 0,
           backgroundColor: const Color(0xff2b4f71),
@@ -166,14 +175,8 @@ class _MenuPageState extends State<MenuPage> {
                   Icons.qr_code_scanner,
                   color: Color(0xffe9edf8),
                 ),
-                tooltip: 'Verificar QR CODE',
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('QR CODE'),
-                    ),
-                  );
-                },
+                // tooltip: 'Verificar QR CODE',
+                onPressed: () => _QrPagina(context),
               ),
             ),
           ],
@@ -183,14 +186,15 @@ class _MenuPageState extends State<MenuPage> {
         scrollDirection: Axis.vertical,
         children: [
           const SizedBox(
-            height: 50,
+            height: 40,
           ),
-          const Text(
+          Text(
             'EVENTOS EM ALTA!!',
             textAlign: TextAlign.center,
+            style: GoogleFonts.montserrat(fontSize: 25),
           ),
           const SizedBox(
-            height: 20,
+            height: 40,
           ),
           Container(
             alignment: Alignment.center,
@@ -211,18 +215,367 @@ class _MenuPageState extends State<MenuPage> {
             child: Card1(imagensCard: imagens),
           ),
           const SizedBox(
-            height: 6,
+            height: 10,
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Center(
+              child: Container(
+                height: 50,
+                width: 550,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xffCFE2FF), width: 4.0)),
+                alignment: Alignment.center,
+                child: ListView(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 9, bottom: 5, right: 10, left: 5),
+                      child: Text(
+                        "Medicina",
+                        style: GoogleFonts.montserrat(fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 9, bottom: 5, right: 10, left: 5),
+                      child: Text(
+                        "Tecnologia",
+                        style: GoogleFonts.montserrat(fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 9, bottom: 5, right: 5, left: 4),
+                      child: Text(
+                        "Direito",
+                        style: GoogleFonts.montserrat(fontSize: 20),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 9, bottom: 5, right: 10, left: 10),
+                      child: Text(
+                        "Outros",
+                        style: GoogleFonts.montserrat(fontSize: 20),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                color: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 5,
+                            color: const Color(0xffCFE2FF),
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Image.network(
+                          "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
+                          height: 150,
+                        ),
+                      ),
+                      Text(
+                        "Evento Nome",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Local",
+                        style: GoogleFonts.montserrat(fontSize: 17),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                color: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 5,
+                            color: Color(0xffCFE2FF),
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Image.network(
+                          "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
+                          height: 150,
+                        ),
+                      ),
+                      Text(
+                        "Evento Nome",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Local",
+                        style: GoogleFonts.montserrat(fontSize: 17),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 5,
+                            color: const Color(0xffCFE2FF),
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Image.network(
+                          "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
+                          height: 150,
+                        ),
+                      ),
+                      Text(
+                        "Evento Nome",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Local",
+                        style: GoogleFonts.montserrat(fontSize: 17),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 5,
+                            color: const Color(0xffCFE2FF),
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Image.network(
+                          "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
+                          height: 150,
+                        ),
+                      ),
+                      Text(
+                        "Evento Nome",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Local",
+                        style: GoogleFonts.montserrat(fontSize: 17),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+              ),
+              child: const Text('VER TUDO'),
+            ),
           ),
           Container(
+            margin: const EdgeInsets.all(20),
             alignment: Alignment.center,
-            child: Card2(imagensCard: imagens),
+            child: Text(
+              'Locais',
+              style: GoogleFonts.montserrat(fontSize: 30),
+            ),
           ),
-          const SizedBox(
-            height: 6,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                color: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 5,
+                            color: const Color(0xffCFE2FF),
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Image.network(
+                          "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
+                          height: 150,
+                        ),
+                      ),
+                      Text(
+                        "Evento Nome",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Local",
+                        style: GoogleFonts.montserrat(fontSize: 17),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                color: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 5,
+                            color: Color(0xffCFE2FF),
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Image.network(
+                          "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
+                          height: 150,
+                        ),
+                      ),
+                      Text(
+                        "Evento Nome",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Local",
+                        style: GoogleFonts.montserrat(fontSize: 17),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-          Container(
-            alignment: Alignment.center,
-            child: Card1(imagensCard: imagens),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                  child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 5,
+                                color: const Color(0xffCFE2FF),
+                              ),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Image.network(
+                              "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
+                              height: 150,
+                            ),
+                          ),
+                          Text(
+                            "Evento Nome",
+                            style: GoogleFonts.montserrat(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Local",
+                            style: GoogleFonts.montserrat(fontSize: 17),
+                          ),
+                        ],
+                      ))),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 5,
+                            color: const Color(0xffCFE2FF),
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Image.network(
+                          "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
+                          height: 150,
+                        ),
+                      ),
+                      Text(
+                        "Evento Nome",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Local",
+                        style: GoogleFonts.montserrat(fontSize: 17),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+              ),
+              child: const Text('VER TUDO'),
+            ),
           ),
         ],
       ),
