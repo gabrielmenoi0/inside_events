@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/MenuPageG/MenuPage.dart';
+import 'package:like_button/like_button.dart';
 
 class InformationPge extends StatefulWidget {
   const InformationPge({super.key});
@@ -11,8 +12,15 @@ class InformationPge extends StatefulWidget {
 }
 
 class _InformationPgeState extends State<InformationPge> {
+  late List<Image> imagens = [
+    Image.network(
+        'https://www.giromarilia.com.br/img/news/techsummit_1662672142.jpeg'),
+    Image.network(
+        'https://jdm-files.s3.amazonaws.com/jornaldamanha/images/16640303757mbTbctv8f.jpeg'),
+  ];
   @override
   Widget build(BuildContext context) {
+    bool curtir = false;
     return Material(
       child: Scaffold(
         body: Padding(
@@ -28,44 +36,36 @@ class _InformationPgeState extends State<InformationPge> {
                         height: 250.0,
                         autoPlay: true,
                         viewportFraction: 1.0),
-                    items: [1, 2, 3, 4, 5].map(
-                      (i) {
-                        return Builder(
-                          builder: (BuildContext context) {
-                            return Container(
-                                width: MediaQuery.of(context).size.width,
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 0),
-                                decoration:
-                                    const BoxDecoration(color: Colors.amber),
-                                child: Text(
-                                  'text $i',
-                                  style: TextStyle(fontSize: 16.0),
-                                  textAlign: TextAlign.center,
-                                ));
-                          },
-                        );
-                      },
-                    ).toList(),
+                    items: imagens.map((Image) => Image).toList(),
                   ),
-                  IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(
-                        MaterialPageRoute(
-                          builder: (_) => const MenuPage(
-                            title: '',
-                          ),
+                  Padding(
+                    padding: EdgeInsets.all(8),
+                    child: CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Colors.white38,
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(
+                            MaterialPageRoute(
+                              builder: (_) => const MenuPage(
+                                title: '',
+                              ),
+                            ),
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back_ios_new_outlined,
+                          color: Colors.black,
                         ),
-                      );
-                    },
-                    icon: const Icon(Icons.arrow_back_ios_new_outlined),
+                      ),
+                    ),
                   ),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),
                 child: Text(
-                  'Hackaton Univem',
+                  'Hackaton Unimar',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(
                       fontSize: 25,
@@ -98,20 +98,26 @@ class _InformationPgeState extends State<InformationPge> {
               Padding(
                 padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     const Icon(
                       Icons.chair_alt_outlined,
                     ),
-                    Text(
-                      '89 Ingressos restantes',
-                      style: GoogleFonts.montserrat(
-                          fontSize: 14, fontWeight: FontWeight.w500),
-                    )
+                    Padding(
+                      padding: EdgeInsets.only(right: 80),
+                      child: Text(
+                        '89 Ingressos restantes',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 14, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    const LikeButton(),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 40, right: 40, top: 30),
+                padding: const EdgeInsets.only(left: 40, right: 40, top: 30),
                 child: SizedBox(
                   width: 60,
                   height: 50,
@@ -165,7 +171,7 @@ class _InformationPgeState extends State<InformationPge> {
                     color: Colors.transparent,
                     child: Padding(
                       padding:
-                          const EdgeInsets.only(top: 10, left: 20, bottom: 10),
+                          const EdgeInsets.only(top: 10, left: 30, bottom: 10),
                       child: Column(
                         children: [
                           Container(
@@ -176,9 +182,9 @@ class _InformationPgeState extends State<InformationPge> {
                               ),
                               borderRadius: BorderRadius.circular(6),
                             ),
-                            child: Image.asset(
-                              "assets/imagemenu/grazi.jpg",
-                              height: MediaQuery.of(context).size.height / 5,
+                            child: Image.network(
+                              'https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg',
+                              height: MediaQuery.of(context).size.height / 5.5,
                             ),
                           ),
                           Text(
@@ -198,7 +204,7 @@ class _InformationPgeState extends State<InformationPge> {
                     color: Colors.transparent,
                     child: Padding(
                       padding:
-                          const EdgeInsets.only(top: 10, right: 20, bottom: 10),
+                          const EdgeInsets.only(top: 10, right: 30, bottom: 10),
                       child: Column(
                         children: [
                           Container(
@@ -209,9 +215,9 @@ class _InformationPgeState extends State<InformationPge> {
                               ),
                               borderRadius: BorderRadius.circular(6),
                             ),
-                            child: Image.asset(
-                              "assets/imagemenu/grazi.jpg",
-                              height: MediaQuery.of(context).size.height / 5,
+                            child: Image.network(
+                              'https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg',
+                              height: MediaQuery.of(context).size.height / 5.5,
                             ),
                           ),
                           Text(
