@@ -8,7 +8,6 @@ class QrPage extends StatefulWidget {
 }
 
 class _QrPageState extends State<QrPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +28,10 @@ class _QrPageState extends State<QrPage> {
           decoration: BoxDecoration(
             color: const Color(0xffACD7FF),
             borderRadius: BorderRadius.circular(30),
+          ),
+          child: const Icon(
+            Icons.qr_code_scanner_outlined,
+            size: 300,
           ),
         ),
       ),

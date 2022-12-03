@@ -135,6 +135,7 @@ class _MenuPageState extends State<MenuPage> {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: AppBar(
+          
           elevation: 0,
           backgroundColor: const Color(0xff2b4f71),
           actions: <Widget>[

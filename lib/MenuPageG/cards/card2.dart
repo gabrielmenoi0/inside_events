@@ -33,30 +33,8 @@ class _Card2State extends State<Card2> {
             ),
           ),
           Positioned(
-            top: 0,
-            left: 2,
-            child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                elevation: 10,
-                child: Container(
-                  color: Colors.transparent,
-                  height: 170,
-                  width: 160,
-                  child: CarouselSlider(
-                    options: CarouselOptions(
-                        viewportFraction: 3,
-                        autoPlay: true,
-                        autoPlayInterval: const Duration(seconds: 2),
-                        reverse: true),
-                    items: widget.imagensCard.map((Image) => Image).toList(),
-                  ),
-                )),
-          ),
-          Positioned(
             top: 40,
-            left: 180,
+            right: 190,
             child: Container(
               height: 150,
               width: 130,
@@ -112,7 +90,29 @@ class _Card2State extends State<Card2> {
                 ],
               ),
             ),
-          )
+          ),
+          Positioned(
+            top: 0,
+            left: 165,
+            child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 10,
+                child: Container(
+                  color: Colors.transparent,
+                  height: 170,
+                  width: 160,
+                  child: CarouselSlider(
+                    options: CarouselOptions(
+                        viewportFraction: 3,
+                        autoPlay: true,
+                        autoPlayInterval: const Duration(seconds: 2),
+                        reverse: true),
+                    items: widget.imagensCard.map((Image) => Image).toList(),
+                  ),
+                )),
+          ),
         ],
       ),
     );
