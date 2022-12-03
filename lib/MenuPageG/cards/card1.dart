@@ -36,6 +36,7 @@ class _Card1State extends State<Card1> {
             top: 0,
             left: 2,
             child: Card(
+              color: Color(0xFFCFE2FF),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
               ),

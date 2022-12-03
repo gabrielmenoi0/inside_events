@@ -36,7 +36,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       top: 110,
     ),
   );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,70 +55,103 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         // ),
         pages: [
           PageViewModel(
-            title: "Full Screen Page",
+            title: "Eventos",
             body:
-                "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
+                "A tela de eventos funciona para que você ache o que mais te interessar de uma forma facil e simples de se navegar, utilizando de uma barra de pesquisa objetiva e com um menu de simples entendimento ",
             footer: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.asset("assets/fundu.png"),
+              child: Image.asset(
+                "assets/fundu.png",
+              ),
             ),
             decoration: pageDecoration.copyWith(
               fullScreen: false,
+              bodyTextStyle: GoogleFonts.montserrat(fontSize: 17),
+              descriptionPadding: const EdgeInsets.all(10),
               footerPadding:
-                  const EdgeInsets.only(left: 30, right: 30, top: 35),
+                  const EdgeInsets.only(left: 10, right: 10, top: 10),
+              titleTextStyle: GoogleFonts.montserrat(
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff2B4F71),
+              ),
+              titlePadding: const EdgeInsets.only(right: 160, bottom: 30),
             ),
             reverse: true,
           ),
           PageViewModel(
-            title: "titulo reverso",
+            title: "PAG2",
             bodyWidget: Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset("assets/fundu.png"),
               ),
             ),
-            footer: const Text(
-                'Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.',
+            footer: Text('Para se inscrever nos eventos é simples',
+                style: GoogleFonts.montserrat(fontSize: 17),
                 textAlign: TextAlign.center),
             decoration: pageDecoration.copyWith(
+              titleTextStyle: GoogleFonts.montserrat(
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff2B4F71),
+              ),
               bodyAlignment: Alignment.topCenter,
               footerPadding:
                   const EdgeInsets.only(top: 20, left: 10, right: 10),
-              titlePadding: const EdgeInsets.only(bottom: 70, top: 20),
+              titlePadding:
+                  const EdgeInsets.only(right: 220, bottom: 50, top: 2),
             ),
             reverse: true,
           ),
           PageViewModel(
-            title: "Full Screen Page",
+            title: "Eventos",
             body:
-                "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
+                "A tela de eventos funciona para que você ache o que mais te interessar de uma forma facil e simples de se navegar, utilizando de uma barra de pesquisa objetiva e com um menu de simples entendimento ",
             footer: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.asset("assets/fundu.png"),
+              child: Image.asset(
+                "assets/fundu.png",
+              ),
             ),
             decoration: pageDecoration.copyWith(
               fullScreen: false,
+              bodyTextStyle: GoogleFonts.montserrat(fontSize: 17),
+              descriptionPadding: const EdgeInsets.all(10),
               footerPadding:
-                  const EdgeInsets.only(left: 30, right: 30, top: 35),
+                  const EdgeInsets.only(left: 10, right: 10, top: 10),
+              titleTextStyle: GoogleFonts.montserrat(
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff2B4F71),
+              ),
+              titlePadding: const EdgeInsets.only(right: 50, bottom: 30),
             ),
             reverse: true,
           ),
           PageViewModel(
-            title: "titulo reverso",
+            title: "PAG4",
             bodyWidget: Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset("assets/fundu.png"),
               ),
             ),
-            footer: const Text(
-                'Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.',
+            footer: Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus, mauris a euismod semper, purus tellus blandit est, et hendrerit tellus nisl in risus. Cras ut sem aliquet, aliquam turpis eu, cursus tortor.',
+                style: GoogleFonts.montserrat(fontSize: 17),
                 textAlign: TextAlign.center),
             decoration: pageDecoration.copyWith(
+              titleTextStyle: GoogleFonts.montserrat(
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff2B4F71),
+              ),
               bodyAlignment: Alignment.topCenter,
               footerPadding:
                   const EdgeInsets.only(top: 20, left: 10, right: 10),
-              titlePadding: const EdgeInsets.only(bottom: 70, top: 20),
+              titlePadding:
+                  const EdgeInsets.only(right: 220, bottom: 50, top: 2),
             ),
             reverse: true,
           ),
@@ -158,36 +190,39 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           textStyle: const TextStyle(color: Colors.transparent),
           backgroundColor: const Color(0xff2B4F71),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(100),
           ),
         ),
         doneStyle: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(2),
           textStyle: const TextStyle(color: Colors.transparent),
           backgroundColor: const Color(0xff2B4F71),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(100)),
           ),
         ),
-        skip: const Text(
+        skip: Text(
           'Pular',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            color: Color(0xff2B4F71),
+          style: GoogleFonts.montserrat(
+            fontSize: 17,
+            fontWeight: FontWeight.w400,
+            color: const Color(0xff2B4F71),
           ),
         ),
-        next: const Text(
+        next: Text(
           'Avançar',
-          style: TextStyle(
+          style: GoogleFonts.montserrat(
+            fontSize: 17,
             fontWeight: FontWeight.w600,
-            color: Color(0xffFFFFFF),
+            color: const Color(0xffFFFFFF),
           ),
         ),
-        done: const Text(
+        done: Text(
           'Feito!',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            color: Color(0xffFFFFFF),
+          style: GoogleFonts.montserrat(
+            fontSize: 17,
+            fontWeight: FontWeight.w400,
+            color: const Color(0xffFFFFFF),
           ),
         ),
         curve: Curves.easeInOut,
