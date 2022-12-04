@@ -1,6 +1,9 @@
 import 'dart:developer';
 
+import 'package:ai_barcode_scanner/ai_barcode_scanner.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class QrPage extends StatefulWidget {
@@ -13,7 +16,6 @@ class QrPage extends StatefulWidget {
 class _QrPageState extends State<QrPage> {
   final isDetailsOpen = ValueNotifier<bool>(false);
   MobileScannerController cameraController = MobileScannerController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,35 +29,77 @@ class _QrPageState extends State<QrPage> {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
-      body: Center(
-        child: ValueListenableBuilder(
-          valueListenable: isDetailsOpen,
-          builder: (context, value, child) {
-            return Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: Colors.red),
-              height: MediaQuery.of(context).size.height / 2,
-              width: MediaQuery.of(context).size.height / 2.5,
-              child: MobileScanner(
-                allowDuplicates: true,
-                controller: cameraController,
-                onDetect: (barcode, args) async {
-                  if (barcode.rawValue == null) {
-                    debugPrint('Failed to scan Barcode');
-                  } else {
-                    if (barcode.rawValue == "1111") {
-                      log("resultado", error: barcode.rawValue);
-                      // return Navigator.of(context).pop();
-                      /// navegar
-                    }
-                    // if (!isDetailsOpen.value) {
-                    //   isDetailsOpen.value = true;
-                    // }
-                  }
-                },
-              ),
-            );
-          },
+      body: Container(
+        color: Colors.transparent,
+        width: double.infinity,
+        height: double.infinity,
+        child: Center(
+          child: AiBarcodeScanner(
+            onScan: (String value) {
+              debugPrint(value);
+            },
+            borderColor: const Color(0xff2B4F71),
+            errorColor: Colors.red,
+            borderWidth: 16,
+            successColor: Colors.green,
+            overlayColor: const Color(0xffACD7FF),
+            onDetect: (barcode, args) async {
+              if (barcode.rawValue == "1111") {
+                return Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const InformationPge(),
+                  ),
+                );
+              } else {
+                if (barcode.rawValue != "1111") {
+                  log("resultado", error: barcode.rawValue);
+                  Navigator.of(context).pop();
+                  // navegar
+                }
+                // if (!isDetailsOpen.value) {
+                //   isDetailsOpen.value = true;
+                // }
+              }
+            },
+            borderLength: 20,
+            cutOutSize: 300,
+            hintTextStyle: GoogleFonts.montserrat(fontSize: 20),
+            // hintBackgroundColor: Colors.transparent,
+            showHint: false,
+            errorText: 'Inválido',
+            showOverlay: true,
+            canPop: false,
+            showSuccess: true,
+          ),
+          // child: ValueListenableBuilder(
+          //   valueListenable: isDetailsOpen,
+          //   builder: (context, value, child) {
+          //     return Container(
+          //       decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.circular(30), color: Colors.red),
+          //       height: MediaQuery.of(context).size.height / 2,
+          //       width: MediaQuery.of(context).size.height / 2.5,
+          //       child: MobileScanner(
+          //         allowDuplicates: true,
+          //         controller: cameraController,
+          // onDetect: (barcode, args) async {
+          //   if (barcode.rawValue == null) {
+          //     debugPrint('Failed to scan Barcode');
+          //   } else {
+          //     if (barcode.rawValue == "1111") {
+          //       log("resultado", error: barcode.rawValue);
+          //       // return Navigator.of(context).pop();
+          //       /// navegar
+          //     }
+          //     // if (!isDetailsOpen.value) {
+          //     //   isDetailsOpen.value = true;
+          //     // }
+          //   }
+          // },
+          //       ),
+          //     );
+          //   },
+          // ),
         ),
       ),
     );

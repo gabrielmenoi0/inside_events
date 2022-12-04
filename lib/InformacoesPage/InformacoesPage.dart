@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/MenuPageG/MenuPage.dart';
+import 'package:inside_events/Pagamento/PagamentoPage.dart';
 import 'package:like_button/like_button.dart';
 
 class InformationPge extends StatefulWidget {
@@ -39,7 +40,7 @@ class _InformationPgeState extends State<InformationPge> {
                     items: imagens.map((Image) => Image).toList(),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     child: CircleAvatar(
                       radius: 20,
                       backgroundColor: Colors.white38,
@@ -122,7 +123,11 @@ class _InformationPgeState extends State<InformationPge> {
                   width: 60,
                   height: 50,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (_) => const PayPage()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
