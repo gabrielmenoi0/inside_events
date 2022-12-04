@@ -1,10 +1,8 @@
 import 'dart:developer';
-
 import 'package:ai_barcode_scanner/ai_barcode_scanner.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 
 class QrPage extends StatefulWidget {
   const QrPage({super.key});
@@ -42,7 +40,7 @@ class _QrPageState extends State<QrPage> {
             errorColor: Colors.red,
             borderWidth: 16,
             successColor: Colors.green,
-            overlayColor: const Color(0xffACD7FF),
+            // overlayColor: const Color(0xffACD7FF),
             onDetect: (barcode, args) async {
               if (barcode.rawValue == "1111") {
                 return Navigator.of(context).push(
@@ -71,35 +69,6 @@ class _QrPageState extends State<QrPage> {
             canPop: false,
             showSuccess: true,
           ),
-          // child: ValueListenableBuilder(
-          //   valueListenable: isDetailsOpen,
-          //   builder: (context, value, child) {
-          //     return Container(
-          //       decoration: BoxDecoration(
-          //           borderRadius: BorderRadius.circular(30), color: Colors.red),
-          //       height: MediaQuery.of(context).size.height / 2,
-          //       width: MediaQuery.of(context).size.height / 2.5,
-          //       child: MobileScanner(
-          //         allowDuplicates: true,
-          //         controller: cameraController,
-          // onDetect: (barcode, args) async {
-          //   if (barcode.rawValue == null) {
-          //     debugPrint('Failed to scan Barcode');
-          //   } else {
-          //     if (barcode.rawValue == "1111") {
-          //       log("resultado", error: barcode.rawValue);
-          //       // return Navigator.of(context).pop();
-          //       /// navegar
-          //     }
-          //     // if (!isDetailsOpen.value) {
-          //     //   isDetailsOpen.value = true;
-          //     // }
-          //   }
-          // },
-          //       ),
-          //     );
-          //   },
-          // ),
         ),
       ),
     );
