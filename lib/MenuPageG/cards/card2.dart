@@ -98,14 +98,15 @@ class _Card2State extends State<Card2> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
-                elevation: 10,
+                elevation: 0,
                 child: Container(
                   color: Colors.transparent,
-                  height: 170,
+                  height: 160,
                   width: 160,
                   child: CarouselSlider(
                     options: CarouselOptions(
-                        viewportFraction: 3,
+                        autoPlayCurve: Curves.easeInOutSine,
+                        viewportFraction: 1,
                         autoPlay: true,
                         autoPlayInterval: const Duration(seconds: 2),
                         reverse: true),

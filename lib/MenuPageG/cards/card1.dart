@@ -40,16 +40,18 @@ class _Card1State extends State<Card1> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
               ),
-              elevation: 10,
+              elevation: 0,
               child: Container(
                 color: Colors.transparent,
                 height: 170,
                 width: 160,
                 child: CarouselSlider(
                   options: CarouselOptions(
-                    viewportFraction: 3,
+                    autoPlayCurve: Curves.easeInOutSine,
+                    viewportFraction: 1,
+                    aspectRatio: 1,
                     autoPlay: true,
-                    autoPlayInterval: const Duration(seconds: 2),
+                    autoPlayInterval: const Duration(seconds: 3),
                   ),
                   items: widget.imagensCard.map((Image) => Image).toList(),
                 ),

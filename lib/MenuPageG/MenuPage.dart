@@ -35,12 +35,8 @@ class _MenuPageState extends State<MenuPage> {
     }
 
     late List<Image> imagens = [
-      Image.network(
-          'https://www.keeperformaturas.com.br/blog/wp-content/uploads/2019/07/O-que-observar-ao-visitar-uma-festa-de-formatura.jpg'),
-      Image.network(
-          'https://alphaconvites.com.br/wp-content/uploads/2020/12/festa-antes-formatura-scaled.jpg'),
-      Image.network(
-          'https://wegoout.com.br/wp-content/uploads/2022/06/295699262_763192505101723_309887737909331421_n.jpg'),
+      Image.asset('assets/paracarrossel.png'),
+      Image.asset('assets/paracarrossel2.png')
     ];
 
     return Scaffold(
@@ -285,9 +281,18 @@ class _MenuPageState extends State<MenuPage> {
                                 ),
                                 borderRadius: BorderRadius.circular(6),
                               ),
-                              child: Image.asset(
-                                "assets/imagemenu/grazi.jpg",
-                                height: MediaQuery.of(context).size.height / 5,
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (_) => InformationPge()),
+                                  );
+                                },
+                                child: Image.asset(
+                                  "assets/imagemenu/grazi.jpg",
+                                  height:
+                                      MediaQuery.of(context).size.height / 5,
+                                ),
                               ),
                             ),
                             Text(
@@ -317,9 +322,18 @@ class _MenuPageState extends State<MenuPage> {
                                 ),
                                 borderRadius: BorderRadius.circular(6),
                               ),
-                              child: Image.asset(
-                                "assets/imagemenu/grazi.jpg",
-                                height: MediaQuery.of(context).size.height / 5,
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (_) => InformationPge()),
+                                  );
+                                },
+                                child: Image.asset(
+                                  "assets/imagemenu/grazi.jpg",
+                                  height:
+                                      MediaQuery.of(context).size.height / 5,
+                                ),
                               ),
                             ),
                             Text(
@@ -349,9 +363,17 @@ class _MenuPageState extends State<MenuPage> {
                           ),
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        child: Image.asset(
-                          "assets/imagemenu/grazi.jpg",
-                          height: MediaQuery.of(context).size.height / 5,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (_) => InformationPge()),
+                            );
+                          },
+                          child: Image.asset(
+                            "assets/imagemenu/grazi.jpg",
+                            height: MediaQuery.of(context).size.height / 5,
+                          ),
                         ),
                       ),
                       Text(
@@ -386,9 +408,17 @@ class _MenuPageState extends State<MenuPage> {
                           ),
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        child: Image.asset(
-                          "assets/imagemenu/grazi.jpg",
-                          height: MediaQuery.of(context).size.height / 5,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (_) => InformationPge()),
+                            );
+                          },
+                          child: Image.asset(
+                            "assets/imagemenu/grazi.jpg",
+                            height: MediaQuery.of(context).size.height / 5,
+                          ),
                         ),
                       ),
                       Text(
