@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:carousel_slider/carousel_options.dart';
 
 class Card1 extends StatefulWidget {
   Card1({Key? key, required this.imagensCard}) : super(key: key);
@@ -36,7 +33,7 @@ class _Card1State extends State<Card1> {
             top: 0,
             left: 2,
             child: Card(
-              color: Color(0xFFCFE2FF),
+              color: const Color(0xFFCFE2FF),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
               ),
@@ -62,6 +59,7 @@ class _Card1State extends State<Card1> {
             top: 40,
             left: 180,
             child: Container(
+              color: Colors.transparent,
               height: 150,
               width: 130,
               child: Column(
@@ -97,7 +95,6 @@ class _Card1State extends State<Card1> {
                   Center(
                     child: TextButton(
                       onPressed: () {},
-                      child: Text("SAIBA MAIS"),
                       style: ButtonStyle(
                         foregroundColor:
                             MaterialStateProperty.all(const Color(0xFFA1C7FF)),
@@ -111,6 +108,7 @@ class _Card1State extends State<Card1> {
                           ),
                         ),
                       ),
+                      child: const Text("SAIBA MAIS"),
                     ),
                   ),
                 ],

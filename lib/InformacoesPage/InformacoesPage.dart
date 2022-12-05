@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:inside_events/MenuPageG/MenuPage.dart';
 import 'package:inside_events/Pagamento/PagamentoPage.dart';
 import 'package:like_button/like_button.dart';
 
@@ -13,6 +12,7 @@ class InformationPge extends StatefulWidget {
 }
 
 class _InformationPgeState extends State<InformationPge> {
+  bool curtir = false;
   late List<Image> imagens = [
     Image.network(
         'https://www.giromarilia.com.br/img/news/techsummit_1662672142.jpeg'),
@@ -21,47 +21,42 @@ class _InformationPgeState extends State<InformationPge> {
   ];
   @override
   Widget build(BuildContext context) {
-    bool curtir = false;
     return Material(
       child: Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+        floatingActionButton: (Padding(
+          padding: const EdgeInsets.only(left: 0, top: 15),
+          child: SizedBox(
+            width: 50,
+            height: 50,
+            child: FloatingActionButton(
+              foregroundColor: Colors.green,
+              elevation: 0,
+              backgroundColor: Colors.white38,
+              splashColor: const Color(0xff2B4F71),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Icon(
+                Icons.arrow_back_ios_new_outlined,
+                color: Color(0xff2B4F71),
+                size: 28,
+              ),
+            ),
+          ),
+        )),
         body: Padding(
-          padding: const EdgeInsets.only(top: 0, left: 0, right: 0),
+          padding: const EdgeInsets.all(0),
           child: ListView(
             scrollDirection: Axis.vertical,
             children: [
-              Stack(
-                children: [
-                  CarouselSlider(
-                    options: CarouselOptions(
-                        aspectRatio: 2.0,
-                        height: 250.0,
-                        autoPlay: true,
-                        viewportFraction: 1.0),
-                    items: imagens.map((Image) => Image).toList(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: CircleAvatar(
-                      radius: 20,
-                      backgroundColor: Colors.white38,
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.of(context).pop(
-                            MaterialPageRoute(
-                              builder: (_) => const MenuPage(
-                                title: '',
-                              ),
-                            ),
-                          );
-                        },
-                        icon: const Icon(
-                          Icons.arrow_back_ios_new_outlined,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+              CarouselSlider(
+                options: CarouselOptions(
+                    aspectRatio: 2.0,
+                    height: 250.0,
+                    autoPlay: true,
+                    viewportFraction: 1.0),
+                items: imagens.map((Image) => Image).toList(),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),
@@ -106,7 +101,7 @@ class _InformationPgeState extends State<InformationPge> {
                       Icons.chair_alt_outlined,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(right: 80),
+                      padding: const EdgeInsets.only(right: 80),
                       child: Text(
                         '89 Ingressos restantes',
                         style: GoogleFonts.montserrat(

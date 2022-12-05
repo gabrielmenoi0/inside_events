@@ -44,55 +44,57 @@ class _Login_pageState extends State<Login_page> {
             height: 25,
           ),
           TextFormField(
-              autofocus: true,
-              obscureText: true,
-              keyboardType: TextInputType.text,
-              decoration: const InputDecoration(
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
-                  ),
-                  labelText: ('Senha'),
-                  hintText: ('Digite sua senha'),
-                  labelStyle: TextStyle(color: Colors.black, fontSize: 23),
-                  hintStyle: TextStyle(fontSize: 23))),
-          SizedBox(
+            autofocus: true,
+            obscureText: true,
+            keyboardType: TextInputType.text,
+            decoration: const InputDecoration(
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+              ),
+              labelText: ('Senha'),
+              hintText: ('Digite sua senha'),
+              labelStyle: TextStyle(color: Colors.black, fontSize: 23),
+              hintStyle: TextStyle(fontSize: 23),
+            ),
+          ),
+          const SizedBox(
             height: 25,
             child: Text('esqueceu a senha ?', textAlign: TextAlign.right),
           ),
           Container(
             alignment: Alignment.center,
             child: TextButton(
-                style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        const EdgeInsets.all(10)),
-                    foregroundColor: MaterialStateProperty.all(
-                        const Color.fromARGB(255, 13, 67, 110)),
-                    backgroundColor: MaterialStateProperty.all(Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
-                        side: BorderSide(width: 1.0, color: Colors.grey),
-                      ),
-                    )),
-                onPressed: () {},
-                child: const Text(
-                  'Entre',
-                  style: TextStyle(
-                    height: 1.0,
-                    fontSize: 30,
-                  ),
-                )),
+              style: ButtonStyle(
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                      const EdgeInsets.all(10)),
+                  foregroundColor: MaterialStateProperty.all(
+                      const Color.fromARGB(255, 13, 67, 110)),
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.zero,
+                      side: BorderSide(width: 1.0, color: Colors.grey),
+                    ),
+                  )),
+              onPressed: () {},
+              child: const Text(
+                'Entre',
+                style: TextStyle(
+                  height: 1.0,
+                  fontSize: 30,
+                ),
+              ),
+            ),
           ),
-          SizedBox(
-              child: Text(
-            'Não tem uma conta? Cadastre-se \n Ou conecte-se em outras contas',
-            style: TextStyle(fontSize: 18, color: Colors.black),
-          )),
+          const SizedBox(
+            child: Text(
+              'Não tem uma conta? Cadastre-se \n Ou conecte-se em outras contas',
+              style: TextStyle(fontSize: 18, color: Colors.black),
+            ),
+          ),
           Container(
             alignment: Alignment.center,
             child: Row(
