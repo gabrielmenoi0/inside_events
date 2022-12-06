@@ -7,7 +7,7 @@ import 'package:carousel_slider/carousel_options.dart';
 class Card2 extends StatefulWidget {
   Card2({Key? key, required this.imagensCard}) : super(key: key);
 
-  late List<Image> imagensCard = imagensCard;
+  late List<Widget> imagensCard = imagensCard;
 
   @override
   _Card2State createState() => _Card2State();
@@ -71,7 +71,7 @@ class _Card2State extends State<Card2> {
                   Center(
                     child: TextButton(
                       onPressed: () {},
-                      child: Text("SAIBA MAIS"),
+                      child: const Text("SAIBA MAIS"),
                       style: ButtonStyle(
                         foregroundColor:
                             MaterialStateProperty.all(const Color(0xFFA1C7FF)),

@@ -34,9 +34,25 @@ class _MenuPageState extends State<MenuPage> {
       const Icon(Icons.arrow_back_ios_new_outlined);
     }
 
-    late List<Image> imagens = [
-      Image.asset('assets/paracarrossel.png'),
-      Image.asset('assets/paracarrossel2.png')
+    late List<Widget> imagens = [
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/paracarrossel.png",
+        ),
+      ),
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/paracarrossel.png",
+        ),
+      ),
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/paracarrossel.png",
+        ),
+      ),
     ];
 
     return Scaffold(
@@ -128,7 +144,9 @@ class _MenuPageState extends State<MenuPage> {
         ),
       ),
       appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80),
+        preferredSize: const Size.fromHeight(80),
+        child: Padding(
+          padding: EdgeInsets.only(top: 10),
           child: AppBar(
             elevation: 0,
             backgroundColor: const Color(0xff2b4f71),
@@ -175,7 +193,9 @@ class _MenuPageState extends State<MenuPage> {
                 ),
               ),
             ],
-          )),
+          ),
+        ),
+      ),
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [

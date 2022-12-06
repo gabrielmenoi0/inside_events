@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 class Card1 extends StatefulWidget {
   Card1({Key? key, required this.imagensCard}) : super(key: key);
 
-  late List<Image> imagensCard = imagensCard;
+  late List<Widget> imagensCard = imagensCard;
 
   @override
   _Card1State createState() => _Card1State();
