@@ -60,6 +60,7 @@ class _MenuPageState extends State<MenuPage> {
         floatHeaderSlivers: true,
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(
+            backgroundColor: const Color(0xff2B4F71),
             expandedHeight: 65,
             // flexibleSpace: FlexibleSpaceBar(
             //   title: Text("testee"),
@@ -103,7 +104,11 @@ class _MenuPageState extends State<MenuPage> {
                   color: Color(0xffe9edf8),
                 ),
                 // tooltip: 'Verificar QR CODE',
-                onPressed: () => const QrPage(),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => QrPage()),
+                  );
+                },
               ),
             ],
             floating: true,
