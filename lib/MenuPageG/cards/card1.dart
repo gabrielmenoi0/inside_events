@@ -47,7 +47,7 @@ class _Card1State extends State<Card1> {
                   options: CarouselOptions(
                     autoPlayCurve: Curves.easeInOutSine,
                     viewportFraction: 1,
-                    aspectRatio: 1,
+                    aspectRatio: 2.3,
                     autoPlay: true,
                     autoPlayInterval: const Duration(seconds: 3),
                   ),
@@ -68,8 +68,7 @@ class _Card1State extends State<Card1> {
                 children: [
                   Text(
                     "EVENTO",
-                    style:
-                    GoogleFonts.montserrat(
+                    style: GoogleFonts.montserrat(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF363f93),
@@ -77,8 +76,7 @@ class _Card1State extends State<Card1> {
                   ),
                   Text(
                     "Descrição",
-                    style:
-                    GoogleFonts.montserrat(
+                    style: GoogleFonts.montserrat(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey,
@@ -89,13 +87,11 @@ class _Card1State extends State<Card1> {
                   ),
                   Text(
                     "Horário",
-                    style:
-                    GoogleFonts.montserrat(
+                    style: GoogleFonts.montserrat(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF363f93),
                     ),
-
                   ),
                   const SizedBox(
                     height: 10,
@@ -116,13 +112,14 @@ class _Card1State extends State<Card1> {
                           ),
                         ),
                       ),
-                      child: Text("SAIBA MAIS",
-                        style:
-                       GoogleFonts.montserrat(
-                         fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF363f93),
-                      ),),
+                      child: Text(
+                        "SAIBA MAIS",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF363f93),
+                        ),
+                      ),
                     ),
                   ),
                 ],

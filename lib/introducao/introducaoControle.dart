@@ -21,7 +21,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       context,
       MaterialPageRoute(
         builder: (context) => const MenuPage(
-          title: '',
         ),
       ),
     );

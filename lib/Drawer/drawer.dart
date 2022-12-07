@@ -39,11 +39,10 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
           leading: const Icon(
             Icons.home,
           ),
-          title:  Text('Perfil', style: GoogleFonts.montserrat()),
+          title: Text('Perfil', style: GoogleFonts.montserrat()),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (_) => MenuPage(title: '',)),
+              MaterialPageRoute(builder: (_) => MenuPage()),
             );
           },
         ),
@@ -54,8 +53,7 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
           title: Text('Seu registro', style: GoogleFonts.montserrat()),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (_) => registro()),
+              MaterialPageRoute(builder: (_) => registro()),
             );
             ;
           },
@@ -102,9 +100,5 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
         ),
       ],
     );
-
   }
 }
-
-
-

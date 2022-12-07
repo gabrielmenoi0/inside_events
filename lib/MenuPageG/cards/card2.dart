@@ -42,8 +42,7 @@ class _Card2State extends State<Card2> {
                 children: [
                   Text(
                     "EVENTO",
-                    style:
-                    GoogleFonts.montserrat(
+                    style: GoogleFonts.montserrat(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF363f93),
@@ -51,8 +50,7 @@ class _Card2State extends State<Card2> {
                   ),
                   Text(
                     "Descrição",
-                    style:
-                    GoogleFonts.montserrat(
+                    style: GoogleFonts.montserrat(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey,
@@ -63,13 +61,11 @@ class _Card2State extends State<Card2> {
                   ),
                   Text(
                     "Horário",
-                    style:
-                    GoogleFonts.montserrat(
+                    style: GoogleFonts.montserrat(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF363f93),
                     ),
-
                   ),
                   const SizedBox(
                     height: 10,
@@ -79,24 +75,25 @@ class _Card2State extends State<Card2> {
                       onPressed: () {},
                       style: ButtonStyle(
                         foregroundColor:
-                        MaterialStateProperty.all(const Color(0xFFA1C7FF)),
+                            MaterialStateProperty.all(const Color(0xFFA1C7FF)),
                         backgroundColor:
-                        MaterialStateProperty.all(Colors.white),
+                            MaterialStateProperty.all(Colors.white),
                         shape:
-                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                             side: const BorderSide(color: Colors.white),
                           ),
                         ),
                       ),
-                      child: Text("SAIBA MAIS",
-                        style:
-                        GoogleFonts.montserrat(
+                      child: Text(
+                        "SAIBA MAIS",
+                        style: GoogleFonts.montserrat(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF363f93),
-                        ),),
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -107,6 +104,7 @@ class _Card2State extends State<Card2> {
             top: 0,
             left: 165,
             child: Card(
+                color: Colors.transparent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
@@ -119,6 +117,7 @@ class _Card2State extends State<Card2> {
                     options: CarouselOptions(
                         autoPlayCurve: Curves.easeInOutSine,
                         viewportFraction: 1,
+                        aspectRatio: 2.3,
                         autoPlay: true,
                         autoPlayInterval: const Duration(seconds: 2),
                         reverse: true),
