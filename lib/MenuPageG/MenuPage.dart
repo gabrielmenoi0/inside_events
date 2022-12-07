@@ -4,6 +4,7 @@ import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
 import 'package:inside_events/MenuPageG/cards/card1.dart';
 import 'package:inside_events/MenuPageG/cards/card2.dart';
 import 'package:inside_events/QrPage/QrPage.dart';
+import '../Drawer/drawer.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({Key? key, required this.title}) : super(key: key);
@@ -59,92 +60,12 @@ class _MenuPageState extends State<MenuPage> {
 
     return Scaffold(
       drawer: Drawer(
-        width: 250,
-        elevation: 0,
-        backgroundColor: const Color(0xffE9EDF8),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            const UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: Color(0xffe9edf8)),
-              currentAccountPictureSize: Size(80, 80),
-              currentAccountPicture: CircleAvatar(
-                radius: 50.0,
-                backgroundImage: AssetImage(
-                  'assets/imagemenu/grazi.jpg',
-                ),
-              ),
-              accountName: Text(
-                'Grazziela',
-                style: TextStyle(color: Colors.black),
-                textAlign: TextAlign.center,
-              ),
-              accountEmail: Text(
-                'grazzieladev@gmail.com',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.home,
-              ),
-              title: const Text('Perfil'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.app_registration_outlined,
-              ),
-              title: const Text('Seu registro'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.calendar_month_outlined,
-              ),
-              title: const Text('Inscreveu-se'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.radar_outlined,
-              ),
-              title: const Text('Perto de você'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            const Divider(
-              color: Colors.white,
-              height: 10,
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.settings,
-              ),
-              title: const Text('Configurações'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.message_outlined,
-              ),
-              title: const Text('Nossa central'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
+      width: 250,
+      elevation: 0,
+      backgroundColor: const Color(0xffE9EDF8),
+      child: DrawerPaginas(),
+
+    ),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: Padding(
@@ -154,7 +75,7 @@ class _MenuPageState extends State<MenuPage> {
             backgroundColor: const Color(0xff2b4f71),
             actions: <Widget>[
               Container(
-                width: 250,
+                width: 270,
                 padding: const EdgeInsets.only(
                   top: 11,
                   bottom: 11,
@@ -266,7 +187,7 @@ class _MenuPageState extends State<MenuPage> {
                             top: 9, bottom: 5, right: 10, left: 5),
                         child: Text(
                           "Medicina" ,
-                          style: GoogleFonts.montserrat(fontSize: 20),
+                          style: GoogleFonts.montserrat(fontSize: 20, color: medicina ? Colors.blue : Colors.black),
                         ),
                       ),
                     ),
@@ -287,7 +208,7 @@ class _MenuPageState extends State<MenuPage> {
                             top: 9, bottom: 5, right: 10, left: 5),
                         child: Text(
                           "Tecnologia",
-                          style: GoogleFonts.montserrat(fontSize: 20),
+                          style: GoogleFonts.montserrat(fontSize: 20, color: tecnologia ? Colors.blue : Colors.black),
                         ),
                       ),
                     ),
@@ -306,7 +227,7 @@ class _MenuPageState extends State<MenuPage> {
                             top: 9, bottom: 5, right: 10, left: 5),
                         child: Text(
                           "Direito",
-                          style: GoogleFonts.montserrat(fontSize: 20),
+                          style: GoogleFonts.montserrat(fontSize: 20, color: direito ? Colors.blue : Colors.black),
                         ),
                       ),
                     ),
@@ -326,7 +247,7 @@ class _MenuPageState extends State<MenuPage> {
                             top: 9, bottom: 5, right: 10, left: 5),
                         child: Text(
                           "Outros",
-                          style: GoogleFonts.montserrat(fontSize: 20),
+                          style: GoogleFonts.montserrat(fontSize: 20, color: outros ? Colors.blue : Colors.black),
                         ),
                       ),
                     ),

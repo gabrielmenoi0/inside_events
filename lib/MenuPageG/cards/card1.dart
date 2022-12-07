@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Card1 extends StatefulWidget {
   Card1({Key? key, required this.imagensCard}) : super(key: key);
@@ -65,29 +66,36 @@ class _Card1State extends State<Card1> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     "EVENTO",
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF363f93),
-                        fontWeight: FontWeight.bold),
+                    style:
+                    GoogleFonts.montserrat(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF363f93),
+                    ),
                   ),
-                  const Text(
+                  Text(
                     "Descrição",
-                    style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold),
+                    style:
+                    GoogleFonts.montserrat(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
                   ),
                   const Divider(
                     color: Color.fromARGB(255, 175, 171, 171),
                   ),
-                  const Text(
+                  Text(
                     "Horário",
-                    style: TextStyle(
-                        fontSize: 10,
-                        color: Color(0xFF363f93),
-                        fontWeight: FontWeight.bold),
+                    style:
+                    GoogleFonts.montserrat(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF363f93),
+                    ),
+
                   ),
                   const SizedBox(
                     height: 10,
@@ -108,7 +116,13 @@ class _Card1State extends State<Card1> {
                           ),
                         ),
                       ),
-                      child: const Text("SAIBA MAIS"),
+                      child: Text("SAIBA MAIS",
+                        style:
+                       GoogleFonts.montserrat(
+                         fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF363f93),
+                      ),),
                     ),
                   ),
                 ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_slider/carousel_options.dart';
 
@@ -41,29 +40,36 @@ class _Card2State extends State<Card2> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     "EVENTO",
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF363f93),
-                        fontWeight: FontWeight.bold),
+                    style:
+                    GoogleFonts.montserrat(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF363f93),
+                    ),
                   ),
-                  const Text(
+                  Text(
                     "Descrição",
-                    style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold),
+                    style:
+                    GoogleFonts.montserrat(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
                   ),
                   const Divider(
                     color: Color.fromARGB(255, 175, 171, 171),
                   ),
-                  const Text(
+                  Text(
                     "Horário",
-                    style: TextStyle(
-                        fontSize: 10,
-                        color: Color(0xFF363f93),
-                        fontWeight: FontWeight.bold),
+                    style:
+                    GoogleFonts.montserrat(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF363f93),
+                    ),
+
                   ),
                   const SizedBox(
                     height: 10,
@@ -71,20 +77,26 @@ class _Card2State extends State<Card2> {
                   Center(
                     child: TextButton(
                       onPressed: () {},
-                      child: const Text("SAIBA MAIS"),
                       style: ButtonStyle(
                         foregroundColor:
-                            MaterialStateProperty.all(const Color(0xFFA1C7FF)),
+                        MaterialStateProperty.all(const Color(0xFFA1C7FF)),
                         backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
+                        MaterialStateProperty.all(Colors.white),
                         shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                             side: const BorderSide(color: Colors.white),
                           ),
                         ),
                       ),
+                      child: Text("SAIBA MAIS",
+                        style:
+                        GoogleFonts.montserrat(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF363f93),
+                        ),),
                     ),
                   ),
                 ],
@@ -101,7 +113,7 @@ class _Card2State extends State<Card2> {
                 elevation: 0,
                 child: Container(
                   color: Colors.transparent,
-                  height: 160,
+                  height: 170,
                   width: 160,
                   child: CarouselSlider(
                     options: CarouselOptions(
