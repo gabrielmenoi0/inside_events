@@ -75,7 +75,7 @@ class _MenuPageState extends State<MenuPage> {
             backgroundColor: const Color(0xff2b4f71),
             actions: <Widget>[
               Container(
-                width: 270,
+                width: MediaQuery.of(context).size.width / 1.4,
                 padding: const EdgeInsets.only(
                   top: 11,
                   bottom: 11,
