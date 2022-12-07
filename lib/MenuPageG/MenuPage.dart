@@ -23,8 +23,10 @@ class _MenuPageState extends State<MenuPage> {
     return result;
   }
 
-  bool medicina = false;
-
+  bool medicina = true;
+  bool tecnologia = false;
+  bool direito = false;
+  bool outros = false;
   @override
   Widget build(BuildContext context) {
     void _QrPagina(context) {
@@ -246,37 +248,89 @@ class _MenuPageState extends State<MenuPage> {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
+
+
+
                     GestureDetector(
                       onTap: () {
-                        medicina = true;
-                        setState(() {});
+                        setState(() {
+                        medicina = !medicina;
+                        tecnologia = false;
+                        direito = false;
+                        outros = false;
+
+                        });
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(
                             top: 9, bottom: 5, right: 10, left: 5),
                         child: Text(
-                          "Medicina",
+                          "Medicina" ,
                           style: GoogleFonts.montserrat(fontSize: 20),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 9, bottom: 5, right: 10, left: 5),
-                      child: Text(
-                        "Tecnologia",
-                        style: GoogleFonts.montserrat(fontSize: 20),
+
+
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          tecnologia = true;
+                          medicina = false;
+                          direito = false;
+                          outros = false;
+
+                        });
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 9, bottom: 5, right: 10, left: 5),
+                        child: Text(
+                          "Tecnologia",
+                          style: GoogleFonts.montserrat(fontSize: 20),
+                        ),
                       ),
                     ),
-                    itemPadding("Direito", () {}),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 9, bottom: 5, right: 10, left: 10),
-                      child: Text(
-                        "Outros",
-                        style: GoogleFonts.montserrat(fontSize: 20),
+
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          direito = true;
+                          medicina = false;
+                          tecnologia = false;
+                          outros = false;
+                        });
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 9, bottom: 5, right: 10, left: 5),
+                        child: Text(
+                          "Direito",
+                          style: GoogleFonts.montserrat(fontSize: 20),
+                        ),
                       ),
                     ),
+
+
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          outros = true;
+                          medicina = false;
+                          direito = false;
+                          tecnologia = false;
+                        });
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 9, bottom: 5, right: 10, left: 5),
+                        child: Text(
+                          "Outros",
+                          style: GoogleFonts.montserrat(fontSize: 20),
+                        ),
+                      ),
+                    ),
+
                   ],
                 ),
               ),
@@ -286,213 +340,39 @@ class _MenuPageState extends State<MenuPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              medicina == true
-                  ? Container(
-                      color: Colors.transparent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  width: 5,
-                                  color: const Color(0xffCFE2FF),
-                                ),
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                        builder: (_) => InformationPge()),
-                                  );
-                                },
-                                child: Image.asset(
-                                  "assets/imagemenu/grazi.jpg",
-                                  height:
-                                      MediaQuery.of(context).size.height / 5,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              "Evento Nome",
-                              style: GoogleFonts.montserrat(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "Local",
-                              style: GoogleFonts.montserrat(fontSize: 17),
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
-                  : Container(
-                      color: Colors.transparent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  width: 5,
-                                  color: const Color(0xffCFE2FF),
-                                ),
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                        builder: (_) => InformationPge()),
-                                  );
-                                },
-                                child: Image.asset(
-                                  "assets/imagemenu/grazi.jpg",
-                                  height:
-                                      MediaQuery.of(context).size.height / 5,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              "Evento Nome",
-                              style: GoogleFonts.montserrat(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "Local",
-                              style: GoogleFonts.montserrat(fontSize: 17),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-              Container(
-                color: Colors.transparent,
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 5,
-                            color: Color(0xffCFE2FF),
-                          ),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (_) => InformationPge()),
-                            );
-                          },
-                          child: Image.asset(
-                            "assets/imagemenu/grazi.jpg",
-                            height: MediaQuery.of(context).size.height / 5,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "Evento Nome",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Local",
-                        style: GoogleFonts.montserrat(fontSize: 17),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+
+              medicina ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento Nome", "Local", context)
+                  : direito ? EventoContainer("assets/imagemenu/juridicas.jpeg", "Univem", "host", context)
+                  : tecnologia ?  EventoContainer("assets/imagemenu/grupoEvento.png", "Univem", "host", context)
+                  : outros ? EventoContainer("assets/Logoin.png", "Univem", "host", context)
+                  : EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento Nome", "Local", context),
+
+              medicina ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento Nome", "Local", context)
+                  : direito ? EventoContainer("assets/imagemenu/juridicas.jpeg", "Univem", "host", context)
+                  : tecnologia ?  EventoContainer("assets/imagemenu/grupoEvento.png", "Univem", "host", context)
+                  : outros ? EventoContainer("assets/Logoin.png", "Univem", "host", context)
+                  : EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento Nome", "Local", context),
+
+
             ],
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                child: Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 5,
-                            color: const Color(0xffCFE2FF),
-                          ),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (_) => InformationPge()),
-                            );
-                          },
-                          child: Image.asset(
-                            "assets/imagemenu/grazi.jpg",
-                            height: MediaQuery.of(context).size.height / 5,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "Evento Nome",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Local",
-                        style: GoogleFonts.montserrat(fontSize: 17),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 5,
-                            color: const Color(0xffCFE2FF),
-                          ),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (_) => InformationPge()),
-                            );
-                          },
-                          child: Image.asset(
-                            "assets/imagemenu/grazi.jpg",
-                            height: MediaQuery.of(context).size.height / 5,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "Evento Nome",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Local",
-                        style: GoogleFonts.montserrat(fontSize: 17),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              medicina ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento Nome", "Local", context)
+                  : direito ? EventoContainer("assets/imagemenu/juridicas.jpeg", "Univem", "host", context)
+                  : tecnologia ?  EventoContainer("assets/imagemenu/grupoEvento.png", "Univem", "host", context)
+                  : outros ? EventoContainer("assets/Logoin.png", "Univem", "host", context)
+                  : EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento Nome", "Local", context),
+
+              medicina ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento Nome", "Local", context)
+                  : direito ? EventoContainer("assets/imagemenu/juridicas.jpeg", "Univem", "host", context)
+                  : tecnologia ?  EventoContainer("assets/imagemenu/grupoEvento.png", "Univem", "host", context)
+                  : outros ? EventoContainer("assets/Logoin.png", "Univem", "host", context)
+                  : EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento Nome", "Local", context),
+
+
             ],
           ),
           Padding(
@@ -675,7 +555,13 @@ class _MenuPageState extends State<MenuPage> {
           ),
         ],
       ),
+
+
+
     );
+
+
+
   }
 
   itemPadding(String info, Function tap) {
@@ -691,3 +577,47 @@ class _MenuPageState extends State<MenuPage> {
     );
   }
 }
+
+EventoContainer(String image, String titulo, String local, context) {
+  return Container(
+    child: Padding(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 5,
+                color: const Color(0xffCFE2FF),
+              ),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (_) => InformationPge()),
+                );
+              },
+              child: Image.asset(
+                image,
+                height: MediaQuery.of(context).size.height / 5,
+              ),
+            ),
+          ),
+          Text(
+            titulo,
+            style: GoogleFonts.montserrat(
+                fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            local,
+            style: GoogleFonts.montserrat(fontSize: 17),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+
