@@ -8,22 +8,14 @@ import 'package:inside_events/MenuPageG/cards/card2.dart';
 import 'package:inside_events/QrPage/QrPage.dart';
 
 import '../Drawer_and_AppBar/drawer.dart';
-
-class MenuPage extends StatefulWidget {
-  const MenuPage({super.key});
+class Eventos extends StatefulWidget {
+  const Eventos({Key? key}) : super(key: key);
 
   @override
-  State<MenuPage> createState() => _MenuPageState();
+  State<Eventos> createState() => _EventosState();
 }
 
-class _MenuPageState extends State<MenuPage> {
-  List<T> map<T>(List list, Function handler) {
-    List<T> result = [];
-    for (var i = 0; i < list.length; i++) {
-      result.add(handler(i, list[i]));
-    }
-    return result;
-  }
+class _EventosState extends State<Eventos> {
 
   bool medicina = true;
   bool tecnologia = false;
@@ -70,39 +62,6 @@ class _MenuPageState extends State<MenuPage> {
         body: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            const SizedBox(
-              height: 30,
-            ),
-            Text(
-              'EVENTOS EM ALTA!!',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(fontSize: 25),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Container(
-              alignment: Alignment.center,
-              child: Card1(imagensCard: imagens),
-            ),
-            const SizedBox(
-              height: 6,
-            ),
-            Container(
-              alignment: Alignment.center,
-              child: GestureDetector(
-                  onTap: () {}, child: Card2(imagensCard: imagens)),
-            ),
-            const SizedBox(
-              height: 6,
-            ),
-            Container(
-              alignment: Alignment.center,
-              child: Card1(imagensCard: imagens),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: Center(
@@ -208,44 +167,44 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 medicina
                     ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                        "Evento Nome", "Local", context)
+                    "Evento Nome", "Local", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/juridicas.jpeg",
-                            "Univem", "host", context)
-                        : tecnologia
-                            ? EventoContainer(
-                                "assets/imagemenu/grupoEvento.png",
-                                "Univem",
-                                "host",
-                                context)
-                            : outros
-                                ? EventoContainer("assets/Logoin.png", "Univem",
-                                    "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/eventoUnivem.jpeg",
-                                    "Evento Nome",
-                                    "Local",
-                                    context),
+                    ? EventoContainer("assets/imagemenu/juridicas.jpeg",
+                    "Univem", "host", context)
+                    : tecnologia
+                    ? EventoContainer(
+                    "assets/imagemenu/grupoEvento.png",
+                    "Univem",
+                    "host",
+                    context)
+                    : outros
+                    ? EventoContainer("assets/Logoin.png", "Univem",
+                    "host", context)
+                    : EventoContainer(
+                    "assets/imagemenu/eventoUnivem.jpeg",
+                    "Evento Nome",
+                    "Local",
+                    context),
                 medicina
                     ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                        "Evento Nome", "Local", context)
+                    "Evento Nome", "Local", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/juridicas.jpeg",
-                            "Univem", "host", context)
-                        : tecnologia
-                            ? EventoContainer(
-                                "assets/imagemenu/grupoEvento.png",
-                                "Univem",
-                                "host",
-                                context)
-                            : outros
-                                ? EventoContainer("assets/Logoin.png", "Univem",
-                                    "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/eventoUnivem.jpeg",
-                                    "Evento Nome",
-                                    "Local",
-                                    context),
+                    ? EventoContainer("assets/imagemenu/juridicas.jpeg",
+                    "Univem", "host", context)
+                    : tecnologia
+                    ? EventoContainer(
+                    "assets/imagemenu/grupoEvento.png",
+                    "Univem",
+                    "host",
+                    context)
+                    : outros
+                    ? EventoContainer("assets/Logoin.png", "Univem",
+                    "host", context)
+                    : EventoContainer(
+                    "assets/imagemenu/eventoUnivem.jpeg",
+                    "Evento Nome",
+                    "Local",
+                    context),
               ],
             ),
             Row(
@@ -254,44 +213,44 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 medicina
                     ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                        "Evento Nome", "Local", context)
+                    "Evento Nome", "Local", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/juridicas.jpeg",
-                            "Univem", "host", context)
-                        : tecnologia
-                            ? EventoContainer(
-                                "assets/imagemenu/grupoEvento.png",
-                                "Univem",
-                                "host",
-                                context)
-                            : outros
-                                ? EventoContainer("assets/Logoin.png", "Univem",
-                                    "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/eventoUnivem.jpeg",
-                                    "Evento Nome",
-                                    "Local",
-                                    context),
+                    ? EventoContainer("assets/imagemenu/juridicas.jpeg",
+                    "Univem", "host", context)
+                    : tecnologia
+                    ? EventoContainer(
+                    "assets/imagemenu/grupoEvento.png",
+                    "Univem",
+                    "host",
+                    context)
+                    : outros
+                    ? EventoContainer("assets/Logoin.png", "Univem",
+                    "host", context)
+                    : EventoContainer(
+                    "assets/imagemenu/eventoUnivem.jpeg",
+                    "Evento Nome",
+                    "Local",
+                    context),
                 medicina
                     ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                        "Evento Nome", "Local", context)
+                    "Evento Nome", "Local", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/juridicas.jpeg",
-                            "Univem", "host", context)
-                        : tecnologia
-                            ? EventoContainer(
-                                "assets/imagemenu/grupoEvento.png",
-                                "Univem",
-                                "host",
-                                context)
-                            : outros
-                                ? EventoContainer("assets/Logoin.png", "Univem",
-                                    "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/eventoUnivem.jpeg",
-                                    "Evento Nome",
-                                    "Local",
-                                    context),
+                    ? EventoContainer("assets/imagemenu/juridicas.jpeg",
+                    "Univem", "host", context)
+                    : tecnologia
+                    ? EventoContainer(
+                    "assets/imagemenu/grupoEvento.png",
+                    "Univem",
+                    "host",
+                    context)
+                    : outros
+                    ? EventoContainer("assets/Logoin.png", "Univem",
+                    "host", context)
+                    : EventoContainer(
+                    "assets/imagemenu/eventoUnivem.jpeg",
+                    "Evento Nome",
+                    "Local",
+                    context),
               ],
             ),
             Padding(
@@ -543,3 +502,4 @@ EventoContainer(String image, String titulo, String local, context) {
     ),
   );
 }
+
