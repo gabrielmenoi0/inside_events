@@ -47,6 +47,8 @@ dependencies:
   like_button: ^2.0.5
   ai_barcode_scanner: ^0.0.3
   awesome_card: ^1.1.7
+  animated_custom_dropdown: 1.2.2
+  multi_dropdown: ^1.0.4
 
 flutter_native_splash:
   color: "#C9CFDF"

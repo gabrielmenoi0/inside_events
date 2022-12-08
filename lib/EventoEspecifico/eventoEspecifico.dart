@@ -6,6 +6,8 @@ import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
 import 'package:inside_events/MenuPageG/cards/card1.dart';
 import 'package:inside_events/MenuPageG/cards/card2.dart';
 import 'package:inside_events/QrPage/QrPage.dart';
+import 'package:multi_dropdown/multiselect_dropdown.dart';
+
 
 import '../Drawer_and_AppBar/drawer.dart';
 class Eventos extends StatefulWidget {
@@ -15,7 +17,10 @@ class Eventos extends StatefulWidget {
   State<Eventos> createState() => _EventosState();
 }
 
+
+
 class _EventosState extends State<Eventos> {
+
 
   bool medicina = true;
   bool tecnologia = false;
@@ -62,386 +67,72 @@ class _EventosState extends State<Eventos> {
         body: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Center(
-                child: Container(
-                  height: 50,
-                  width: 550,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color(0xffCFE2FF), width: 4.0)),
-                  alignment: Alignment.center,
-                  child: ListView(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            medicina = !medicina;
-                            tecnologia = false;
-                            direito = false;
-                            outros = false;
-                          });
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 9, bottom: 5, right: 10, left: 5),
-                          child: Text(
-                            "Medicina",
-                            style: GoogleFonts.montserrat(
-                                fontSize: 20,
-                                color: medicina ? Colors.blue : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            tecnologia = true;
-                            medicina = false;
-                            direito = false;
-                            outros = false;
-                          });
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 9, bottom: 5, right: 10, left: 5),
-                          child: Text(
-                            "Tecnologia",
-                            style: GoogleFonts.montserrat(
-                                fontSize: 20,
-                                color: tecnologia ? Colors.blue : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            direito = true;
-                            medicina = false;
-                            tecnologia = false;
-                            outros = false;
-                          });
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 9, bottom: 5, right: 10, left: 5),
-                          child: Text(
-                            "Direito",
-                            style: GoogleFonts.montserrat(
-                                fontSize: 20,
-                                color: direito ? Colors.blue : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            outros = true;
-                            medicina = false;
-                            direito = false;
-                            tecnologia = false;
-                          });
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 9, bottom: 5, right: 10, left: 5),
-                          child: Text(
-                            "Outros",
-                            style: GoogleFonts.montserrat(
-                                fontSize: 20,
-                                color: outros ? Colors.blue : Colors.black),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+
+          Container(
+            decoration: BoxDecoration(
+              color: Color(0xffCFE2FF),
+
             ),
+            child: Center(
+              child:
+              Text("Evento específico",
+                style: GoogleFonts.montserrat(
+                  fontSize: 24
+              ),),
+            ),
+
+          ),
+
+             Padding(
+               padding: const EdgeInsets.only(top: 20.0),
+               child: MultiSelectDropDown(
+                 backgroundColor: Color(0xffCFE2FF),
+
+
+                 onOptionSelected: (List<ValueItem> selectedOptions) {},
+                 options: const <ValueItem>[
+                   ValueItem(label: 'Medicina', value: '2'),
+                   ValueItem(label: 'Tecnologia', value: '3'),
+                   ValueItem(label: 'Direito', value: '4'),
+                   ValueItem(label: 'Outros', value: '5'),
+                 ],
+                 selectionType: SelectionType.multi,
+                 chipConfig: const ChipConfig(wrapType: WrapType.scroll),
+                  hint: "Filtrar",
+
+                  hintStyle: GoogleFonts.montserrat(fontSize: 15),
+                 selectedOptionIcon: const Icon(Icons.check_circle),
+
+               ),
+             ),
+
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                medicina
-                    ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                    "Evento Nome", "Local", context)
-                    : direito
-                    ? EventoContainer("assets/imagemenu/juridicas.jpeg",
-                    "Univem", "host", context)
-                    : tecnologia
-                    ? EventoContainer(
-                    "assets/imagemenu/grupoEvento.png",
-                    "Univem",
-                    "host",
-                    context)
-                    : outros
-                    ? EventoContainer("assets/Logoin.png", "Univem",
-                    "host", context)
-                    : EventoContainer(
-                    "assets/imagemenu/eventoUnivem.jpeg",
-                    "Evento Nome",
-                    "Local",
-                    context),
-                medicina
-                    ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                    "Evento Nome", "Local", context)
-                    : direito
-                    ? EventoContainer("assets/imagemenu/juridicas.jpeg",
-                    "Univem", "host", context)
-                    : tecnologia
-                    ? EventoContainer(
-                    "assets/imagemenu/grupoEvento.png",
-                    "Univem",
-                    "host",
-                    context)
-                    : outros
-                    ? EventoContainer("assets/Logoin.png", "Univem",
-                    "host", context)
-                    : EventoContainer(
-                    "assets/imagemenu/eventoUnivem.jpeg",
-                    "Evento Nome",
-                    "Local",
-                    context),
+                EventoContainer("assets/imagemenu/juridicas.jpeg", "Evento", "Local", context),
+                EventoContainer("assets/imagemenu/juridicas.jpeg", "Evento", "Local", context),
               ],
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                medicina
-                    ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                    "Evento Nome", "Local", context)
-                    : direito
-                    ? EventoContainer("assets/imagemenu/juridicas.jpeg",
-                    "Univem", "host", context)
-                    : tecnologia
-                    ? EventoContainer(
-                    "assets/imagemenu/grupoEvento.png",
-                    "Univem",
-                    "host",
-                    context)
-                    : outros
-                    ? EventoContainer("assets/Logoin.png", "Univem",
-                    "host", context)
-                    : EventoContainer(
-                    "assets/imagemenu/eventoUnivem.jpeg",
-                    "Evento Nome",
-                    "Local",
-                    context),
-                medicina
-                    ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                    "Evento Nome", "Local", context)
-                    : direito
-                    ? EventoContainer("assets/imagemenu/juridicas.jpeg",
-                    "Univem", "host", context)
-                    : tecnologia
-                    ? EventoContainer(
-                    "assets/imagemenu/grupoEvento.png",
-                    "Univem",
-                    "host",
-                    context)
-                    : outros
-                    ? EventoContainer("assets/Logoin.png", "Univem",
-                    "host", context)
-                    : EventoContainer(
-                    "assets/imagemenu/eventoUnivem.jpeg",
-                    "Evento Nome",
-                    "Local",
-                    context),
+                EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento", "Local", context),
+                EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento", "Local", context),
+
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 35, right: 35, top: 10),
-              child: SizedBox(
-                height: 40,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => Eventos()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(28)),
-                      ),
-                      elevation: 0,
-                      backgroundColor: const Color(0xffACD7FF)),
-                  child: Text(
-                    'VER TUDO!',
-                    style: GoogleFonts.montserrat(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.all(20),
-              alignment: Alignment.center,
-              child: Text(
-                'Locais',
-                style: GoogleFonts.montserrat(fontSize: 30),
-              ),
-            ),
+
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  color: Colors.transparent,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 5,
-                              color: const Color(0xffCFE2FF),
-                            ),
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          child: Image.network(
-                            "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
-                            height: 150,
-                          ),
-                        ),
-                        Text(
-                          "Evento Nome",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          "Local",
-                          style: GoogleFonts.montserrat(fontSize: 17),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.transparent,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 5,
-                              color: Color(0xffCFE2FF),
-                            ),
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          child: Image.network(
-                            "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
-                            height: 150,
-                          ),
-                        ),
-                        Text(
-                          "Evento Nome",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          "Local",
-                          style: GoogleFonts.montserrat(fontSize: 17),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                EventoContainer("assets/imagemenu/grupoEvento.png", "Evento", "Local", context),
+                EventoContainer("assets/imagemenu/grupoEvento.png", "Evento", "Local", context),
               ],
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                    child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  width: 5,
-                                  color: const Color(0xffCFE2FF),
-                                ),
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              child: Image.network(
-                                "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
-                                height: 150,
-                              ),
-                            ),
-                            Text(
-                              "Evento Nome",
-                              style: GoogleFonts.montserrat(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "Local",
-                              style: GoogleFonts.montserrat(fontSize: 17),
-                            ),
-                          ],
-                        ))),
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 5,
-                              color: const Color(0xffCFE2FF),
-                            ),
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          child: Image.network(
-                            "https://www.univem.edu.br/storage/eventos/June2020/WhatsApp%20Image%202020-05-27%20at%2011.23.16.jpeg",
-                            height: 150,
-                          ),
-                        ),
-                        Text(
-                          "Evento Nome",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          "Local",
-                          style: GoogleFonts.montserrat(fontSize: 17),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 35, right: 35, top: 10, bottom: 20),
-              child: SizedBox(
-                height: 40,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(28)),
-                      ),
-                      elevation: 0,
-                      backgroundColor: const Color(0xffACD7FF)),
-                  child: Text(
-                    'VER TUDO!',
-                    style: GoogleFonts.montserrat(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ),
+
           ],
         ),
       ),
