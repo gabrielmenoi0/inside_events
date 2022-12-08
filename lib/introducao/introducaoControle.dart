@@ -20,8 +20,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const MenuPage(
-        ),
+        builder: (context) => const MenuPage(),
       ),
     );
   }
@@ -220,7 +219,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           'Feito!',
           style: GoogleFonts.montserrat(
             fontSize: 17,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w600,
             color: const Color(0xffFFFFFF),
           ),
         ),

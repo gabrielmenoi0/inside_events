@@ -13,51 +13,67 @@ class InformationPge extends StatefulWidget {
 
 class _InformationPgeState extends State<InformationPge> {
   bool curtir = false;
-  late List<Image> imagens = [
+  List<Widget> imagens = [
     Image.network(
-        'https://www.giromarilia.com.br/img/news/techsummit_1662672142.jpeg'),
+      'https://www.giromarilia.com.br/img/news/techsummit_1662672142.jpeg',
+      fit: BoxFit.cover,
+    ),
     Image.network(
-        'https://jdm-files.s3.amazonaws.com/jornaldamanha/images/16640303757mbTbctv8f.jpeg'),
+      'https://jdm-files.s3.amazonaws.com/jornaldamanha/images/16640303757mbTbctv8f.jpeg',
+      fit: BoxFit.cover,
+    ),
   ];
   @override
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-        floatingActionButton: (Padding(
-          padding: const EdgeInsets.only(left: 0, top: 15),
-          child: SizedBox(
-            width: 50,
-            height: 50,
-            child: FloatingActionButton(
-              foregroundColor: Colors.green,
-              elevation: 0,
-              backgroundColor: Colors.white38,
-              splashColor: const Color(0xff2B4F71),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Icon(
-                Icons.arrow_back_ios_new_outlined,
-                color: Color(0xff2B4F71),
-                size: 28,
+        body: NestedScrollView(
+          floatHeaderSlivers: true,
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+            SliverAppBar(
+              expandedHeight: 200,
+              flexibleSpace: FlexibleSpaceBar(
+                background: CarouselSlider(
+                  options: CarouselOptions(
+                      autoPlayCurve: Curves.easeInOut,
+                      autoPlay: true,
+                      viewportFraction: 1,
+                      aspectRatio: 1),
+                  // items: imagens.map((Image) => Image).toList(),
+                  items: <Widget>[
+                    Image.network(
+                      'https://jdm-files.s3.amazonaws.com/jornaldamanha/images/16640303757mbTbctv8f.jpeg',
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
+                    Image.network(
+                      'https://www.giromarilia.com.br/img/news/techsummit_1662672142.jpeg',
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ),
-        )),
-        body: Padding(
-          padding: const EdgeInsets.all(0),
-          child: ListView(
+              floating: true,
+              snap: true,
+              pinned: true,
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios_new_outlined,
+                  size: 30,
+                  color: Color(0xff2B4F71),
+                ),
+              ),
+            )
+          ],
+          body: ListView(
             scrollDirection: Axis.vertical,
             children: [
-              CarouselSlider(
-                options: CarouselOptions(
-                    aspectRatio: 2.0,
-                    height: 250.0,
-                    autoPlay: true,
-                    viewportFraction: 1.0),
-                items: imagens.map((Image) => Image).toList(),
-              ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),
                 child: Text(

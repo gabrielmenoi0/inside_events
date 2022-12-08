@@ -34,18 +34,21 @@ class _MenuPageState extends State<MenuPage> {
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
           "assets/paracarrossel.png",
+          fit: BoxFit.cover,
         ),
       ),
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
           "assets/paracarrossel.png",
+          fit: BoxFit.cover,
         ),
       ),
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
           "assets/paracarrossel.png",
+          fit: BoxFit.cover,
         ),
       ),
     ];
