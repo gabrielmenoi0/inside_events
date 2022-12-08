@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inside_events/Registro/registro.dart';
 import '../MenuPageG/MenuPage.dart';
 
 class DrawerPaginas extends StatefulWidget {
@@ -50,7 +51,11 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
             Icons.app_registration_outlined,
           ),
           title: Text('Seu registro', style: GoogleFonts.montserrat()),
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => registro()),
+            );
+          },
         ),
         ListTile(
           leading: const Icon(
