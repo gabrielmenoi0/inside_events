@@ -28,7 +28,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   PageDecoration pageDecoration = const PageDecoration(
     titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
     bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-    pageColor: Color(0xffC9CFDF),
+    pageColor: Color(0xffffffff),
     imagePadding: EdgeInsets.zero,
     contentMargin: EdgeInsets.only(
       top: 110,
@@ -38,10 +38,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      backgroundColor: const Color(0xff657A97),
+      backgroundColor: const Color(0xffffffff),
       body: IntroductionScreen(
         key: introKey,
-        globalBackgroundColor: const Color(0xffC9CFDF),
+        globalBackgroundColor: const Color(0xffffffff),
         // globalHeader: Align(
         //   alignment: Alignment.topLeft,
         //   child: SafeArea(
@@ -53,7 +53,43 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         // ),
         pages: [
           PageViewModel(
-            title: "Eventos",
+            titleWidget: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Container(
+                alignment: Alignment.center,
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: 70,
+                      height: 70,
+                      decoration: BoxDecoration(
+                          color: const Color(0xffCBCEDF),
+                          borderRadius: BorderRadius.circular(50.0)),
+                      child: Text(
+                        '1',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 64,
+                            color: const Color(0xff2B4F71),
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        'Eventos',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 36,
+                            fontWeight: FontWeight.w500,
+                            color: const Color(0xff2B4F71)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             body:
                 "A tela de eventos funciona para que você ache o que mais te interessar de uma forma facil e simples de se navegar, utilizando de uma barra de pesquisa objetiva e com um menu de simples entendimento ",
             footer: ClipRRect(
@@ -68,17 +104,47 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               descriptionPadding: const EdgeInsets.all(10),
               footerPadding:
                   const EdgeInsets.only(left: 10, right: 10, top: 10),
-              titleTextStyle: GoogleFonts.montserrat(
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
-                color: const Color(0xff2B4F71),
-              ),
-              titlePadding: const EdgeInsets.only(right: 160, bottom: 30),
             ),
             reverse: true,
           ),
           PageViewModel(
-            title: "PAG2",
+            titleWidget: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Container(
+                alignment: Alignment.center,
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: 70,
+                      height: 70,
+                      decoration: BoxDecoration(
+                          color: const Color(0xffCBCEDF),
+                          borderRadius: BorderRadius.circular(50.0)),
+                      child: Text(
+                        '2',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 64,
+                            color: const Color(0xff2B4F71),
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        'Inscrição',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 36,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff2B4F71)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             bodyWidget: Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
@@ -89,21 +155,50 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 style: GoogleFonts.montserrat(fontSize: 17),
                 textAlign: TextAlign.center),
             decoration: pageDecoration.copyWith(
-              titleTextStyle: GoogleFonts.montserrat(
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
-                color: const Color(0xff2B4F71),
-              ),
               bodyAlignment: Alignment.topCenter,
               footerPadding:
                   const EdgeInsets.only(top: 20, left: 10, right: 10),
-              titlePadding:
-                  const EdgeInsets.only(right: 220, bottom: 50, top: 2),
             ),
             reverse: true,
           ),
           PageViewModel(
-            title: "Eventos",
+            titleWidget: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Container(
+                alignment: Alignment.center,
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: 70,
+                      height: 70,
+                      decoration: BoxDecoration(
+                          color: const Color(0xffCBCEDF),
+                          borderRadius: BorderRadius.circular(50.0)),
+                      child: Text(
+                        '3',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 64,
+                            color: const Color(0xff2B4F71),
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        'Pagamento',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 36,
+                            fontWeight: FontWeight.w500,
+                            color: const Color(0xff2B4F71)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             body:
                 "A tela de eventos funciona para que você ache o que mais te interessar de uma forma facil e simples de se navegar, utilizando de uma barra de pesquisa objetiva e com um menu de simples entendimento ",
             footer: ClipRRect(
@@ -118,17 +213,47 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               descriptionPadding: const EdgeInsets.all(10),
               footerPadding:
                   const EdgeInsets.only(left: 10, right: 10, top: 10),
-              titleTextStyle: GoogleFonts.montserrat(
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
-                color: const Color(0xff2B4F71),
-              ),
-              titlePadding: const EdgeInsets.only(right: 50, bottom: 30),
             ),
             reverse: true,
           ),
           PageViewModel(
-            title: "PAG4",
+            titleWidget: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Container(
+                alignment: Alignment.center,
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: 70,
+                      height: 70,
+                      decoration: BoxDecoration(
+                          color: const Color(0xffCBCEDF),
+                          borderRadius: BorderRadius.circular(50.0)),
+                      child: Text(
+                        '4',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 64,
+                            color: const Color(0xff2B4F71),
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        'QrCode',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 36,
+                            fontWeight: FontWeight.w500,
+                            color: const Color(0xff2B4F71)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             bodyWidget: Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
@@ -140,96 +265,81 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 style: GoogleFonts.montserrat(fontSize: 17),
                 textAlign: TextAlign.center),
             decoration: pageDecoration.copyWith(
-              titleTextStyle: GoogleFonts.montserrat(
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
-                color: const Color(0xff2B4F71),
-              ),
               bodyAlignment: Alignment.topCenter,
               footerPadding:
                   const EdgeInsets.only(top: 20, left: 10, right: 10),
-              titlePadding:
-                  const EdgeInsets.only(right: 220, bottom: 50, top: 2),
             ),
             reverse: true,
           ),
-          // PageViewModel(
-          //   title: "Title of last page - reversed",
-          //   bodyWidget: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: const [
-          //       Text("Click on "),
-          //       Icon(Icons.edit),
-          //       Text(
-          //         " to edit a post",
-          //       ),
-          //     ],
-          //   ),
-          //   decoration: pageDecoration.copyWith(
-          //     bodyFlex: 2,
-          //     imageFlex: 4,
-          //     bodyAlignment: Alignment.bottomCenter,
-          //     imageAlignment: Alignment.topCenter,
-          //   ),
-          //   image: Image.network(
-          //       'https://image.shutterstock.com/image-illustration/3d-rendering-4k-image-abstract-260nw-1807917784.jpg'),
-          //   reverse: true,
-          // ),
         ],
         onDone: () => _onIntroEnd(context),
         showSkipButton: true,
-        skipOrBackFlex: 2,
-        nextFlex: 3,
-        dotsFlex: 5,
+        skipOrBackFlex: 0,
+        nextFlex: 1,
+        dotsFlex: 1,
         showBackButton: false,
         back: const Icon(Icons.arrow_back),
-        nextStyle: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.all(5.0),
-          textStyle: const TextStyle(color: Colors.transparent),
-          backgroundColor: const Color(0xff2B4F71),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100),
-          ),
-        ),
-        doneStyle: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.all(2),
-          textStyle: const TextStyle(color: Colors.transparent),
-          backgroundColor: const Color(0xff2B4F71),
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(100)),
-          ),
-        ),
         skip: Text(
           'Pular',
           style: GoogleFonts.montserrat(
             fontSize: 17,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w500,
             color: const Color(0xff2B4F71),
           ),
         ),
-        next: Text(
-          'Avançar',
-          style: GoogleFonts.montserrat(
-            fontSize: 17,
-            fontWeight: FontWeight.w600,
-            color: const Color(0xffFFFFFF),
+        next: Padding(
+          padding: const EdgeInsets.only(left: 5),
+          child: Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width / 3,
+            height: 35,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: const Color(0xff2B4F71)),
+            child: Padding(
+              padding:
+                  const EdgeInsets.only(left: 5, right: 5, top: 5, bottom: 5),
+              child: Text(
+                'Avançar!',
+                style: GoogleFonts.montserrat(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  color: const Color(0xffFFFFFF),
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
         ),
-        done: Text(
-          'Feito!',
-          style: GoogleFonts.montserrat(
-            fontSize: 17,
-            fontWeight: FontWeight.w600,
-            color: const Color(0xffFFFFFF),
+        done: Container(
+          width: MediaQuery.of(context).size.width / 2,
+          height: 35,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: const Color(0xff2B4F71)),
+          child: Padding(
+            padding:
+                const EdgeInsets.only(left: 5, right: 5, top: 5, bottom: 5),
+            child: Text(
+              'Feito!',
+              style: GoogleFonts.montserrat(
+                fontSize: 17,
+                fontWeight: FontWeight.w600,
+                color: const Color(0xffFFFFFF),
+              ),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
-        curve: Curves.easeInOut,
-        controlsMargin: const EdgeInsets.only(bottom: 20, left: 10, right: 10),
+        animationDuration: 500,
+        curve: Curves.easeOut,
+        controlsMargin: const EdgeInsets.only(bottom: 20, left: 30, right: 1),
         controlsPadding: kIsWeb
-            ? const EdgeInsets.all(12.0)
+            ? const EdgeInsets.only(left: 10, right: 3)
             : const EdgeInsets.fromLTRB(12, 12, 12, 12),
         dotsDecorator: const DotsDecorator(
-          spacing: EdgeInsets.all(8),
+          spacing: EdgeInsets.all(6),
           size: Size(12.0, 12.0),
           color: Color(0xff657A97),
           activeSize: Size(15.0, 15.0),

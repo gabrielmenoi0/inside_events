@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:inside_events/Drawer/drawer.dart';
 import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
 import 'package:inside_events/MenuPageG/cards/card1.dart';
 import 'package:inside_events/MenuPageG/cards/card2.dart';
@@ -53,12 +52,6 @@ class _MenuPageState extends State<MenuPage> {
       ),
     ];
     return Scaffold(
-      drawer: const Drawer(
-        width: 250,
-        elevation: 0,
-        backgroundColor: Color(0xffE9EDF8),
-        child: DrawerPaginas(),
-      ),
       body: NestedScrollView(
         floatHeaderSlivers: true,
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
