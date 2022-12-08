@@ -3,6 +3,9 @@ import 'package:ai_barcode_scanner/ai_barcode_scanner.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
+import 'package:inside_events/utils/determinateLocation.dart';
+import 'package:introduction_screen/introduction_screen.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class QrPage extends StatefulWidget {
   const QrPage({super.key});
@@ -14,6 +17,24 @@ class QrPage extends StatefulWidget {
 class _QrPageState extends State<QrPage> {
   final isDetailsOpen = ValueNotifier<bool>(false);
   MobileScannerController cameraController = MobileScannerController();
+  final determinationPosition location = determinationPosition();
+  Position locale = Position();
+
+  @override
+  void initState() {
+    setLocation();
+    super.initState();
+  }
+
+  setLocation() async{
+    if (await Permission.location.isGranted) {
+      await location.determinePosition();
+    }else{
+      openAppSettings();
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

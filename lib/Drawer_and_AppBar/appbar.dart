@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import '../QrPage/QrPage.dart';
 
@@ -57,10 +58,19 @@ class _appbarState extends State<appbar> {
             color: Color(0xffe9edf8),
           ),
           // tooltip: 'Verificar QR CODE',
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => QrPage()),
-            );
+          onPressed: () async{
+            var status = await Permission.camera.status;
+            if(status.isDenied){
+              openAppSettings();
+            }
+            if (status.isGranted) {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => QrPage()),
+              );
+            }
+
+
+
           },
         ),
       ],

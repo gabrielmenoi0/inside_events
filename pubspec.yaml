@@ -49,6 +49,8 @@ dependencies:
   awesome_card: ^1.1.7
   animated_custom_dropdown: 1.2.2
   multi_dropdown: ^1.0.4
+  geolocator:
+  permission_handler: ^10.2.0
 
 flutter_native_splash:
   color: "#C9CFDF"
