@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inside_events/Configuracao/config.dart';
 import 'package:inside_events/Registro/registro.dart';
 import '../MenuPageG/MenuPage.dart';
+import '../QrPage/aprovado.dart';
 
 class DrawerPaginas extends StatefulWidget {
   const DrawerPaginas({Key? key}) : super(key: key);
@@ -85,7 +87,9 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
           ),
           title: Text('Configurações', style: GoogleFonts.montserrat()),
           onTap: () {
-            Navigator.pop(context);
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => configuracoes( )),
+            );
           },
         ),
         ListTile(

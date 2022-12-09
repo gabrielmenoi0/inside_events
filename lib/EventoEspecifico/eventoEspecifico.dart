@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/Drawer_and_AppBar/appbar.dart';
-import 'package:inside_events/EventoEspecifico/eventoEspecifico.dart';
 import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
-import 'package:inside_events/MenuPageG/cards/card1.dart';
-import 'package:inside_events/MenuPageG/cards/card2.dart';
-import 'package:inside_events/QrPage/QrPage.dart';
 import 'package:multi_dropdown/multiselect_dropdown.dart';
 
 
@@ -84,25 +80,29 @@ class _EventosState extends State<Eventos> {
           ),
 
              Padding(
-               padding: const EdgeInsets.only(top: 20.0),
-               child: MultiSelectDropDown(
-                 backgroundColor: Color(0xffCFE2FF),
+               padding: const EdgeInsets.only(top: 20.0, left: 120, right: 10),
+               child: Container(
+                 height: MediaQuery.of(context).size.height / 16,
+                 child: MultiSelectDropDown(
+                   backgroundColor: Color(0xffCFE2FF),
 
 
-                 onOptionSelected: (List<ValueItem> selectedOptions) {},
-                 options: const <ValueItem>[
-                   ValueItem(label: 'Medicina', value: '2'),
-                   ValueItem(label: 'Tecnologia', value: '3'),
-                   ValueItem(label: 'Direito', value: '4'),
-                   ValueItem(label: 'Outros', value: '5'),
-                 ],
-                 selectionType: SelectionType.multi,
-                 chipConfig: const ChipConfig(wrapType: WrapType.scroll),
-                  hint: "Filtrar",
+                   onOptionSelected: (List<ValueItem> selectedOptions) {},
+                   options: const <ValueItem>[
+                     ValueItem(label: 'Medicina', value: '2'),
+                     ValueItem(label: 'Tecnologia', value: '3'),
+                     ValueItem(label: 'Direito', value: '4'),
+                     ValueItem(label: 'Outros', value: '5'),
+                   ],
+                   selectionType: SelectionType.multi,
 
-                  hintStyle: GoogleFonts.montserrat(fontSize: 15),
-                 selectedOptionIcon: const Icon(Icons.check_circle),
+                   chipConfig: const ChipConfig(wrapType: WrapType.scroll),
+                    hint: "Filtrar",
 
+                    hintStyle: GoogleFonts.montserrat(fontSize: 15),
+                   selectedOptionIcon: const Icon(Icons.check_circle),
+
+                 ),
                ),
              ),
 

@@ -6,7 +6,6 @@ import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
 import 'package:inside_events/MenuPageG/cards/card1.dart';
 import 'package:inside_events/MenuPageG/cards/card2.dart';
 import 'package:inside_events/QrPage/QrPage.dart';
-
 import '../Drawer_and_AppBar/drawer.dart';
 
 class MenuPage extends StatefulWidget {
