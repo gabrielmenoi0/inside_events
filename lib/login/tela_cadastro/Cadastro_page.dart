@@ -3,7 +3,6 @@ import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/login/tela_login/login_page.dart';
-
 // ignore: camel_case_types
 class Cadastro_page extends StatefulWidget {
   const Cadastro_page({Key? key}) : super(key: key);

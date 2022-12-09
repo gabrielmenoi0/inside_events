@@ -31,25 +31,52 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
-    late List<Widget> imagens = [
+    late List<Widget> imagens1 = [
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
-          "assets/paracarrossel.png",
+          "assets/imagemenu/BusWeek.png",
           fit: BoxFit.cover,
         ),
       ),
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
-          "assets/paracarrossel.png",
+          "assets/imagemenu/eventoUnivem.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    ];
+
+    late List<Widget> imagens2 = [
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/imagemenu/Renata.png",
           fit: BoxFit.cover,
         ),
       ),
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
-          "assets/paracarrossel.png",
+          "assets/imagemenu/eventoUnivem.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    ];
+
+    late List<Widget> imagens3 = [
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/imagemenu/direito.png",
+          fit: BoxFit.cover,
+        ),
+      ),
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/imagemenu/eventoUnivem.jpeg",
           fit: BoxFit.cover,
         ),
       ),
@@ -82,22 +109,38 @@ class _MenuPageState extends State<MenuPage> {
             ),
             Container(
               alignment: Alignment.center,
-              child: Card1(imagensCard: imagens),
+              child: Card1(
+                imagensCard: imagens1,
+                titulo: "Business Week",
+                descricao:
+                    "Metaverso e os desafios e oportunidades da nova Era no mundo dos negócios.",
+                horario: "10/10/2023 - 19h",
+              ),
             ),
             const SizedBox(
               height: 6,
             ),
             Container(
               alignment: Alignment.center,
-              child: GestureDetector(
-                  onTap: () {}, child: Card2(imagensCard: imagens)),
+              child: Card2(
+                imagensCard: imagens2,
+                titulo: "Design Thinking",
+                descricao:
+                    "Live: ''Ferramentas do Design Thinking aplicada em projetos'' ministrada pela palestrante Profa. Ma. Renata Pinheiro.",
+                horario: "29/10/2023 - 15h",
+              ),
             ),
             const SizedBox(
               height: 6,
             ),
             Container(
               alignment: Alignment.center,
-              child: Card1(imagensCard: imagens),
+              child: Card1(
+                  imagensCard: imagens3,
+                  titulo: "Curso de Capacitação",
+                  descricao:
+                      "Curso de Capacitação de Conciliadores e Mediadores Judiciais e Extrajudiciais 2022 aqui do Univem!",
+                  horario: "15/10/2023 - 19h"),
             ),
             const SizedBox(
               height: 10,
@@ -203,94 +246,83 @@ class _MenuPageState extends State<MenuPage> {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 medicina
-                    ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                        "Evento Nome", "Local", context)
+                    ? EventoContainer("assets/imagemenu/medicina1.png",
+                        "Ciclo Médicas", "Univem", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/juridicas.jpeg",
+                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
                             "Univem", "host", context)
                         : tecnologia
                             ? EventoContainer(
-                                "assets/imagemenu/grupoEvento.png",
+                                "assets/imagemenu/programacao.png",
                                 "Univem",
                                 "host",
                                 context)
                             : outros
                                 ? EventoContainer("assets/Logoin.png", "Univem",
                                     "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/eventoUnivem.jpeg",
-                                    "Evento Nome",
-                                    "Local",
-                                    context),
+                                : EventoContainer("assets/imagemenu/medicina1.png",
+                    "Ciclo Médicas", "Univem", context),
                 medicina
-                    ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                        "Evento Nome", "Local", context)
+                    ? EventoContainer("assets/imagemenu/medicina2.png",
+                        "Patinhas Solidárias", "Univem", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/juridicas.jpeg",
+                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
                             "Univem", "host", context)
                         : tecnologia
                             ? EventoContainer(
-                                "assets/imagemenu/grupoEvento.png",
+                                "assets/imagemenu/pesquisacienti.png",
                                 "Univem",
                                 "host",
                                 context)
                             : outros
                                 ? EventoContainer("assets/Logoin.png", "Univem",
                                     "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/eventoUnivem.jpeg",
-                                    "Evento Nome",
-                                    "Local",
-                                    context),
+                                : EventoContainer("assets/imagemenu/medicina2.png",
+                    "Patinhas Solidárias", "Univem", context)
               ],
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 medicina
-                    ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                        "Evento Nome", "Local", context)
+                    ? EventoContainer("assets/imagemenu/medicina1.png",
+                        "Ciclo Médicas", "Univem", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/juridicas.jpeg",
+                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
                             "Univem", "host", context)
                         : tecnologia
                             ? EventoContainer(
-                                "assets/imagemenu/grupoEvento.png",
+                                "assets/imagemenu/olimpiadaInf.png",
                                 "Univem",
                                 "host",
                                 context)
                             : outros
                                 ? EventoContainer("assets/Logoin.png", "Univem",
                                     "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/eventoUnivem.jpeg",
-                                    "Evento Nome",
-                                    "Local",
-                                    context),
+                                : EventoContainer("assets/imagemenu/medicina1.png",
+                    "Evento Nome", "Local", context),
                 medicina
-                    ? EventoContainer("assets/imagemenu/eventoUnivem.jpeg",
-                        "Evento Nome", "Local", context)
+                    ? EventoContainer("assets/imagemenu/medicina2.png",
+                        "Patinhas Solidárias", "Univem", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/juridicas.jpeg",
+                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
                             "Univem", "host", context)
                         : tecnologia
                             ? EventoContainer(
-                                "assets/imagemenu/grupoEvento.png",
+                                "assets/imagemenu/semanatec.png",
                                 "Univem",
                                 "host",
                                 context)
                             : outros
                                 ? EventoContainer("assets/Logoin.png", "Univem",
                                     "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/eventoUnivem.jpeg",
-                                    "Evento Nome",
-                                    "Local",
-                                    context),
+                                : EventoContainer("assets/imagemenu/medicina2.png",
+                    "Patinhas Solidárias", "Univem", context)
+
               ],
             ),
             Padding(
@@ -503,42 +535,35 @@ itemPadding(String info, Function tap) {
 }
 
 EventoContainer(String image, String titulo, String local, context) {
-  return Container(
-    child: Padding(
-      padding: const EdgeInsets.all(10),
-      child: Column(
+  return Padding(
+    padding: const EdgeInsets.all(10),
+    child: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 5,
-                color: const Color(0xffCFE2FF),
-              ),
-              borderRadius: BorderRadius.circular(6),
-            ),
-            child: InkWell(
+          InkWell(
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (_) => InformationPge()),
                 );
               },
               child: Image.asset(
+                fit: BoxFit.cover,
                 image,
+                width: MediaQuery.of(context).size.width / 2.5,
                 height: MediaQuery.of(context).size.height / 5,
               ),
             ),
-          ),
+
           Text(
             titulo,
-            style: GoogleFonts.montserrat(
-                fontSize: 20, fontWeight: FontWeight.bold),
+            style:
+                GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           Text(
             local,
-            style: GoogleFonts.montserrat(fontSize: 17),
+            style: GoogleFonts.montserrat(fontSize: 15),
           ),
         ],
-      ),
+
     ),
   );
 }

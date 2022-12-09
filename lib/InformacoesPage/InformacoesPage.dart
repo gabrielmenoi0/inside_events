@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/Pagamento/PagamentoPage.dart';
 import 'package:like_button/like_button.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class InformationPge extends StatefulWidget {
   const InformationPge({super.key});
@@ -13,16 +14,33 @@ class InformationPge extends StatefulWidget {
 
 class _InformationPgeState extends State<InformationPge> {
   bool curtir = false;
+
   List<Widget> imagens = [
-    Image.network(
-      'https://www.giromarilia.com.br/img/news/techsummit_1662672142.jpeg',
+    Image.asset(
+      'assets/imagemenu/Nasa.png',
       fit: BoxFit.cover,
     ),
-    Image.network(
-      'https://jdm-files.s3.amazonaws.com/jornaldamanha/images/16640303757mbTbctv8f.jpeg',
+    Image.asset(
+      'assets/imagemenu/Nasa2.png',
       fit: BoxFit.cover,
     ),
   ];
+
+  late TextEditingController _controller;
+  late String feedback;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -41,13 +59,13 @@ class _InformationPgeState extends State<InformationPge> {
                       aspectRatio: 1),
                   // items: imagens.map((Image) => Image).toList(),
                   items: <Widget>[
-                    Image.network(
-                      'https://jdm-files.s3.amazonaws.com/jornaldamanha/images/16640303757mbTbctv8f.jpeg',
+                    Image.asset(
+                      'assets/imagemenu/Nasa.png',
                       fit: BoxFit.cover,
                       width: double.infinity,
                     ),
-                    Image.network(
-                      'https://www.giromarilia.com.br/img/news/techsummit_1662672142.jpeg',
+                    Image.asset(
+                      'assets/imagemenu/Nasa2.png',
                       fit: BoxFit.cover,
                       width: double.infinity,
                     ),
@@ -60,7 +78,7 @@ class _InformationPgeState extends State<InformationPge> {
               elevation: 0,
               backgroundColor: Colors.transparent,
               leading: CircleAvatar(
-                radius: 5,
+                radius: 10,
                 backgroundColor: Colors.white54,
                 child: IconButton(
                   onPressed: () {
@@ -81,7 +99,7 @@ class _InformationPgeState extends State<InformationPge> {
               Padding(
                 padding: const EdgeInsets.only(top: 15),
                 child: Text(
-                  'Hackaton Unimar',
+                  'Hackathon Unimar',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(
                       fontSize: 25,
@@ -92,12 +110,23 @@ class _InformationPgeState extends State<InformationPge> {
               Padding(
                 padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
                 child: Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis luctus purus. Pellentesque pretium quis enim ut porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos',
+                  'O hackathon da nasa é um evento que a Univem junto da Administração Nacional da Aeronáutica e Espaço (nasa) tem como objetivo questões que irão envolver aeronáutica e o espaço para universitários e visitantes.',
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.montserrat(
                       fontSize: 14,
                       color: Colors.black,
                       fontWeight: FontWeight.w500),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 15, left: 20),
+                child: Text(
+                  "09/09/2022",
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.montserrat(
+                      fontSize: 20,
+                      color: const Color(0xff2B4F71),
+                      fontWeight: FontWeight.w600),
                 ),
               ),
               Padding(
@@ -162,9 +191,176 @@ class _InformationPgeState extends State<InformationPge> {
                   ),
                 ),
               ),
+              const Divider(
+                color: Color(0xffCFE2FF),
+              ),
               const SizedBox(
                 height: 10,
               ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 1,
+                      color: const Color(0xffCFE2FF),
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Center(
+                      child: Column(
+                        children: [
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("Média Nota:",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 16,
+                                        color: Color(0xff2B4F71))),
+                              ]),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(
+                                        Icons.star,
+                                        color: Color(0xff7EA1FF),
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Color(0xff7EA1FF),
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Color(0xff7EA1FF),
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Color(0xff7EA1FF),
+                                      ),
+                                      Icon(
+                                        Icons.star_half,
+                                        color: Color(0xff7EA1FF),
+                                      ),
+                                    ]),
+                                Text("4,5",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 20,
+                                        color: Color(0xff2B4F71))),
+                                Text("300 avaliações",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 14,
+                                        color: Color(0xff2B4F71))),
+                              ]),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("Muito boas: ",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 14,
+                                        color: Color(0xff2B4F71))),
+                              ]),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("Boas: ",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 14,
+                                        color: Color(0xff2B4F71))),
+                              ]),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("Ruins ",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 14,
+                                        color: Color(0xff2B4F71))),
+                              ]),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundImage: AssetImage(
+                              'assets/imagemenu/grazi.jpg',
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 15),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Sua avaliação: ",
+                                    style:
+                                        GoogleFonts.montserrat(fontSize: 17)),
+                                RatingBar.builder(
+                                  initialRating: 3,
+                                  minRating: 1,
+                                  direction: Axis.horizontal,
+                                  itemSize: 20,
+                                  allowHalfRating: true,
+                                  itemCount: 5,
+                                  itemPadding:
+                                      EdgeInsets.symmetric(horizontal: 0.5),
+                                  itemBuilder: (context, _) => Icon(
+                                    Icons.star,
+                                    color: Color(0xff7EA1FF),
+                                  ),
+                                  onRatingUpdate: (rating) {
+                                    print(rating);
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      TextField(
+                          decoration: InputDecoration(
+                              hintText: "Deixe um comentário",
+                              hintStyle: GoogleFonts.montserrat(
+                                  fontSize: 14, color: Color(0xffE4E4E4)))),
+                    ]),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Comentario(
+                  "assets/imagemenu/grazi.jpg",
+                  "Graziella Bedani",
+                  "Universitário",
+                  Color(0xff7EA1FF),
+                  "39/11/2022",
+                  "Achei o evento muito bom e fui muito bem recebida por todos!",
+                  "10",
+                  "5"),
+              Comentario(
+                  "assets/felix.jpg",
+                  "Gabriel Félix",
+                  "Universitário",
+                  Color(0xff7EA1FF),
+                  "26/11/2022",
+                  "Gostei muito da recepção e achei o evento incrível",
+                  "20",
+                  "2"),
               const Divider(
                 color: Colors.grey,
               ),
@@ -256,6 +452,100 @@ class _InformationPgeState extends State<InformationPge> {
                 ],
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Comentario(String image, String nome, String cargo, Color cor, String dia,
+      String coment, String numberDeslike, String numberlike) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+      child: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Center(
+            child: Column(
+              children: [
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundImage: AssetImage(
+                          image,
+                        ),
+                      ),
+                      Text(nome),
+                      Text(cargo),
+                      Icon(Icons.more_vert),
+                    ]),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: cor,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: cor,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: cor,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: cor,
+                            ),
+                            Icon(
+                              Icons.star_half,
+                              color: cor,
+                            ),
+                            Text(dia,
+                                style: GoogleFonts.montserrat(
+                                    fontSize: 13, color: Color(0xff2B4F71))),
+                          ]),
+                    ]),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width / 1.4,
+                    child: Text(coment,
+                        style: GoogleFonts.montserrat(fontSize: 14)),
+                  ),
+                ]),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  Icon(Icons.heart_broken),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Text(numberlike,
+                        style: GoogleFonts.montserrat(
+                            fontSize: 14, color: Color(0xff2B4F71))),
+                  ),
+                  Icon(Icons.heart_broken),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(numberDeslike,
+                        style: GoogleFonts.montserrat(
+                            fontSize: 14, color: Color(0xff2B4F71))),
+                  ),
+                ]),
+              ],
+            ),
           ),
         ),
       ),
