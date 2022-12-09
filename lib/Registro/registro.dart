@@ -17,36 +17,53 @@ class registro extends StatelessWidget {
       );
       const Icon(Icons.arrow_back_ios_new_outlined);
     }
+    late List<Widget> imagens1 = [
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/criatividade.png",
+          fit: BoxFit.contain,
+        ),
+      ),
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/criatividade.png",
+          fit: BoxFit.contain,
+        ),
+      ),
+    ];
 
-    late List<Widget> imagens = [
+    late List<Widget> imagens2 = [
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
-          "assets/imagemenu/hackaUnimar.jpg",
-          height: MediaQuery
-              .of(context)
-              .size
-              .height / 1,
+          "assets/Expo.png",
+          fit: BoxFit.contain,
         ),
       ),
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
-          "assets/imagemenu/hackaUnimar.jpg",
-          height: MediaQuery
-              .of(context)
-              .size
-              .height / 1,
+          "assets/Expo.png",
+          fit: BoxFit.contain,
+        ),
+      ),
+    ];
+
+    late List<Widget> imagens3 = [
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          "assets/semanaXV.png",
+          fit: BoxFit.contain,
         ),
       ),
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
-          "assets/imagemenu/hackaUnimar.jpg",
-          height: MediaQuery
-              .of(context)
-              .size
-              .height / 1,
+          "assets/semanaXV.png",
+          fit: BoxFit.contain,
         ),
       ),
     ];
@@ -68,20 +85,21 @@ class registro extends StatelessWidget {
     children: [
     Container(
     alignment: Alignment.center,
-    child: cardRegistro(imagensCard: imagens),
+    child: cardRegistro(imagensCard: imagens1, titulo: "Semana da Criatividade Univem" , horario: "12/12/2023", cor: Color(0xffFF9839), situacao: "Inscrito"),
     ),
     const SizedBox(
-    height: 6,
+    height: 30,
     ),
     Container(
     alignment: Alignment.center,
-    child: cardRegistro(imagensCard: imagens)),
-    const SizedBox(
-    height: 6,
+    child: cardRegistro(imagensCard: imagens2, titulo: "Expo Negócios" , horario: "12/12/2023", cor: Color(0xffFA5757), situacao: "Não foi"),
+    ),
+      const SizedBox(
+    height: 30,
     ),
     Container(
     alignment: Alignment.center,
-    child: cardRegistro(imagensCard: imagens),
+      child: cardRegistro(imagensCard: imagens3, titulo: "XV Semana de Tecnologia" , horario: "12/12/2023", cor: Color(0xff63DD85), situacao: "Participou"),
     ),
 
 

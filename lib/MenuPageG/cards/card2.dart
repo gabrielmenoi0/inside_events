@@ -4,8 +4,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_slider/carousel_options.dart';
 
 class Card2 extends StatefulWidget {
-  Card2({Key? key, required this.imagensCard}) : super(key: key);
-
+  Card2({Key? key, required this.imagensCard, required this.titulo, required this.descricao, required this.horario}) : super(key: key);
+  late String titulo;
+  late String descricao;
+  late String horario;
   late List<Widget> imagensCard = imagensCard;
 
   @override
@@ -22,8 +24,8 @@ class _Card2State extends State<Card2> {
           Positioned(
             child: Material(
               child: Container(
-                height: 180,
-                width: 340,
+                height: MediaQuery.of(context).size.height / 4.5,
+                width: MediaQuery.of(context).size.width / 1.15,
                 decoration: BoxDecoration(
                   color: const Color(0xFFCFE2FF),
                   borderRadius: BorderRadius.circular(10.0),
@@ -32,16 +34,16 @@ class _Card2State extends State<Card2> {
             ),
           ),
           Positioned(
-            top: 40,
+            top: 10,
             right: 190,
             child: Container(
-              height: 150,
+              height: 300,
               width: 130,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "EVENTO",
+                    widget.titulo,
                     style: GoogleFonts.montserrat(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -49,18 +51,16 @@ class _Card2State extends State<Card2> {
                     ),
                   ),
                   Text(
-                    "Descrição",
+                    widget.descricao,
                     style: GoogleFonts.montserrat(
                       fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey,
                     ),
                   ),
                   const Divider(
                     color: Color.fromARGB(255, 175, 171, 171),
                   ),
                   Text(
-                    "Horário",
+                    widget.horario,
                     style: GoogleFonts.montserrat(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ class _Card2State extends State<Card2> {
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Center(
                     child: TextButton(
@@ -89,7 +89,7 @@ class _Card2State extends State<Card2> {
                       child: Text(
                         "SAIBA MAIS",
                         style: GoogleFonts.montserrat(
-                          fontSize: 12,
+                          fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF363f93),
                         ),
@@ -111,8 +111,8 @@ class _Card2State extends State<Card2> {
                 elevation: 0,
                 child: Container(
                   color: Colors.transparent,
-                  height: 170,
-                  width: 160,
+                  height: MediaQuery.of(context).size.height / 4.7,
+                  width: MediaQuery.of(context).size.width / 2.5,
                   child: CarouselSlider(
                     options: CarouselOptions(
                         autoPlayCurve: Curves.easeInOutSine,

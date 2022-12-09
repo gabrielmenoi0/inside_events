@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/login/tela_login/login_page.dart';
 
+import '../../MenuPageG/MenuPage.dart';
 // ignore: camel_case_types
 class Cadastro_page extends StatefulWidget {
   const Cadastro_page({Key? key}) : super(key: key);
@@ -224,7 +225,7 @@ class _Cadastro_pageState extends State<Cadastro_page> {
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const Login_page()));
+                                                              const MenuPage()));
                                                 },
                                               );
                                             },

@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/Configuracao/config.dart';
 import 'package:inside_events/MenuPageG/MenuPage.dart';
 import 'package:inside_events/Perfis/PerfisPage.dart';
+import 'package:inside_events/Registro/registro.dart';
 import '../QrPage/aprovado.dart';
 
 class DrawerPaginas extends StatefulWidget {
@@ -64,17 +65,15 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
             Icons.app_registration_outlined,
           ),
           title: Text('Seu registro', style: GoogleFonts.montserrat()),
-          onTap: () {},
-        ),
-        ListTile(
-          leading: const Icon(
-            Icons.calendar_month_outlined,
-          ),
-          title: Text('Inscreveu-se', style: GoogleFonts.montserrat()),
           onTap: () {
-            Navigator.pop(context);
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) =>
+              registro()),
+            );
+
           },
         ),
+
         ListTile(
           leading: const Icon(
             Icons.radar_outlined,

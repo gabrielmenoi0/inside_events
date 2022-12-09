@@ -6,10 +6,18 @@ import 'package:inside_events/QrPage/QrPage.dart';
 import 'package:like_button/like_button.dart';
 
 class cardRegistro extends StatefulWidget {
-  cardRegistro({Key? key, required this.imagensCard}) : super(key: key);
+  cardRegistro({Key? key, required this.imagensCard,
+    required this.titulo,
+    required this.horario,
+    required this.cor,
+  required this.situacao}) : super(key: key);
 
   late List<Widget> imagensCard = imagensCard;
+  late String titulo;
+  late String horario;
+  late Color cor;
 
+  late String situacao;
   @override
   State<cardRegistro> createState() => _cardRegistroState();
 }
@@ -21,6 +29,15 @@ class _cardRegistroState extends State<cardRegistro> {
   Widget build(BuildContext context) {
     return
       Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                blurRadius: 6,
+              offset: Offset(3, 3)
+            )
+          ],
+        ),
         child: Stack(children: [
         Positioned(
           child: Material(
@@ -91,7 +108,7 @@ class _cardRegistroState extends State<cardRegistro> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Hackathon Univem",
+                  widget.titulo,
                   style: GoogleFonts.montserrat(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -115,7 +132,7 @@ class _cardRegistroState extends State<cardRegistro> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "12/12/2023",
+                      widget.horario,
                       style: GoogleFonts.montserrat(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -133,14 +150,14 @@ class _cardRegistroState extends State<cardRegistro> {
         ),
         Positioned(
           top: 160,
-          left: 280,
+          left: 260,
           child: Container(
-            color: Color(0xffFF9839),
+            color: widget.cor,
             height: MediaQuery.of(context).size.height / 30,
-            width: MediaQuery.of(context).size.height / 10,
+            width: MediaQuery.of(context).size.width / 4,
             child: Center(
               child: Text(
-                "Inscrito",
+                widget.situacao,
                 style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.bold, color: Colors.white),
               ),

@@ -25,29 +25,7 @@ class _EventosState extends State<Eventos> {
 
   @override
   Widget build(BuildContext context) {
-    late List<Widget> imagens = [
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          "assets/paracarrossel.png",
-          fit: BoxFit.cover,
-        ),
-      ),
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          "assets/paracarrossel.png",
-          fit: BoxFit.cover,
-        ),
-      ),
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          "assets/paracarrossel.png",
-          fit: BoxFit.cover,
-        ),
-      ),
-    ];
+
     return Scaffold(
       drawer: const Drawer(
         width: 250,
@@ -61,6 +39,7 @@ class _EventosState extends State<Eventos> {
           appbar(),
         ],
         body: ListView(
+
           scrollDirection: Axis.vertical,
           children: [
 
@@ -71,7 +50,7 @@ class _EventosState extends State<Eventos> {
             ),
             child: Center(
               child:
-              Text("Evento específico",
+              Text("Tecnologia",
                 style: GoogleFonts.montserrat(
                   fontSize: 24
               ),),
@@ -87,7 +66,9 @@ class _EventosState extends State<Eventos> {
                    backgroundColor: Color(0xffCFE2FF),
 
 
-                   onOptionSelected: (List<ValueItem> selectedOptions) {},
+                   onOptionSelected: (List<ValueItem> selectedOptions) {
+
+                   },
                    options: const <ValueItem>[
                      ValueItem(label: 'Medicina', value: '2'),
                      ValueItem(label: 'Tecnologia', value: '3'),
@@ -106,30 +87,33 @@ class _EventosState extends State<Eventos> {
                ),
              ),
 
+            SizedBox(
+              height: 20,
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                EventoContainer("assets/imagemenu/juridicas.jpeg", "Evento", "Local", context),
-                EventoContainer("assets/imagemenu/juridicas.jpeg", "Evento", "Local", context),
+                EventoContainer("assets/imagemenu/programacao.png", "Programação Phyton", "Univem", context),
+                EventoContainer("assets/imagemenu/pesquisacienti.png", "12° Congresso de Pesquisa Científica", "Univem", context),
               ],
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento", "Local", context),
-                EventoContainer("assets/imagemenu/eventoUnivem.jpeg", "Evento", "Local", context),
+                EventoContainer("assets/imagemenu/semanatec.png", "XV Semana de Tecnologia", "Univem", context),
+                EventoContainer("assets/imagemenu/olimpiadaInf.png", "Olímpiada de informática", "Univem", context),
 
               ],
             ),
 
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                EventoContainer("assets/imagemenu/grupoEvento.png", "Evento", "Local", context),
-                EventoContainer("assets/imagemenu/grupoEvento.png", "Evento", "Local", context),
+                EventoContainer("assets/imagemenu/Pontes.png", "Palestra: Marcos Pontes", "Univem", context),
+                EventoContainer("assets/imagemenu/Pontes.png", "Palestra: Marcos Pontes", "Univem", context),
               ],
             ),
 
@@ -140,57 +124,54 @@ class _EventosState extends State<Eventos> {
   }
 }
 
-itemPadding(String info, Function tap) {
-  return GestureDetector(
-    onTap: tap(),
-    child: Padding(
-      padding: const EdgeInsets.only(top: 9, bottom: 5, right: 5, left: 4),
-      child: Text(
-        info,
-        style: GoogleFonts.montserrat(fontSize: 20),
-      ),
-    ),
-  );
-}
+
 
 EventoContainer(String image, String titulo, String local, context) {
-  return Container(
-    child: Padding(
+  return
+
+    Container(
+      width: MediaQuery.of(context).size.width / 2.05,
+      child: Padding(
       padding: const EdgeInsets.all(10),
       child: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 5,
-                color: const Color(0xffCFE2FF),
-              ),
-              borderRadius: BorderRadius.circular(6),
-            ),
-            child: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => InformationPge()),
-                );
-              },
-              child: Image.asset(
-                image,
-                height: MediaQuery.of(context).size.height / 5,
-              ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => InformationPge()),
+              );
+            },
+            child: Image.asset(
+              fit: BoxFit.cover,
+              image,
+              width: MediaQuery.of(context).size.width / 2.5,
+              height: MediaQuery.of(context).size.height / 6,
             ),
           ),
+
+          SizedBox(
+            height: 5,
+          ),
+
           Text(
             titulo,
-            style: GoogleFonts.montserrat(
-                fontSize: 20, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+            style:
+            GoogleFonts.montserrat(fontSize: 16,  fontWeight: FontWeight.bold),
+          ),
+
+
+          SizedBox(
+            height: 5,
           ),
           Text(
             local,
-            style: GoogleFonts.montserrat(fontSize: 17),
+            style: GoogleFonts.montserrat(fontSize: 15),
           ),
         ],
+
       ),
-    ),
-  );
+  ),
+    );
 }
 
