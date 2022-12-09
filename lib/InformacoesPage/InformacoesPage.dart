@@ -59,14 +59,18 @@ class _InformationPgeState extends State<InformationPge> {
               pinned: true,
               elevation: 0,
               backgroundColor: Colors.transparent,
-              leading: IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: const Icon(
-                  Icons.arrow_back_ios_new_outlined,
-                  size: 30,
-                  color: Color(0xff2B4F71),
+              leading: CircleAvatar(
+                radius: 5,
+                backgroundColor: Colors.white54,
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  icon: Icon(
+                    Icons.adaptive.arrow_back,
+                    size: 30,
+                    color: const Color(0xff2B4F71),
+                  ),
                 ),
               ),
             )

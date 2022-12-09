@@ -34,9 +34,9 @@ class _PayPageState extends State<PayPage> {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: const Icon(
-              Icons.arrow_back_ios_new_outlined,
-              color: Color(0xff2B4F71),
+            child: Icon(
+              Icons.adaptive.arrow_back,
+              color: const Color(0xff2B4F71),
             ),
           ),
         ),
@@ -109,7 +109,6 @@ class _PayPageState extends State<PayPage> {
             showBackSide: false,
             frontBackground: CardBackgrounds.black,
             backBackground: CardBackgrounds.white,
-            showShadow: true,
             textExpDate: 'válidade',
             textName: 'Gabriel Menoi',
             textExpiry: 'MM/YY',
@@ -138,7 +137,6 @@ class _PayPageState extends State<PayPage> {
             showBackSide: false,
             frontBackground: CardBackgrounds.purple,
             backBackground: CardBackgrounds.black,
-            showShadow: true,
             textExpDate: 'válidade',
             textName: 'Graziella Bedani',
             textExpiry: 'MM/YY',

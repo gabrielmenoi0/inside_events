@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/Configuracao/config.dart';
-import 'package:inside_events/Registro/registro.dart';
-import '../MenuPageG/MenuPage.dart';
+import 'package:inside_events/MenuPageG/MenuPage.dart';
+import 'package:inside_events/Perfis/PerfisPage.dart';
 import '../QrPage/aprovado.dart';
 
 class DrawerPaginas extends StatefulWidget {
@@ -41,7 +41,7 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
           leading: const Icon(
             Icons.home,
           ),
-          title: Text('Perfil', style: GoogleFonts.montserrat()),
+          title: Text('Inicio', style: GoogleFonts.montserrat()),
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => MenuPage()),
@@ -50,14 +50,21 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
         ),
         ListTile(
           leading: const Icon(
+            Icons.account_circle_outlined,
+          ),
+          title: Text('Perfil', style: GoogleFonts.montserrat()),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => Perfilpage()),
+            );
+          },
+        ),
+        ListTile(
+          leading: const Icon(
             Icons.app_registration_outlined,
           ),
           title: Text('Seu registro', style: GoogleFonts.montserrat()),
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => registro()),
-            );
-          },
+          onTap: () {},
         ),
         ListTile(
           leading: const Icon(
