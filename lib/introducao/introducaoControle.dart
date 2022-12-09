@@ -151,13 +151,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 child: Image.asset("assets/fundu.png"),
               ),
             ),
-            footer: Text('Para se inscrever nos eventos é simples',
+            footer: Text(
+                'Para se inscrever nos eventos é simples, você apenas irma precisar selecionar o evento e depois apertar no botão “inscrever-se”',
                 style: GoogleFonts.montserrat(fontSize: 17),
                 textAlign: TextAlign.center),
             decoration: pageDecoration.copyWith(
               bodyAlignment: Alignment.topCenter,
               footerPadding:
-                  const EdgeInsets.only(top: 20, left: 10, right: 10),
+                  const EdgeInsets.only(top: 20, left: 15, right: 15),
             ),
             reverse: true,
           ),
@@ -200,7 +201,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ),
             ),
             body:
-                "A tela de eventos funciona para que você ache o que mais te interessar de uma forma facil e simples de se navegar, utilizando de uma barra de pesquisa objetiva e com um menu de simples entendimento ",
+                "Se o Evento for pago depois de apertar em “inscrever-se” o app te levará a página de pagamento onde você irá cadastrar selecionar a forma de pagamento e cadastrar os dados necessários",
             footer: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
@@ -261,13 +262,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ),
             ),
             footer: Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus, mauris a euismod semper, purus tellus blandit est, et hendrerit tellus nisl in risus. Cras ut sem aliquet, aliquam turpis eu, cursus tortor.',
+                'Se preferir utilizar um código QR apenas aperte na barra superior com o ícone de QRCode e o app te levará ao scaner, depois de scanear iremos confirmar seu código!',
                 style: GoogleFonts.montserrat(fontSize: 17),
                 textAlign: TextAlign.center),
             decoration: pageDecoration.copyWith(
               bodyAlignment: Alignment.topCenter,
               footerPadding:
-                  const EdgeInsets.only(top: 20, left: 10, right: 10),
+                  const EdgeInsets.only(top: 20, left: 20, right: 20),
             ),
             reverse: true,
           ),
