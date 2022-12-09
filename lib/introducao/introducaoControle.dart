@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:inside_events/MenuPageG/MenuPage.dart';
+import 'package:inside_events/login/tela_login/login_page.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,7 +20,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const MenuPage(),
+        builder: (context) => const Login_page(),
       ),
     );
   }

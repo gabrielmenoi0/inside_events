@@ -50,6 +50,8 @@ dependencies:
   multi_dropdown:
   geolocator:
   permission_handler: ^10.2.0
+  quickalert: ^1.0.1
+  cool_alert: ^1.1.0
 
 flutter_native_splash:
   color: "#C9CFDF"
