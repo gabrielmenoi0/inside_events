@@ -5,10 +5,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 class Card2 extends StatefulWidget {
   Card2(
       {Key? key,
-      required this.imagensCard,
-      required this.titulo,
-      required this.descricao,
-      required this.horario})
+        required this.imagensCard,
+        required this.titulo,
+        required this.descricao,
+        required this.horario})
       : super(key: key);
   late String titulo;
   late String descricao;
@@ -40,7 +40,7 @@ class _Card2State extends State<Card2> {
           ),
           Positioned(
             top: 5,
-            right: 160,
+            right: 180,
             left: 20,
             child: Container(
               height: 190,
@@ -83,11 +83,11 @@ class _Card2State extends State<Card2> {
                       onPressed: () {},
                       style: ButtonStyle(
                         foregroundColor:
-                            MaterialStateProperty.all(const Color(0xFFA1C7FF)),
+                        MaterialStateProperty.all(const Color(0xFFA1C7FF)),
                         backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
+                        MaterialStateProperty.all(Colors.white),
                         shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                             side: const BorderSide(color: Colors.white),
@@ -110,7 +110,7 @@ class _Card2State extends State<Card2> {
           ),
           Positioned(
             top: 0,
-            left: 155,
+            left: 165,
             child: Card(
                 color: Colors.transparent,
                 shape: RoundedRectangleBorder(

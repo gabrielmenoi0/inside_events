@@ -5,10 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 class Card1 extends StatefulWidget {
   Card1(
       {Key? key,
-      required this.imagensCard,
-      required this.titulo,
-      required this.descricao,
-      required this.horario})
+        required this.imagensCard,
+        required this.titulo,
+        required this.descricao,
+        required this.horario})
       : super(key: key);
   late String titulo;
   late String descricao;
@@ -67,7 +67,7 @@ class _Card1State extends State<Card1> {
           ),
           Positioned(
             top: 10,
-            left: 162,
+            left: 175,
             child: Container(
               color: Colors.transparent,
               height: 190,
@@ -108,11 +108,11 @@ class _Card1State extends State<Card1> {
                       onPressed: () {},
                       style: ButtonStyle(
                         foregroundColor:
-                            MaterialStateProperty.all(const Color(0xFFA1C7FF)),
+                        MaterialStateProperty.all(const Color(0xFFA1C7FF)),
                         backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
+                        MaterialStateProperty.all(Colors.white),
                         shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                        MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                             side: const BorderSide(color: Colors.white),

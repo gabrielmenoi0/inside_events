@@ -136,7 +136,7 @@ class _MenuPageState extends State<MenuPage> {
           appbar(),
         ],
         body: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.symmetric(horizontal: 5),
           scrollDirection: Axis.vertical,
           children: [
             const SizedBox(
@@ -156,7 +156,7 @@ class _MenuPageState extends State<MenuPage> {
                 imagensCard: imagens1,
                 titulo: "Business Week",
                 descricao:
-                    "Metaverso e os desafios e oportunidades da nova Era no mundo dos negócios.",
+                "Metaverso e os desafios e oportunidades da nova Era no mundo dos negócios.",
                 horario: "10/10/2023 - 19h",
               ),
             ),
@@ -169,7 +169,7 @@ class _MenuPageState extends State<MenuPage> {
                 imagensCard: imagens2,
                 titulo: "Design Thinking",
                 descricao:
-                    "Live: ''Ferramentas do Design Thinking aplicada em projetos'' ministrada pela palestrante Profa. Ma. Renata Pinheiro.",
+                "Live: ''Ferramentas do Design Thinking aplicada em projetos'' ministrada pela palestrante Profa. Ma. Renata Pinheiro.",
                 horario: "29/10/2023 - 15h",
               ),
             ),
@@ -182,7 +182,7 @@ class _MenuPageState extends State<MenuPage> {
                   imagensCard: imagens3,
                   titulo: "Curso de Capacitação",
                   descricao:
-                      "Curso de Capacitação de Conciliadores e Mediadores Judiciais e Extrajudiciais 2022 aqui do Univem!",
+                  "Curso de Capacitação de Conciliadores e Mediadores Judiciais e Extrajudiciais 2022 aqui do Univem!",
                   horario: "15/10/2023 - 19h"),
             ),
             const SizedBox(
@@ -293,44 +293,44 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina1.png",
-                        "Ciclo Médicas", "Univem", context)
+                    "Ciclo Médicas", "Univem", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
-                            "Univem", "host", context)
-                        : tecnologia
-                            ? EventoContainer(
-                                "assets/imagemenu/programacao.png",
-                                "Univem",
-                                "host",
-                                context)
-                            : outros
-                                ? EventoContainer("assets/Logoin.png", "Univem",
-                                    "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/medicina1.png",
-                                    "Ciclo Médicas",
-                                    "Univem",
-                                    context),
+                    ? EventoContainer("assets/imagemenu/grupoEvento.png",
+                    "Univem", "host", context)
+                    : tecnologia
+                    ? EventoContainer(
+                    "assets/imagemenu/programacao.png",
+                    "Univem",
+                    "host",
+                    context)
+                    : outros
+                    ? EventoContainer("assets/Logoin.png", "Univem",
+                    "host", context)
+                    : EventoContainer(
+                    "assets/imagemenu/medicina1.png",
+                    "Ciclo Médicas",
+                    "Univem",
+                    context),
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina2.png",
-                        "Patinhas Solidárias", "Univem", context)
+                    "Patinhas Solidárias", "Univem", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
-                            "Univem", "host", context)
-                        : tecnologia
-                            ? EventoContainer(
-                                "assets/imagemenu/pesquisacienti.png",
-                                "Univem",
-                                "host",
-                                context)
-                            : outros
-                                ? EventoContainer("assets/Logoin.png", "Univem",
-                                    "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/medicina2.png",
-                                    "Patinhas Solidárias",
-                                    "Univem",
-                                    context)
+                    ? EventoContainer("assets/imagemenu/grupoEvento.png",
+                    "Univem", "host", context)
+                    : tecnologia
+                    ? EventoContainer(
+                    "assets/imagemenu/pesquisacienti.png",
+                    "Univem",
+                    "host",
+                    context)
+                    : outros
+                    ? EventoContainer("assets/Logoin.png", "Univem",
+                    "host", context)
+                    : EventoContainer(
+                    "assets/imagemenu/medicina2.png",
+                    "Patinhas Solidárias",
+                    "Univem",
+                    context)
               ],
             ),
             Row(
@@ -339,41 +339,41 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina1.png",
-                        "Ciclo Médicas", "Univem", context)
+                    "Ciclo Médicas", "Univem", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
-                            "Univem", "host", context)
-                        : tecnologia
-                            ? EventoContainer(
-                                "assets/imagemenu/olimpiadaInf.png",
-                                "Univem",
-                                "host",
-                                context)
-                            : outros
-                                ? EventoContainer("assets/Logoin.png", "Univem",
-                                    "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/medicina1.png",
-                                    "Evento Nome",
-                                    "Local",
-                                    context),
+                    ? EventoContainer("assets/imagemenu/grupoEvento.png",
+                    "Univem", "host", context)
+                    : tecnologia
+                    ? EventoContainer(
+                    "assets/imagemenu/olimpiadaInf.png",
+                    "Univem",
+                    "host",
+                    context)
+                    : outros
+                    ? EventoContainer("assets/Logoin.png", "Univem",
+                    "host", context)
+                    : EventoContainer(
+                    "assets/imagemenu/medicina1.png",
+                    "Evento Nome",
+                    "Local",
+                    context),
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina2.png",
-                        "Patinhas Solidárias", "Univem", context)
+                    "Patinhas Solidárias", "Univem", context)
                     : direito
-                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
-                            "Univem", "host", context)
-                        : tecnologia
-                            ? EventoContainer("assets/imagemenu/semanatec.png",
-                                "Univem", "host", context)
-                            : outros
-                                ? EventoContainer("assets/Logoin.png", "Univem",
-                                    "host", context)
-                                : EventoContainer(
-                                    "assets/imagemenu/medicina2.png",
-                                    "Patinhas Solidárias",
-                                    "Univem",
-                                    context)
+                    ? EventoContainer("assets/imagemenu/grupoEvento.png",
+                    "Univem", "host", context)
+                    : tecnologia
+                    ? EventoContainer("assets/imagemenu/semanatec.png",
+                    "Univem", "host", context)
+                    : outros
+                    ? EventoContainer("assets/Logoin.png", "Univem",
+                    "host", context)
+                    : EventoContainer(
+                    "assets/imagemenu/medicina2.png",
+                    "Patinhas Solidárias",
+                    "Univem",
+                    context)
               ],
             ),
             Padding(
@@ -514,7 +514,7 @@ EventoContainer(String image, String titulo, String local, context) {
         Text(
           titulo,
           style:
-              GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold),
+          GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         SizedBox(
           height: 5,

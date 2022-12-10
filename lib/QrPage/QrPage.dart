@@ -72,10 +72,11 @@ class _QrPageState extends State<QrPage> {
                 );
               } else {
                 if (barcode.rawValue != "1111") {
-                  log("resultado", error: barcode.rawValue);
+                 return Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => const recusado(),
-                  );
+                  ),
+                );
                   // navegar
                 }
                 // if (!isDetailsOpen.value) {
