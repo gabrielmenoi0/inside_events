@@ -456,7 +456,10 @@ class _InformationPgeState extends State<InformationPge> {
                 ),
                 Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                   Container(
-                    width: MediaQuery.of(context).size.width / 1.4,
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width / 1.4,
                     child: Text(coment,
                         style: GoogleFonts.montserrat(fontSize: 14)),
                   ),
@@ -488,7 +491,7 @@ class _InformationPgeState extends State<InformationPge> {
     );
   }
 
-  Comentario(String image, String nome, String cargo, Color cor, String dia,
+  Comentarios(String image, String nome, String cargo, Color cor, String dia,
       String coment, String numberDeslike, String numberlike) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
