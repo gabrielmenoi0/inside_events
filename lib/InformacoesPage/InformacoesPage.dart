@@ -487,6 +487,100 @@ class _InformationPgeState extends State<InformationPge> {
       ),
     );
   }
+
+  Comentario(String image, String nome, String cargo, Color cor, String dia,
+      String coment, String numberDeslike, String numberlike) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+      child: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Center(
+            child: Column(
+              children: [
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundImage: AssetImage(
+                          image,
+                        ),
+                      ),
+                      Text(nome),
+                      Text(cargo),
+                      Icon(Icons.more_vert),
+                    ]),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: cor,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: cor,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: cor,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: cor,
+                            ),
+                            Icon(
+                              Icons.star_half,
+                              color: cor,
+                            ),
+                            Text(dia,
+                                style: GoogleFonts.montserrat(
+                                    fontSize: 13, color: Color(0xff2B4F71))),
+                          ]),
+                    ]),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width / 1.4,
+                    child: Text(coment,
+                        style: GoogleFonts.montserrat(fontSize: 14)),
+                  ),
+                ]),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  Icon(Icons.heart_broken),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Text(numberlike,
+                        style: GoogleFonts.montserrat(
+                            fontSize: 14, color: Color(0xff2B4F71))),
+                  ),
+                  Icon(Icons.heart_broken),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(numberDeslike,
+                        style: GoogleFonts.montserrat(
+                            fontSize: 14, color: Color(0xff2B4F71))),
+                  ),
+                ]),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 
