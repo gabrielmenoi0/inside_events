@@ -42,7 +42,7 @@ class _cardRegistroState extends State<cardRegistro> {
         Positioned(
           child: Material(
             child: Container(
-              height: MediaQuery.of(context).size.height / 4,
+              height: MediaQuery.of(context).size.height / 3.5,
               width: MediaQuery.of(context).size.width / 1.05,
               decoration: BoxDecoration(
                 color: const Color(0xFFCFE2FF),
@@ -102,6 +102,7 @@ class _cardRegistroState extends State<cardRegistro> {
           top: 13,
           left: 180,
           child: Container(
+            width: MediaQuery.of(context).size.width / 2,
             color: Colors.transparent,
             height: 150,
             child: Column(
@@ -140,7 +141,7 @@ class _cardRegistroState extends State<cardRegistro> {
                       ),
                     ),
                     Padding(
-                        padding: EdgeInsets.only(left: 50),
+                        padding: EdgeInsets.only(right: 10),
                         child: const LikeButton()),
                   ],
                 ),
@@ -150,7 +151,7 @@ class _cardRegistroState extends State<cardRegistro> {
         ),
         Positioned(
           top: 160,
-          left: 260,
+          left: 255,
           child: Container(
             color: widget.cor,
             height: MediaQuery.of(context).size.height / 30,

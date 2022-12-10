@@ -50,13 +50,15 @@ class _PerfilpageState extends State<Perfilpage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+
                             CircleAvatar(
-                              radius: 70,
+                              radius: 60,
                               backgroundImage: AssetImage(
                                 'assets/imagemenu/grazi.jpg',
                               ),
                             ),
                             Container(
+                              width: MediaQuery.of(context).size.width / 2,
                               margin: EdgeInsets.only(top: 40),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,9 +135,9 @@ class _PerfilpageState extends State<Perfilpage> {
                         child: Row(
                           children: [
                             ContainersEventos("Hackathon Univem",
-                                "assets/paracarrossel2.png"),
+                                "assets/paracarrossel2.png", context),
                             ContainersEventos(
-                                "Bootcamp Univem", "assets/paracarrossel.png"),
+                                "Bootcamp Univem", "assets/paracarrossel.png", context),
                           ],
                         ),
                       ),
@@ -171,7 +173,7 @@ class _PerfilpageState extends State<Perfilpage> {
                         child: Row(
                           children: [
                             ContainersEventos("Hackathon Univem",
-                                "assets/imagemenu/hackaUnimar.jpg"),
+                                "assets/imagemenu/hackaUnimar.jpg", context),
                           ],
                         ),
                       ),
@@ -187,9 +189,10 @@ class _PerfilpageState extends State<Perfilpage> {
   }
 }
 
-ContainersEventos(String nome, String imagem) {
+ContainersEventos(String nome, String imagem, context) {
   return Center(
     child: Container(
+      width: MediaQuery.of(context).size.width / 2.5,
       child: Card(
         color: const Color(0xFFCFE2FF),
         shape: RoundedRectangleBorder(
@@ -210,9 +213,10 @@ ContainersEventos(String nome, String imagem) {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(6),
+                padding: const EdgeInsets.all(3),
                 child: Text(
                   nome,
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(
                     color: Colors.black,
                     fontSize: 15,
