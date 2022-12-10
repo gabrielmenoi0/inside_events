@@ -94,7 +94,7 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
           title: Text('Configurações', style: GoogleFonts.montserrat()),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => configuracoes( )),
+              MaterialPageRoute(builder: (_) => configuracoes()),
             );
           },
         ),

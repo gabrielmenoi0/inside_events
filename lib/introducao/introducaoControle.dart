@@ -95,7 +95,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             footer: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-                "assets/fundu.png",
+                "assets/menufoto.png",
               ),
             ),
             decoration: pageDecoration.copyWith(
@@ -109,7 +109,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
           PageViewModel(
             titleWidget: Padding(
-              padding: const EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 20, bottom: 50),
               child: Container(
                 alignment: Alignment.center,
                 color: Colors.transparent,
@@ -148,7 +148,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             bodyWidget: Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset("assets/fundu.png"),
+                child: Image.asset("assets/inscreva.png"),
               ),
             ),
             footer: Text(
@@ -205,7 +205,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             footer: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-                "assets/fundu.png",
+                "assets/cartaoimg.png",
+                width: 200,
               ),
             ),
             decoration: pageDecoration.copyWith(
@@ -258,7 +259,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             bodyWidget: Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset("assets/fundu.png"),
+                child: Image.asset(
+                  "assets/qrimage.png",
+                  height: 200,
+                ),
               ),
             ),
             footer: Text(

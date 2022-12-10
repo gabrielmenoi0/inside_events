@@ -125,9 +125,11 @@ class _Login_pageState extends State<Login_page> {
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 child: SizedBox(
                   height: 40,
+                  width: 300,
                   child: ElevatedButton(
                     onPressed: () {
-                      if (email == 'dev@etec.com' && senha == '123') {
+                      if (email == 'grazielladev@gmail.com' &&
+                          senha == '123456') {
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (_) => MenuPage()),
                         );

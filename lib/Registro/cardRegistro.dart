@@ -6,11 +6,14 @@ import 'package:inside_events/QrPage/QrPage.dart';
 import 'package:like_button/like_button.dart';
 
 class cardRegistro extends StatefulWidget {
-  cardRegistro({Key? key, required this.imagensCard,
-    required this.titulo,
-    required this.horario,
-    required this.cor,
-  required this.situacao}) : super(key: key);
+  cardRegistro(
+      {Key? key,
+      required this.imagensCard,
+      required this.titulo,
+      required this.horario,
+      required this.cor,
+      required this.situacao})
+      : super(key: key);
 
   late List<Widget> imagensCard = imagensCard;
   late String titulo;
@@ -27,18 +30,16 @@ class _cardRegistroState extends State<cardRegistro> {
 
   @override
   Widget build(BuildContext context) {
-    return
-      Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                blurRadius: 6,
-              offset: Offset(3, 3)
-            )
-          ],
-        ),
-        child: Stack(children: [
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              blurRadius: 6,
+              offset: Offset(3, 3))
+        ],
+      ),
+      child: Stack(children: [
         Positioned(
           child: Material(
             child: Container(
@@ -141,7 +142,7 @@ class _cardRegistroState extends State<cardRegistro> {
                       ),
                     ),
                     Padding(
-                        padding: EdgeInsets.only(right: 10),
+                        padding: EdgeInsets.only(right: 20),
                         child: const LikeButton()),
                   ],
                 ),
@@ -166,6 +167,6 @@ class _cardRegistroState extends State<cardRegistro> {
           ),
         ),
       ]),
-      );
+    );
   }
 }

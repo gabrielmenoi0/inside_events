@@ -1,8 +1,10 @@
 // ignore_for_file: file_names
 import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/login/tela_login/login_page.dart';
+import 'package:flutter/services.dart';
 
 import '../../MenuPageG/MenuPage.dart';
 // ignore: camel_case_types
@@ -19,79 +21,51 @@ class _Cadastro_pageState extends State<Cadastro_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          leading: InkWell(
-            onTap: () {
-              Navigator.of(context).pop();
-            },
-            child: Icon(
-              Icons.adaptive.arrow_back,
-              color: const Color(0xff2B4F71),
-            ),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: InkWell(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: Icon(
+            Icons.adaptive.arrow_back,
+            color: const Color(0xff2B4F71),
           ),
         ),
-        body: SingleChildScrollView(
-          reverse: false,
-          child: Padding(
-            padding: const EdgeInsets.only(
-              left: 43,
-              right: 53,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                CircleAvatar(
-                  radius: 90,
-                  backgroundColor: Colors.transparent,
-                  child: Image.asset(
-                    'assets/logo11.png',
-                    fit: BoxFit.cover,
-                  ),
+      ),
+      body: SingleChildScrollView(
+        reverse: false,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 43,
+            right: 53,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              CircleAvatar(
+                radius: 90,
+                backgroundColor: Colors.transparent,
+                child: Image.asset(
+                  'assets/logo11.png',
+                  fit: BoxFit.cover,
                 ),
-                Column(
-                  children: <Widget>[
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Edereço de E-mail',
-                          style: GoogleFonts.inter(fontSize: 20),
-                        ))
-                  ],
-                ),
-                TextFormField(
-                    autofocus: true,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      enabledBorder: const UnderlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
-                      ),
-                      focusedBorder: const UnderlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
-                      ),
-                      hintText: ('Digite seu E-mail'),
-                      hintStyle: GoogleFonts.inter(fontSize: 18),
-                    )),
-                const SizedBox(
-                  height: 25,
-                ),
-                Column(
-                  children: <Widget>[
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Número de telefone',
-                          style: GoogleFonts.inter(fontSize: 20),
-                        ))
-                  ],
-                ),
-                TextFormField(
-                  autofocus: true,
-                  keyboardType: TextInputType.number,
+              ),
+              Column(
+                children: <Widget>[
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Edereço de E-mail',
+                        style: GoogleFonts.inter(fontSize: 20),
+                      ))
+                ],
+              ),
+              TextFormField(
+                  autofocus: false,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     enabledBorder: const UnderlineInputBorder(
                       borderSide:
@@ -101,180 +75,315 @@ class _Cadastro_pageState extends State<Cadastro_page> {
                       borderSide:
                           BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
                     ),
-                    hintText: ('+55'),
+                    hintText: ('Digite seu E-mail'),
                     hintStyle: GoogleFonts.inter(fontSize: 18),
+                  )),
+              const SizedBox(
+                height: 25,
+              ),
+              Column(
+                children: <Widget>[
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Número de telefone',
+                        style: GoogleFonts.inter(fontSize: 20),
+                      ))
+                ],
+              ),
+              TextFormField(
+                autofocus: false,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
                   ),
+                  focusedBorder: const UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                  ),
+                  hintText: ('+55'),
+                  hintStyle: GoogleFonts.inter(fontSize: 18),
                 ),
-                const SizedBox(
-                  height: 25,
-                ),
-                Column(
-                  children: <Widget>[
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Senha',
-                          style: GoogleFonts.inter(fontSize: 20),
-                        ))
-                  ],
-                ),
-                TextFormField(
-                    autofocus: true,
-                    obscureText: true,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      enabledBorder: const UnderlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
-                      ),
-                      focusedBorder: const UnderlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
-                      ),
-                      hintText: ('Digite sua senha'),
-                      hintStyle: GoogleFonts.inter(fontSize: 18),
-                    )),
-                const SizedBox(
-                  height: 25,
-                ),
-                Column(
-                  children: <Widget>[
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Repita sua senha',
-                          style: GoogleFonts.inter(fontSize: 20),
-                        ))
-                  ],
-                ),
-                TextFormField(
-                    autofocus: true,
-                    obscureText: true,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      enabledBorder: const UnderlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
-                      ),
-                      focusedBorder: const UnderlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
-                      ),
-                      hintText: ('Digite sua senha'),
-                      hintStyle: GoogleFonts.inter(fontSize: 18),
-                    )),
-                const SizedBox(
-                  height: 28,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  child: TextButton(
-                      style: ButtonStyle(
-                          padding: MaterialStateProperty.all<EdgeInsets>(
-                              const EdgeInsets.all(20)),
-                          foregroundColor: MaterialStateProperty.all(
-                              const Color.fromARGB(255, 13, 67, 110)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: const BorderSide(
-                                  width: 1.0, color: Colors.grey),
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              Column(
+                children: <Widget>[
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Senha',
+                        style: GoogleFonts.inter(fontSize: 20),
+                      ))
+                ],
+              ),
+              TextFormField(
+                  autofocus: false,
+                  obscureText: true,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    enabledBorder: const UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                    ),
+                    focusedBorder: const UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                    ),
+                    hintText: ('Digite sua senha'),
+                    hintStyle: GoogleFonts.inter(fontSize: 18),
+                  )),
+              const SizedBox(
+                height: 25,
+              ),
+              Column(
+                children: <Widget>[
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Repita sua senha',
+                        style: GoogleFonts.inter(fontSize: 20),
+                      ))
+                ],
+              ),
+              TextFormField(
+                  autofocus: false,
+                  obscureText: true,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    enabledBorder: const UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                    ),
+                    focusedBorder: const UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                    ),
+                    hintText: ('Digite sua senha'),
+                    hintStyle: GoogleFonts.inter(fontSize: 18),
+                  )),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10, right: 10),
+                child: SizedBox(
+                  height: 40,
+                  width: 300,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text(
+                              'Enviamos um código de confirmação para o  número +55 (00)xxxx-xx00 para o término do cadastro',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.montserrat(
+                                fontSize: 16,
+                              ),
                             ),
-                          )),
-                      onPressed: () {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                  title: Text(
-                                    // os textos tem esse espaçamento mesmo que é para alinhar
-                                    '        Enviamos um código de \n             confirmação para o \n número +55 (00)xxxx-xx00 para \n         o término do cadastro',
-                                    style: GoogleFonts.inter(
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                  content: const Padding(
-                                    padding: EdgeInsets.fromLTRB(100, 0, 20, 0),
-                                    child: TextField(
-                                      autofocus: true,
-                                      maxLength: 5,
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        counterText: '',
-                                        hintText: "Digite aqui",
+                            content: Form(
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    height: 30,
+                                    width: 28,
+                                    child: TextFormField(
+                                      // controller: _controller,
+                                      decoration: const InputDecoration(
+                                        hintText: '0',
                                       ),
-                                    ),
-                                  ),
-                                  actions: <Widget>[
-                                    Column(
-                                      children: [
-                                        Center(
-                                          child: TextButton(
-                                            onPressed: () {
-                                              CoolAlert.show(
-                                                context: context,
-                                                type: CoolAlertType.success,
-                                                text:
-                                                    ('Confirmamos que é você, \n tudo certo por aqui !'),
-                                                confirmBtnText: 'Prosseguir',
-                                                backgroundColor: Colors.white,
-                                                onConfirmBtnTap: () {
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const MenuPage()));
-                                                },
-                                              );
-                                            },
-                                            child: Text(
-                                              'Continuar',
-                                              style: GoogleFonts.inter(
-                                                //decoration: TextDecoration.underline,
-                                                fontSize: 18,
-                                                color: const Color.fromRGBO(
-                                                    43, 79, 113, 1),
-                                              ),
-                                            ),
-                                          ),
-                                        )
+                                      onChanged: (value) {
+                                        if (value.length == 1) {
+                                          FocusScope.of(context).nextFocus();
+                                        }
+                                      },
+                                      style:
+                                          Theme.of(context).textTheme.headline6,
+                                      keyboardType: TextInputType.number,
+                                      textAlign: TextAlign.center,
+                                      inputFormatters: [
+                                        LengthLimitingTextInputFormatter(1),
+                                        FilteringTextInputFormatter.digitsOnly,
                                       ],
                                     ),
-                                    const SizedBox(
-                                      height: 20,
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                    width: 28,
+                                    child: TextFormField(
+                                      decoration:
+                                          const InputDecoration(hintText: '0'),
+                                      onChanged: (value) {
+                                        if (value.length == 1) {
+                                          FocusScope.of(context).nextFocus();
+                                        }
+                                      },
+                                      style:
+                                          Theme.of(context).textTheme.headline6,
+                                      keyboardType: TextInputType.number,
+                                      textAlign: TextAlign.center,
+                                      inputFormatters: [
+                                        LengthLimitingTextInputFormatter(1),
+                                        FilteringTextInputFormatter.digitsOnly,
+                                      ],
                                     ),
-                                    Center(
-                                        child: TextButton(
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                    width: 28,
+                                    child: TextFormField(
+                                      decoration:
+                                          InputDecoration(hintText: '0'),
+                                      onChanged: (value) {
+                                        if (value.length == 1) {
+                                          FocusScope.of(context).nextFocus();
+                                        }
+                                      },
+                                      style:
+                                          Theme.of(context).textTheme.headline6,
+                                      keyboardType: TextInputType.number,
+                                      textAlign: TextAlign.center,
+                                      inputFormatters: [
+                                        LengthLimitingTextInputFormatter(1),
+                                        FilteringTextInputFormatter.digitsOnly,
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                    width: 28,
+                                    child: TextFormField(
+                                      decoration:
+                                          InputDecoration(hintText: '0'),
+                                      onChanged: (value) {
+                                        if (value.length == 1) {
+                                          FocusScope.of(context).nextFocus();
+                                        }
+                                      },
+                                      style:
+                                          Theme.of(context).textTheme.headline6,
+                                      keyboardType: TextInputType.number,
+                                      textAlign: TextAlign.center,
+                                      inputFormatters: [
+                                        LengthLimitingTextInputFormatter(1),
+                                        FilteringTextInputFormatter.digitsOnly,
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                    width: 28,
+                                    child: TextFormField(
+                                      decoration:
+                                          InputDecoration(hintText: '0'),
+                                      onChanged: (value) {
+                                        if (value.length == 1) {
+                                          FocusScope.of(context).nextFocus();
+                                        }
+                                      },
+                                      style:
+                                          Theme.of(context).textTheme.headline6,
+                                      keyboardType: TextInputType.number,
+                                      textAlign: TextAlign.center,
+                                      inputFormatters: [
+                                        LengthLimitingTextInputFormatter(1),
+                                        FilteringTextInputFormatter.digitsOnly,
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            actions: <Widget>[
+                              Column(
+                                children: [
+                                  Center(
+                                    child: TextButton(
                                       onPressed: () {
-                                        setState(() {});
-                                        Navigator.of(context).pop();
+                                        CoolAlert.show(
+                                          context: context,
+                                          type: CoolAlertType.success,
+                                          text:
+                                              ('Confirmamos que é você, \n tudo certo por aqui !'),
+                                          confirmBtnText: 'Prosseguir',
+                                          backgroundColor: Colors.white,
+                                          onConfirmBtnTap: () {
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Login_page(),
+                                              ),
+                                            );
+                                          },
+                                        );
                                       },
                                       child: Text(
-                                        'Não recebi o Código',
+                                        'Continuar',
                                         style: GoogleFonts.inter(
-                                          decoration: TextDecoration.underline,
+                                          //decoration: TextDecoration.underline,
                                           fontSize: 18,
                                           color: const Color.fromRGBO(
                                               43, 79, 113, 1),
                                         ),
                                       ),
-                                    ))
-                                  ]);
-                            });
-                      },
-                      child: Text(
-                        'Cadastre-se',
-                        style: GoogleFonts.inter(
-                            height: 1.0,
-                            fontSize: 30,
-                            color: (const Color.fromRGBO(43, 79, 113, 1))),
-                      )),
-                )
-              ],
-            ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              // Center(
+                              //   child: TextButton(
+                              //     onPressed: () {
+                              //       setState(() {});
+                              //       Navigator.of(context).pop();
+                              //     },
+                              //     child: Text(
+                              //       '',
+                              //       // 'Não recebi o Código',
+                              //       style: GoogleFonts.inter(
+                              //         decoration: TextDecoration.underline,
+                              //         fontSize: 18,
+                              //         color:
+                              //             const Color.fromRGBO(43, 79, 113, 1),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // )
+                            ],
+                          );
+                        },
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(28)),
+                        ),
+                        elevation: 0,
+                        shadowColor: Colors.transparent,
+                        backgroundColor: const Color(0xffACD7FF)),
+                    child: Text(
+                      'ENTRE',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

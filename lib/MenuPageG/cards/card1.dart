@@ -3,7 +3,13 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Card1 extends StatefulWidget {
-  Card1({Key? key, required this.imagensCard, required this.titulo, required this.descricao, required this.horario}) : super(key: key);
+  Card1(
+      {Key? key,
+      required this.imagensCard,
+      required this.titulo,
+      required this.descricao,
+      required this.horario})
+      : super(key: key);
   late String titulo;
   late String descricao;
   late String horario;
@@ -35,6 +41,7 @@ class _Card1State extends State<Card1> {
           Positioned(
             top: 0,
             left: 2,
+            bottom: 4,
             child: Card(
               color: const Color(0xFFCFE2FF),
               shape: RoundedRectangleBorder(
@@ -49,7 +56,7 @@ class _Card1State extends State<Card1> {
                   options: CarouselOptions(
                     autoPlayCurve: Curves.easeInOutSine,
                     viewportFraction: 1,
-                    aspectRatio: 2.3,
+                    aspectRatio: 2.4,
                     autoPlay: true,
                     autoPlayInterval: const Duration(seconds: 3),
                   ),
@@ -60,7 +67,7 @@ class _Card1State extends State<Card1> {
           ),
           Positioned(
             top: 10,
-            left: 180,
+            left: 162,
             child: Container(
               color: Colors.transparent,
               height: 190,
@@ -71,17 +78,16 @@ class _Card1State extends State<Card1> {
                   Text(
                     widget.titulo,
                     style: GoogleFonts.montserrat(
-                      fontSize: 15,
+                      fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF363f93),
                     ),
                   ),
                   Text(
                     widget.descricao,
+                    textAlign: TextAlign.start,
                     style: GoogleFonts.montserrat(
-                      fontSize: 10,
-
-                    ),
+                        fontSize: 10, fontWeight: FontWeight.w500),
                   ),
                   const Divider(
                     color: Color.fromARGB(255, 175, 171, 171),
@@ -95,7 +101,7 @@ class _Card1State extends State<Card1> {
                     ),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 0.5,
                   ),
                   Center(
                     child: TextButton(

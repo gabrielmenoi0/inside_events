@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:carousel_slider/carousel_options.dart';
 
 class Card2 extends StatefulWidget {
-  Card2({Key? key, required this.imagensCard, required this.titulo, required this.descricao, required this.horario}) : super(key: key);
+  Card2(
+      {Key? key,
+      required this.imagensCard,
+      required this.titulo,
+      required this.descricao,
+      required this.horario})
+      : super(key: key);
   late String titulo;
   late String descricao;
   late String horario;
@@ -34,26 +39,29 @@ class _Card2State extends State<Card2> {
             ),
           ),
           Positioned(
-            top: 10,
-            right: 190,
+            top: 5,
+            right: 160,
+            left: 20,
             child: Container(
-              height: 300,
-              width: 130,
+              height: 190,
+              width: 180,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     widget.titulo,
                     style: GoogleFonts.montserrat(
-                      fontSize: 15,
+                      fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF363f93),
                     ),
                   ),
                   Text(
                     widget.descricao,
+                    textAlign: TextAlign.left,
                     style: GoogleFonts.montserrat(
                       fontSize: 10,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   const Divider(
@@ -68,7 +76,7 @@ class _Card2State extends State<Card2> {
                     ),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 0.1,
                   ),
                   Center(
                     child: TextButton(
@@ -89,7 +97,7 @@ class _Card2State extends State<Card2> {
                       child: Text(
                         "SAIBA MAIS",
                         style: GoogleFonts.montserrat(
-                          fontSize: 10,
+                          fontSize: 8,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF363f93),
                         ),
@@ -102,7 +110,7 @@ class _Card2State extends State<Card2> {
           ),
           Positioned(
             top: 0,
-            left: 165,
+            left: 155,
             child: Card(
                 color: Colors.transparent,
                 shape: RoundedRectangleBorder(
@@ -117,7 +125,7 @@ class _Card2State extends State<Card2> {
                     options: CarouselOptions(
                         autoPlayCurve: Curves.easeInOutSine,
                         viewportFraction: 1,
-                        aspectRatio: 2.3,
+                        aspectRatio: 2.4,
                         autoPlay: true,
                         autoPlayInterval: const Duration(seconds: 2),
                         reverse: true),

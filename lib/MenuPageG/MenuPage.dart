@@ -32,52 +32,94 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     late List<Widget> imagens1 = [
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          "assets/imagemenu/BusWeek.png",
-          fit: BoxFit.cover,
+      InkWell(
+        onTap: (() {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => InformationPge()),
+          );
+        }),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            "assets/imagemenu/BusWeek.png",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          "assets/imagemenu/eventoUnivem.jpeg",
-          fit: BoxFit.cover,
+      InkWell(
+        onTap: (() {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => InformationPge()),
+          );
+        }),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            "assets/imagemenu/eventoUnivem.jpeg",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     ];
 
     late List<Widget> imagens2 = [
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          "assets/imagemenu/Renata.png",
-          fit: BoxFit.cover,
+      InkWell(
+        onTap: (() {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => InformationPge()),
+          );
+        }),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            "assets/imagemenu/Renata.png",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          "assets/imagemenu/eventoUnivem.jpeg",
-          fit: BoxFit.cover,
+      InkWell(
+        onTap: (() {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => InformationPge()),
+          );
+        }),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            "assets/imagemenu/eventoUnivem.jpeg",
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
+      )
     ];
 
     late List<Widget> imagens3 = [
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          "assets/imagemenu/direito.png",
-          fit: BoxFit.cover,
+      InkWell(
+        onTap: (() {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => InformationPge()),
+          );
+        }),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            "assets/imagemenu/direito.png",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          "assets/imagemenu/eventoUnivem.jpeg",
-          fit: BoxFit.cover,
+      InkWell(
+        onTap: (() {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => InformationPge()),
+          );
+        }),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            "assets/imagemenu/eventoUnivem.jpeg",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     ];
@@ -264,8 +306,11 @@ class _MenuPageState extends State<MenuPage> {
                             : outros
                                 ? EventoContainer("assets/Logoin.png", "Univem",
                                     "host", context)
-                                : EventoContainer("assets/imagemenu/medicina1.png",
-                    "Ciclo Médicas", "Univem", context),
+                                : EventoContainer(
+                                    "assets/imagemenu/medicina1.png",
+                                    "Ciclo Médicas",
+                                    "Univem",
+                                    context),
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina2.png",
                         "Patinhas Solidárias", "Univem", context)
@@ -281,8 +326,11 @@ class _MenuPageState extends State<MenuPage> {
                             : outros
                                 ? EventoContainer("assets/Logoin.png", "Univem",
                                     "host", context)
-                                : EventoContainer("assets/imagemenu/medicina2.png",
-                    "Patinhas Solidárias", "Univem", context)
+                                : EventoContainer(
+                                    "assets/imagemenu/medicina2.png",
+                                    "Patinhas Solidárias",
+                                    "Univem",
+                                    context)
               ],
             ),
             Row(
@@ -304,8 +352,11 @@ class _MenuPageState extends State<MenuPage> {
                             : outros
                                 ? EventoContainer("assets/Logoin.png", "Univem",
                                     "host", context)
-                                : EventoContainer("assets/imagemenu/medicina1.png",
-                    "Evento Nome", "Local", context),
+                                : EventoContainer(
+                                    "assets/imagemenu/medicina1.png",
+                                    "Evento Nome",
+                                    "Local",
+                                    context),
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina2.png",
                         "Patinhas Solidárias", "Univem", context)
@@ -313,17 +364,16 @@ class _MenuPageState extends State<MenuPage> {
                         ? EventoContainer("assets/imagemenu/grupoEvento.png",
                             "Univem", "host", context)
                         : tecnologia
-                            ? EventoContainer(
-                                "assets/imagemenu/semanatec.png",
-                                "Univem",
-                                "host",
-                                context)
+                            ? EventoContainer("assets/imagemenu/semanatec.png",
+                                "Univem", "host", context)
                             : outros
                                 ? EventoContainer("assets/Logoin.png", "Univem",
                                     "host", context)
-                                : EventoContainer("assets/imagemenu/medicina2.png",
-                    "Patinhas Solidárias", "Univem", context)
-
+                                : EventoContainer(
+                                    "assets/imagemenu/medicina2.png",
+                                    "Patinhas Solidárias",
+                                    "Univem",
+                                    context)
               ],
             ),
             Padding(
@@ -362,7 +412,8 @@ class _MenuPageState extends State<MenuPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              LocalContainer("assets/imagemenu/univem.png", "Univem", context),
+                LocalContainer(
+                    "assets/imagemenu/univem.png", "Univem", context),
                 LocalContainer("assets/imagemenu/etec.png", "Etec", context),
               ],
             ),
@@ -370,7 +421,8 @@ class _MenuPageState extends State<MenuPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                LocalContainer("assets/imagemenu/neusa.jpg", "Neusa Galleti ", context),
+                LocalContainer(
+                    "assets/imagemenu/neusa.jpg", "Neusa Galleti ", context),
                 LocalContainer("assets/imagemenu/dsin.png", "DSIN", context),
               ],
             ),
@@ -396,36 +448,30 @@ class _MenuPageState extends State<MenuPage> {
               ),
             ),
             Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-
-
-              Image.asset("assets/imagemenu/devFoto.png",
-              height: 170,
-              width: 200),
-              Icon(Icons.add),
-              Image.asset("assets/insideSplash.png",
-                  height: 150,
-                  width: 90),
-            ]
-                )
-              ],
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("assets/imagemenu/devFoto.png",
+                      height: 170, width: 200),
+                  Icon(Icons.add),
+                  Image.asset("assets/insideSplash.png",
+                      height: 150, width: 90),
+                ])
+          ],
         ),
       ),
     );
   }
 }
 
-LocalContainer(String image, String titulo, context){
-  return  Container(
+LocalContainer(String image, String titulo, context) {
+  return Container(
     color: Colors.transparent,
     child: Padding(
       padding: const EdgeInsets.all(10),
       child: Column(
         children: [
           Container(
-
             child: Image.asset(
               fit: BoxFit.cover,
               image,
@@ -438,53 +484,46 @@ LocalContainer(String image, String titulo, context){
             style: GoogleFonts.montserrat(
                 fontSize: 20, fontWeight: FontWeight.bold),
           ),
-
         ],
       ),
     ),
   );
-
 }
 
 EventoContainer(String image, String titulo, String local, context) {
   return Padding(
     padding: const EdgeInsets.all(10),
     child: Column(
-        children: [
-          InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => InformationPge()),
-                );
-              },
-              child: Image.asset(
-                fit: BoxFit.cover,
-                image,
-                width: MediaQuery.of(context).size.width / 2.5,
-                height: MediaQuery.of(context).size.height / 5,
-              ),
-            ),
-
-          SizedBox(
-            height: 5,
+      children: [
+        InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => InformationPge()),
+            );
+          },
+          child: Image.asset(
+            fit: BoxFit.cover,
+            image,
+            width: MediaQuery.of(context).size.width / 2.6,
+            height: MediaQuery.of(context).size.height / 5,
           ),
-
-          Text(
-            titulo,
-            style:
-            GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-
-
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            local,
-            style: GoogleFonts.montserrat(fontSize: 15),
-          ),
-        ],
-
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Text(
+          titulo,
+          style:
+              GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Text(
+          local,
+          style: GoogleFonts.montserrat(fontSize: 15),
+        ),
+      ],
     ),
   );
 }

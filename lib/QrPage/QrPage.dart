@@ -3,6 +3,8 @@ import 'package:ai_barcode_scanner/ai_barcode_scanner.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
+import 'package:inside_events/QrPage/aprovado.dart';
+import 'package:inside_events/QrPage/recusado.dart';
 import 'package:inside_events/utils/determinateLocation.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -26,13 +28,12 @@ class _QrPageState extends State<QrPage> {
     super.initState();
   }
 
-  setLocation() async{
+  setLocation() async {
     if (await Permission.location.isGranted) {
       await location.determinePosition();
-    }else{
+    } else {
       openAppSettings();
     }
-
   }
 
   @override
@@ -66,13 +67,15 @@ class _QrPageState extends State<QrPage> {
               if (barcode.rawValue == "1111") {
                 return Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => const InformationPge(),
+                    builder: (_) => const aprovado(),
                   ),
                 );
               } else {
                 if (barcode.rawValue != "1111") {
                   log("resultado", error: barcode.rawValue);
-                  Navigator.of(context).pop();
+                  MaterialPageRoute(
+                    builder: (_) => const recusado(),
+                  );
                   // navegar
                 }
                 // if (!isDetailsOpen.value) {
