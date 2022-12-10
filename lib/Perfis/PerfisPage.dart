@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:like_button/like_button.dart';
 
+import '../EventoEspecifico/eventoEspecifico.dart';
+
 class Perfilpage extends StatefulWidget {
   const Perfilpage({super.key});
 
@@ -51,11 +53,43 @@ class _PerfilpageState extends State<Perfilpage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
 
-                            CircleAvatar(
-                              radius: 60,
-                              backgroundImage: AssetImage(
-                                'assets/imagemenu/grazi.jpg',
-                              ),
+                            Column(
+                              children: [
+                                CircleAvatar(
+                                  radius: 60,
+                                  backgroundImage: AssetImage(
+                                    'assets/imagemenu/grazi.jpg',
+                                  ),
+                                ),
+
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 10.0),
+                                    child: SizedBox(
+                                      height: 40,
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(builder: (_) => Eventos()),
+                                          );
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(Radius.circular(28)),
+                                            ),
+                                            elevation: 0,
+                                            backgroundColor: const Color(0xffACD7FF)),
+                                        child: Text(
+                                          'Editar Perfil',
+                                          style: GoogleFonts.montserrat(
+                                              color: Colors.white, fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+
+                              ],
+
+
                             ),
                             Container(
                               width: MediaQuery.of(context).size.width / 2,
