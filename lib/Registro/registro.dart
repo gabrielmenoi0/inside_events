@@ -4,7 +4,7 @@ import 'package:inside_events/Drawer_and_AppBar/drawer.dart';
 import 'package:inside_events/QrPage/QrPage.dart';
 import 'package:inside_events/Registro/cardRegistro.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:inside_events/utils/appColors.dart';
 
 class registro extends StatelessWidget {
   const registro({Key? key}) : super(key: key);
@@ -17,6 +17,7 @@ class registro extends StatelessWidget {
       );
       const Icon(Icons.arrow_back_ios_new_outlined);
     }
+
     late List<Widget> imagens1 = [
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
@@ -69,43 +70,53 @@ class registro extends StatelessWidget {
     ];
 
     return Scaffold(
-        drawer: const Drawer(
+      drawer: const Drawer(
         width: 250,
         elevation: 0,
-        backgroundColor: Color(0xffE9EDF8),
-    child: DrawerPaginas(),
-    ),
-    body: NestedScrollView(
-    floatHeaderSlivers: true,
-    headerSliverBuilder: (context, innerBoxIsScrolled) => [
-    appbar(),
-    ],
-    body: ListView(
-    scrollDirection: Axis.vertical,
-    children: [
-    Container(
-    alignment: Alignment.center,
-    child: cardRegistro(imagensCard: imagens1, titulo: "Semana da Criatividade Univem" , horario: "12/12/2023", cor: Color(0xffFF9839), situacao: "Inscrito"),
-    ),
-    const SizedBox(
-    height: 30,
-    ),
-    Container(
-    alignment: Alignment.center,
-    child: cardRegistro(imagensCard: imagens2, titulo: "Expo Negócios" , horario: "12/12/2023", cor: Color(0xffFA5757), situacao: "Não foi"),
-    ),
-      const SizedBox(
-    height: 30,
-    ),
-    Container(
-    alignment: Alignment.center,
-      child: cardRegistro(imagensCard: imagens3, titulo: "XV Semana de Tecnologia" , horario: "12/12/2023", cor: Color(0xff63DD85), situacao: "Participou"),
-    ),
-
-
-    ]
-    ),
-    ),
+        backgroundColor: Cor.corBrancoFumaca,
+        child: DrawerPaginas(),
+      ),
+      body: NestedScrollView(
+        floatHeaderSlivers: true,
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          appbar(),
+        ],
+        body: ListView(scrollDirection: Axis.vertical, children: [
+          Container(
+            alignment: Alignment.center,
+            child: cardRegistro(
+                imagensCard: imagens1,
+                titulo: "Semana da Criatividade Univem",
+                horario: "12/12/2023",
+                cor: Cor.corAmarelo,
+                situacao: "Inscrito"),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: cardRegistro(
+                imagensCard: imagens2,
+                titulo: "Expo Negócios",
+                horario: "12/12/2023",
+                cor: Cor.corVermelho,
+                situacao: "Não foi"),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: cardRegistro(
+                imagensCard: imagens3,
+                titulo: "XV Semana de Tecnologia",
+                horario: "12/12/2023",
+                cor: Cor.corVerde,
+                situacao: "Participou"),
+          ),
+        ]),
+      ),
     );
   }
 }

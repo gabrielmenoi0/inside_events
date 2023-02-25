@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../utils/appColors.dart';
+
 class configuracoes extends StatefulWidget {
   const configuracoes({Key? key}) : super(key: key);
 
@@ -13,7 +15,7 @@ class _configuracoesState extends State<configuracoes> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFFAFAFA),
+        backgroundColor: Cor.corBranco,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -22,18 +24,16 @@ class _configuracoesState extends State<configuracoes> {
           icon: const Icon(
             Icons.arrow_back_ios_new_outlined,
             size: 20,
-            color: Color(0xff2B4F71),
+            color: Cor.corEscuroAzul,
           ),
         ),
         centerTitle: true,
-        title:
-           Text("Configurações",
-            style: GoogleFonts.montserrat(color: Colors.black, fontSize: 20),),
-
+        title: Text(
+          "Configurações",
+          style: GoogleFonts.montserrat(color: Cor.corPreto, fontSize: 20),
+        ),
       ),
-
-      body:
-      Column(
+      body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(20),
@@ -46,19 +46,19 @@ class _configuracoesState extends State<configuracoes> {
                   isDense: true,
                   prefixIcon: const Icon(
                     Icons.search,
-                    color: Color(0xff2B4F71),
+                    color: Cor.corEscuroAzul,
                   ),
                   contentPadding: const EdgeInsets.symmetric(vertical: 5.0),
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: Cor.corBranco,
                   focusedBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
-                        color: Color(0xffe9edf8), width: 1.0),
+                        color: Cor.corBrancoFumaca, width: 1.0),
                     borderRadius: BorderRadius.circular(30),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
-                        color: Color(0xffe9edf8), width: 1.0),
+                        color: Cor.corBrancoFumaca, width: 1.0),
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   hintText: 'Pesquise eventos ou locais',
@@ -67,66 +67,54 @@ class _configuracoesState extends State<configuracoes> {
               ),
             ),
           ),
-
-
-
-
           Padding(
-            padding: const EdgeInsets.all(20.0),
-
-            child: Column(
-            children: [
-              OpcoesConfig("Sua conta"),
-              Divider(
-                color: Colors.white,
-                height: 30,
-              ),
-              OpcoesConfig("Privacidade e Segurança"),
-              const Divider(
-                color: Colors.white,
-                height: 30,
-              ),
-              OpcoesConfig("Acessibilidade"),
-              const Divider(
-                color: Colors.white,
-                height: 30,
-              ),
-              OpcoesConfig("Exibição"),
-              const Divider(
-                color: Colors.white,
-                height: 30,
-              ),
-              OpcoesConfig("Aparência"),
-              const Divider(
-                color: Colors.white,
-                height: 30,
-              ),
-              OpcoesConfig("Recursos Adicionais"),
-            ]
-            )
-          ),
-
-
-
+              padding: const EdgeInsets.all(20.0),
+              child: Column(children: [
+                OpcoesConfig("Sua conta"),
+                Divider(
+                  color: Cor.corBranco,
+                  height: 30,
+                ),
+                OpcoesConfig("Privacidade e Segurança"),
+                const Divider(
+                  color: Cor.corBranco,
+                  height: 30,
+                ),
+                OpcoesConfig("Acessibilidade"),
+                const Divider(
+                  color: Cor.corBranco,
+                  height: 30,
+                ),
+                OpcoesConfig("Exibição"),
+                const Divider(
+                  color: Cor.corBranco,
+                  height: 30,
+                ),
+                OpcoesConfig("Aparência"),
+                const Divider(
+                  color: Cor.corBranco,
+                  height: 30,
+                ),
+                OpcoesConfig("Recursos Adicionais"),
+              ])),
         ],
       ),
     );
-
   }
 }
 
-OpcoesConfig(String text){
-    return Row(
+OpcoesConfig(String text) {
+  return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-
-      Text(text, style: GoogleFonts.montserrat(fontSize: 15),),
-      Icon(
+        Text(
+          text,
+          style: GoogleFonts.montserrat(fontSize: 15),
+        ),
+        Icon(
           Icons.arrow_forward_ios_outlined,
           size: 20,
-    ),
-  ]
-    );
-
+        ),
+      ]);
 }

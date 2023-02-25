@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/MenuPageG/MenuPage.dart';
 import 'package:inside_events/login/tela_cadastro/Cadastro_page.dart';
 import 'package:inside_events/login/tela_redefinir/Redefinir_page.dart';
+import 'package:inside_events/utils/appColors.dart';
 
 class Login_page extends StatefulWidget {
   const Login_page({super.key});
@@ -20,7 +21,7 @@ class _Login_pageState extends State<Login_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Cor.corBranco,
       body: SingleChildScrollView(
         reverse: true,
         child: Padding(
@@ -49,17 +50,17 @@ class _Login_pageState extends State<Login_page> {
                 decoration: InputDecoration(
                   enabledBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color.fromRGBO(126, 161, 255, 1),
+                      color: Cor.corLilas,
                     ),
                   ),
                   focusedBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color.fromRGBO(126, 161, 255, 1),
+                      color: Cor.corLilas,
                     ),
                   ),
                   hintText: ('Digite seu E-mail'),
                   labelStyle:
-                      GoogleFonts.inter(color: Colors.black, fontSize: 23),
+                      GoogleFonts.inter(color: Cor.corPreto, fontSize: 23),
                   hintStyle: GoogleFonts.inter(fontSize: 18),
                 ),
               ),
@@ -85,12 +86,10 @@ class _Login_pageState extends State<Login_page> {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       enabledBorder: const UnderlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                        borderSide: BorderSide(color: Cor.corLilas),
                       ),
                       focusedBorder: const UnderlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                        borderSide: BorderSide(color: Cor.corLilas),
                       ),
                       hintText: ('Digite sua senha'),
                       hintStyle: GoogleFonts.inter(fontSize: 18))),
@@ -109,10 +108,9 @@ class _Login_pageState extends State<Login_page> {
                       child: (Text(
                         'esqueceu sua senha ?',
                         style: GoogleFonts.inter(
-                          decoration: TextDecoration.underline,
-                          fontSize: 18,
-                          color: const Color.fromARGB(255, 13, 67, 110),
-                        ),
+                            decoration: TextDecoration.underline,
+                            fontSize: 18,
+                            color: Cor.corAzulPreto),
                       )),
                     ),
                   )
@@ -147,12 +145,12 @@ class _Login_pageState extends State<Login_page> {
                         ),
                         elevation: 0,
                         shadowColor: Colors.transparent,
-                        backgroundColor: const Color(0xffACD7FF)),
+                        backgroundColor: Cor.corAzulClaro),
                     child: Text(
                       'ENTRE',
                       style: GoogleFonts.montserrat(
                           fontSize: 25,
-                          color: Colors.white,
+                          color: Cor.corBranco,
                           fontWeight: FontWeight.w500),
                     ),
                   ),
@@ -166,7 +164,7 @@ class _Login_pageState extends State<Login_page> {
                 children: [
                   Text(
                     'Não tem uma conta?',
-                    style: GoogleFonts.inter(fontSize: 18, color: Colors.black),
+                    style: GoogleFonts.inter(fontSize: 18, color: Cor.corPreto),
                   ),
                   Row(
                     children: [
@@ -180,7 +178,7 @@ class _Login_pageState extends State<Login_page> {
                           style: GoogleFonts.inter(
                             decoration: TextDecoration.underline,
                             fontSize: 18,
-                            color: const Color(0xff2B4F71),
+                            color: Cor.corEscuroAzul,
                           ),
                         ),
                       )
@@ -202,7 +200,7 @@ class _Login_pageState extends State<Login_page> {
                     style: GoogleFonts.inter(
                         decoration: TextDecoration.underline,
                         fontSize: 18,
-                        color: const Color(0xff2B4F71)),
+                        color: Cor.corEscuroAzul),
                   ),
                 ],
               ),

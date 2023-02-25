@@ -2,6 +2,7 @@ import 'package:awesome_card/awesome_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inside_events/utils/appColors.dart';
 import 'package:like_button/like_button.dart';
 
 import '../EventoEspecifico/eventoEspecifico.dart';
@@ -20,7 +21,7 @@ class _PerfilpageState extends State<Perfilpage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            backgroundColor: Colors.pink,
+            backgroundColor: Cor.corRosa,
             expandedHeight: 20,
           ),
           SliverToBoxAdapter(
@@ -34,15 +35,15 @@ class _PerfilpageState extends State<Perfilpage> {
                     children: [
                       Container(
                         height: MediaQuery.of(context).size.height / 6,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           borderRadius:
                               BorderRadius.vertical(bottom: Radius.circular(0)),
                           gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.center,
                               colors: [
-                                Colors.pink,
-                                Colors.white,
+                                Cor.corRosa,
+                                Cor.corBranco,
                               ]),
                         ),
                       ),
@@ -52,7 +53,6 @@ class _PerfilpageState extends State<Perfilpage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-
                             Column(
                               children: [
                                 CircleAvatar(
@@ -61,35 +61,34 @@ class _PerfilpageState extends State<Perfilpage> {
                                     'assets/imagemenu/grazi.jpg',
                                   ),
                                 ),
-
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 10.0),
-                                    child: SizedBox(
-                                      height: 40,
-                                      child: ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.of(context).push(
-                                            MaterialPageRoute(builder: (_) => Eventos()),
-                                          );
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                            shape: const RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.all(Radius.circular(28)),
-                                            ),
-                                            elevation: 0,
-                                            backgroundColor: const Color(0xffACD7FF)),
-                                        child: Text(
-                                          'Editar Perfil',
-                                          style: GoogleFonts.montserrat(
-                                              color: Colors.white, fontWeight: FontWeight.bold),
-                                        ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 10.0),
+                                  child: SizedBox(
+                                    height: 40,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (_) => Eventos()),
+                                        );
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                          shape: const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(28)),
+                                          ),
+                                          elevation: 0,
+                                          backgroundColor: Cor.corAzulClaro),
+                                      child: Text(
+                                        'Editar Perfil',
+                                        style: GoogleFonts.montserrat(
+                                            color: Cor.corBranco,
+                                            fontWeight: FontWeight.bold),
                                       ),
                                     ),
                                   ),
-
+                                ),
                               ],
-
-
                             ),
                             Container(
                               width: MediaQuery.of(context).size.width / 2,
@@ -113,7 +112,6 @@ class _PerfilpageState extends State<Perfilpage> {
                                       fontSize: 14,
                                     ),
                                   ),
-
                                   SizedBox(
                                     height: 6,
                                   ),
@@ -123,7 +121,6 @@ class _PerfilpageState extends State<Perfilpage> {
                                       fontSize: 14,
                                     ),
                                   ),
-
                                   SizedBox(
                                     height: 6,
                                   ),
@@ -158,7 +155,7 @@ class _PerfilpageState extends State<Perfilpage> {
                         ),
                       ),
                       Divider(
-                        color: Color(0xff2B4F71),
+                        color: Cor.corEscuroAzul,
                         height: 25,
                         thickness: 2,
                         indent: MediaQuery.of(context).size.width / 13,
@@ -170,8 +167,8 @@ class _PerfilpageState extends State<Perfilpage> {
                           children: [
                             ContainersEventos("Hackathon Univem",
                                 "assets/paracarrossel2.png", context),
-                            ContainersEventos(
-                                "Bootcamp Univem", "assets/paracarrossel.png", context),
+                            ContainersEventos("Bootcamp Univem",
+                                "assets/paracarrossel.png", context),
                           ],
                         ),
                       ),
@@ -196,7 +193,7 @@ class _PerfilpageState extends State<Perfilpage> {
                         ),
                       ),
                       Divider(
-                        color: Color(0xff2B4F71),
+                        color: Cor.corEscuroAzul,
                         height: 25,
                         thickness: 2,
                         indent: MediaQuery.of(context).size.width / 13,
@@ -228,7 +225,7 @@ ContainersEventos(String nome, String imagem, context) {
     child: Container(
       width: MediaQuery.of(context).size.width / 2.5,
       child: Card(
-        color: const Color(0xFFCFE2FF),
+        color: Cor.corBranco,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
         ),
@@ -252,7 +249,7 @@ ContainersEventos(String nome, String imagem, context) {
                   nome,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(
-                    color: Colors.black,
+                    color: Cor.corPreto,
                     fontSize: 15,
                   ),
                 ),

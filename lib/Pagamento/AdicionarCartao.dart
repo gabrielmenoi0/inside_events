@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:awesome_card/awesome_card.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inside_events/utils/appColors.dart';
 
 class Addcard extends StatefulWidget {
   Addcard({Key? key, required this.title}) : super(key: key);
@@ -45,7 +46,7 @@ class _AddcardState extends State<Addcard> {
       body: CustomScrollView(
         slivers: [
           const SliverAppBar(
-            backgroundColor: Color(0xffCFE2FF),
+            backgroundColor: Cor.corBranco,
             expandedHeight: 70,
           ),
           SliverToBoxAdapter(
@@ -62,7 +63,7 @@ class _AddcardState extends State<Addcard> {
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.vertical(
                                 bottom: Radius.circular(0)),
-                            color: Color(0xffCFE2FF),
+                            color: Cor.corBranco,
                           ),
                         ),
                         CreditCard(
@@ -202,12 +203,11 @@ class _AddcardState extends State<Addcard> {
                                                   Radius.circular(28)),
                                             ),
                                             elevation: 0,
-                                            backgroundColor:
-                                                const Color(0xffACD7FF)),
+                                            backgroundColor: Cor.corAzulClaro),
                                         child: Text(
                                           'Adicionar',
                                           style: GoogleFonts.montserrat(
-                                              color: Color(0xff2B4F71),
+                                              color: Cor.corEscuroAzul,
                                               fontWeight: FontWeight.w600,
                                               fontSize: 20),
                                         ),

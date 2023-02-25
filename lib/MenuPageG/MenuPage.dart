@@ -6,6 +6,7 @@ import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
 import 'package:inside_events/MenuPageG/cards/card1.dart';
 import 'package:inside_events/MenuPageG/cards/card2.dart';
 import 'package:inside_events/QrPage/QrPage.dart';
+import 'package:inside_events/utils/appColors.dart';
 import '../Drawer_and_AppBar/drawer.dart';
 
 class MenuPage extends StatefulWidget {
@@ -127,7 +128,7 @@ class _MenuPageState extends State<MenuPage> {
       drawer: const Drawer(
         width: 250,
         elevation: 0,
-        backgroundColor: Color(0xffE9EDF8),
+        backgroundColor: Cor.corBrancoFumaca,
         child: DrawerPaginas(),
       ),
       body: NestedScrollView(
@@ -156,7 +157,7 @@ class _MenuPageState extends State<MenuPage> {
                 imagensCard: imagens1,
                 titulo: "Business Week",
                 descricao:
-                "Metaverso e os desafios e oportunidades da nova Era no mundo dos negócios.",
+                    "Metaverso e os desafios e oportunidades da nova Era no mundo dos negócios.",
                 horario: "10/10/2023 - 19h",
               ),
             ),
@@ -169,7 +170,7 @@ class _MenuPageState extends State<MenuPage> {
                 imagensCard: imagens2,
                 titulo: "Design Thinking",
                 descricao:
-                "Live: ''Ferramentas do Design Thinking aplicada em projetos'' ministrada pela palestrante Profa. Ma. Renata Pinheiro.",
+                    "Live: ''Ferramentas do Design Thinking aplicada em projetos'' ministrada pela palestrante Profa. Ma. Renata Pinheiro.",
                 horario: "29/10/2023 - 15h",
               ),
             ),
@@ -182,7 +183,7 @@ class _MenuPageState extends State<MenuPage> {
                   imagensCard: imagens3,
                   titulo: "Curso de Capacitação",
                   descricao:
-                  "Curso de Capacitação de Conciliadores e Mediadores Judiciais e Extrajudiciais 2022 aqui do Univem!",
+                      "Curso de Capacitação de Conciliadores e Mediadores Judiciais e Extrajudiciais 2022 aqui do Univem!",
                   horario: "15/10/2023 - 19h"),
             ),
             const SizedBox(
@@ -195,8 +196,7 @@ class _MenuPageState extends State<MenuPage> {
                   height: 50,
                   width: 550,
                   decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color(0xffCFE2FF), width: 4.0)),
+                      border: Border.all(color: Cor.corBranco, width: 4.0)),
                   alignment: Alignment.center,
                   child: ListView(
                     shrinkWrap: true,
@@ -218,7 +218,7 @@ class _MenuPageState extends State<MenuPage> {
                             "Medicina",
                             style: GoogleFonts.montserrat(
                                 fontSize: 20,
-                                color: medicina ? Colors.blue : Colors.black),
+                                color: medicina ? Cor.corAzul : Cor.corPreto),
                           ),
                         ),
                       ),
@@ -238,7 +238,7 @@ class _MenuPageState extends State<MenuPage> {
                             "Tecnologia",
                             style: GoogleFonts.montserrat(
                                 fontSize: 20,
-                                color: tecnologia ? Colors.blue : Colors.black),
+                                color: tecnologia ? Cor.corAzul : Cor.corPreto),
                           ),
                         ),
                       ),
@@ -258,7 +258,7 @@ class _MenuPageState extends State<MenuPage> {
                             "Direito",
                             style: GoogleFonts.montserrat(
                                 fontSize: 20,
-                                color: direito ? Colors.blue : Colors.black),
+                                color: direito ? Cor.corAzul : Cor.corPreto),
                           ),
                         ),
                       ),
@@ -278,7 +278,7 @@ class _MenuPageState extends State<MenuPage> {
                             "Outros",
                             style: GoogleFonts.montserrat(
                                 fontSize: 20,
-                                color: outros ? Colors.blue : Colors.black),
+                                color: outros ? Cor.corAzul : Cor.corPreto),
                           ),
                         ),
                       ),
@@ -293,44 +293,44 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina1.png",
-                    "Ciclo Médicas", "Univem", context)
+                        "Ciclo Médicas", "Univem", context)
                     : direito
-                    ? EventoContainer("assets/imagemenu/grupoEvento.png",
-                    "Univem", "host", context)
-                    : tecnologia
-                    ? EventoContainer(
-                    "assets/imagemenu/programacao.png",
-                    "Univem",
-                    "host",
-                    context)
-                    : outros
-                    ? EventoContainer("assets/Logoin.png", "Univem",
-                    "host", context)
-                    : EventoContainer(
-                    "assets/imagemenu/medicina1.png",
-                    "Ciclo Médicas",
-                    "Univem",
-                    context),
+                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
+                            "Univem", "host", context)
+                        : tecnologia
+                            ? EventoContainer(
+                                "assets/imagemenu/programacao.png",
+                                "Univem",
+                                "host",
+                                context)
+                            : outros
+                                ? EventoContainer("assets/Logoin.png", "Univem",
+                                    "host", context)
+                                : EventoContainer(
+                                    "assets/imagemenu/medicina1.png",
+                                    "Ciclo Médicas",
+                                    "Univem",
+                                    context),
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina2.png",
-                    "Patinhas Solidárias", "Univem", context)
+                        "Patinhas Solidárias", "Univem", context)
                     : direito
-                    ? EventoContainer("assets/imagemenu/grupoEvento.png",
-                    "Univem", "host", context)
-                    : tecnologia
-                    ? EventoContainer(
-                    "assets/imagemenu/pesquisacienti.png",
-                    "Univem",
-                    "host",
-                    context)
-                    : outros
-                    ? EventoContainer("assets/Logoin.png", "Univem",
-                    "host", context)
-                    : EventoContainer(
-                    "assets/imagemenu/medicina2.png",
-                    "Patinhas Solidárias",
-                    "Univem",
-                    context)
+                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
+                            "Univem", "host", context)
+                        : tecnologia
+                            ? EventoContainer(
+                                "assets/imagemenu/pesquisacienti.png",
+                                "Univem",
+                                "host",
+                                context)
+                            : outros
+                                ? EventoContainer("assets/Logoin.png", "Univem",
+                                    "host", context)
+                                : EventoContainer(
+                                    "assets/imagemenu/medicina2.png",
+                                    "Patinhas Solidárias",
+                                    "Univem",
+                                    context)
               ],
             ),
             Row(
@@ -339,41 +339,41 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina1.png",
-                    "Ciclo Médicas", "Univem", context)
+                        "Ciclo Médicas", "Univem", context)
                     : direito
-                    ? EventoContainer("assets/imagemenu/grupoEvento.png",
-                    "Univem", "host", context)
-                    : tecnologia
-                    ? EventoContainer(
-                    "assets/imagemenu/olimpiadaInf.png",
-                    "Univem",
-                    "host",
-                    context)
-                    : outros
-                    ? EventoContainer("assets/Logoin.png", "Univem",
-                    "host", context)
-                    : EventoContainer(
-                    "assets/imagemenu/medicina1.png",
-                    "Evento Nome",
-                    "Local",
-                    context),
+                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
+                            "Univem", "host", context)
+                        : tecnologia
+                            ? EventoContainer(
+                                "assets/imagemenu/olimpiadaInf.png",
+                                "Univem",
+                                "host",
+                                context)
+                            : outros
+                                ? EventoContainer("assets/Logoin.png", "Univem",
+                                    "host", context)
+                                : EventoContainer(
+                                    "assets/imagemenu/medicina1.png",
+                                    "Evento Nome",
+                                    "Local",
+                                    context),
                 medicina
                     ? EventoContainer("assets/imagemenu/medicina2.png",
-                    "Patinhas Solidárias", "Univem", context)
+                        "Patinhas Solidárias", "Univem", context)
                     : direito
-                    ? EventoContainer("assets/imagemenu/grupoEvento.png",
-                    "Univem", "host", context)
-                    : tecnologia
-                    ? EventoContainer("assets/imagemenu/semanatec.png",
-                    "Univem", "host", context)
-                    : outros
-                    ? EventoContainer("assets/Logoin.png", "Univem",
-                    "host", context)
-                    : EventoContainer(
-                    "assets/imagemenu/medicina2.png",
-                    "Patinhas Solidárias",
-                    "Univem",
-                    context)
+                        ? EventoContainer("assets/imagemenu/grupoEvento.png",
+                            "Univem", "host", context)
+                        : tecnologia
+                            ? EventoContainer("assets/imagemenu/semanatec.png",
+                                "Univem", "host", context)
+                            : outros
+                                ? EventoContainer("assets/Logoin.png", "Univem",
+                                    "host", context)
+                                : EventoContainer(
+                                    "assets/imagemenu/medicina2.png",
+                                    "Patinhas Solidárias",
+                                    "Univem",
+                                    context)
               ],
             ),
             Padding(
@@ -391,11 +391,11 @@ class _MenuPageState extends State<MenuPage> {
                         borderRadius: BorderRadius.all(Radius.circular(28)),
                       ),
                       elevation: 0,
-                      backgroundColor: const Color(0xffACD7FF)),
+                      backgroundColor: Cor.corAzulClaro),
                   child: Text(
                     'VER TUDO!',
                     style: GoogleFonts.montserrat(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+                        color: Cor.corBranco, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -438,11 +438,11 @@ class _MenuPageState extends State<MenuPage> {
                         borderRadius: BorderRadius.all(Radius.circular(28)),
                       ),
                       elevation: 0,
-                      backgroundColor: const Color(0xffACD7FF)),
+                      backgroundColor: Cor.corAzulClaro),
                   child: Text(
                     'VER TUDO!',
                     style: GoogleFonts.montserrat(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+                        color: Cor.corBranco, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -514,7 +514,7 @@ EventoContainer(String image, String titulo, String local, context) {
         Text(
           titulo,
           style:
-          GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold),
+              GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         SizedBox(
           height: 5,

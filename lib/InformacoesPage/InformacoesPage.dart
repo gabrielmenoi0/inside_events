@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/Pagamento/PagamentoPage.dart';
+import 'package:inside_events/utils/appColors.dart';
 import 'package:like_button/like_button.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -79,7 +80,7 @@ class _InformationPgeState extends State<InformationPge> {
               backgroundColor: Colors.transparent,
               leading: CircleAvatar(
                 radius: 10,
-                backgroundColor: Colors.white54,
+                backgroundColor: Cor.corBranco,
                 child: IconButton(
                   onPressed: () {
                     Navigator.of(context).pop();
@@ -87,7 +88,7 @@ class _InformationPgeState extends State<InformationPge> {
                   icon: Icon(
                     Icons.adaptive.arrow_back,
                     size: 30,
-                    color: const Color(0xff2B4F71),
+                    color: Cor.corEscuroAzul,
                   ),
                 ),
               ),
@@ -103,7 +104,7 @@ class _InformationPgeState extends State<InformationPge> {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(
                       fontSize: 25,
-                      color: const Color(0xff2B4F71),
+                      color: Cor.corEscuroAzul,
                       fontWeight: FontWeight.w600),
                 ),
               ),
@@ -114,7 +115,7 @@ class _InformationPgeState extends State<InformationPge> {
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.montserrat(
                       fontSize: 14,
-                      color: Colors.black,
+                      color: Cor.corPreto,
                       fontWeight: FontWeight.w500),
                 ),
               ),
@@ -125,7 +126,7 @@ class _InformationPgeState extends State<InformationPge> {
                   textAlign: TextAlign.left,
                   style: GoogleFonts.montserrat(
                       fontSize: 20,
-                      color: const Color(0xff2B4F71),
+                      color: Cor.corEscuroAzul,
                       fontWeight: FontWeight.w600),
                 ),
               ),
@@ -136,7 +137,7 @@ class _InformationPgeState extends State<InformationPge> {
                   textAlign: TextAlign.left,
                   style: GoogleFonts.montserrat(
                       fontSize: 20,
-                      color: const Color(0xff2B4F71),
+                      color: Cor.corEscuroAzul,
                       fontWeight: FontWeight.w600),
                 ),
               ),
@@ -179,12 +180,12 @@ class _InformationPgeState extends State<InformationPge> {
                         ),
                       ),
                       elevation: 0,
-                      backgroundColor: const Color(0xffACD7FF),
+                      backgroundColor: Cor.corAzulClaro,
                     ),
                     child: Text(
                       'INSCREVA-SE',
                       style: GoogleFonts.montserrat(
-                          color: Colors.white,
+                          color: Cor.corBranco,
                           fontWeight: FontWeight.w500,
                           fontSize: 20),
                     ),
@@ -192,7 +193,7 @@ class _InformationPgeState extends State<InformationPge> {
                 ),
               ),
               const Divider(
-                color: Color(0xffCFE2FF),
+                color: Cor.corBranco,
               ),
               const SizedBox(
                 height: 10,
@@ -204,7 +205,7 @@ class _InformationPgeState extends State<InformationPge> {
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 1,
-                      color: const Color(0xffCFE2FF),
+                      color: Cor.corBranco,
                     ),
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -219,7 +220,7 @@ class _InformationPgeState extends State<InformationPge> {
                                 Text("Média Nota:",
                                     style: GoogleFonts.montserrat(
                                         fontSize: 16,
-                                        color: Color(0xff2B4F71))),
+                                        color: Cor.corEscuroAzul)),
                               ]),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -229,33 +230,33 @@ class _InformationPgeState extends State<InformationPge> {
                                     children: [
                                       Icon(
                                         Icons.star,
-                                        color: Color(0xff7EA1FF),
+                                        color: Cor.corLilas,
                                       ),
                                       Icon(
                                         Icons.star,
-                                        color: Color(0xff7EA1FF),
+                                        color: Cor.corLilas,
                                       ),
                                       Icon(
                                         Icons.star,
-                                        color: Color(0xff7EA1FF),
+                                        color: Cor.corLilas,
                                       ),
                                       Icon(
                                         Icons.star,
-                                        color: Color(0xff7EA1FF),
+                                        color: Cor.corLilas,
                                       ),
                                       Icon(
                                         Icons.star_half,
-                                        color: Color(0xff7EA1FF),
+                                        color: Cor.corLilas,
                                       ),
                                     ]),
                                 Text("4,5",
                                     style: GoogleFonts.montserrat(
                                         fontSize: 20,
-                                        color: Color(0xff2B4F71))),
+                                        color: Cor.corEscuroAzul)),
                                 Text("300 avaliações",
                                     style: GoogleFonts.montserrat(
                                         fontSize: 14,
-                                        color: Color(0xff2B4F71))),
+                                        color: Cor.corEscuroAzul)),
                               ]),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -263,7 +264,7 @@ class _InformationPgeState extends State<InformationPge> {
                                 Text("Muito boas: ",
                                     style: GoogleFonts.montserrat(
                                         fontSize: 14,
-                                        color: Color(0xff2B4F71))),
+                                        color: Cor.corEscuroAzul)),
                               ]),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -271,7 +272,7 @@ class _InformationPgeState extends State<InformationPge> {
                                 Text("Boas: ",
                                     style: GoogleFonts.montserrat(
                                         fontSize: 14,
-                                        color: Color(0xff2B4F71))),
+                                        color: Cor.corEscuroAzul)),
                               ]),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -279,7 +280,7 @@ class _InformationPgeState extends State<InformationPge> {
                                 Text("Ruins ",
                                     style: GoogleFonts.montserrat(
                                         fontSize: 14,
-                                        color: Color(0xff2B4F71))),
+                                        color: Cor.corEscuroAzul)),
                               ]),
                         ],
                       ),
@@ -322,7 +323,7 @@ class _InformationPgeState extends State<InformationPge> {
                                       EdgeInsets.symmetric(horizontal: 0.5),
                                   itemBuilder: (context, _) => Icon(
                                     Icons.star,
-                                    color: Color(0xff7EA1FF),
+                                    color: Cor.corLilas,
                                   ),
                                   onRatingUpdate: (rating) {
                                     print(rating);
@@ -337,7 +338,7 @@ class _InformationPgeState extends State<InformationPge> {
                           decoration: InputDecoration(
                               hintText: "Deixe um comentário",
                               hintStyle: GoogleFonts.montserrat(
-                                  fontSize: 14, color: Color(0xffE4E4E4)))),
+                                  fontSize: 14, color: Cor.corBranco))),
                     ]),
               ),
               const SizedBox(
@@ -347,7 +348,7 @@ class _InformationPgeState extends State<InformationPge> {
                   "assets/imagemenu/grazi.jpg",
                   "Graziella Bedani",
                   "Universitário",
-                  Color(0xff7EA1FF),
+                  Cor.corLilas,
                   "39/11/2022",
                   "Achei o evento muito bom e fui muito bem recebida por todos!",
                   "10",
@@ -356,13 +357,13 @@ class _InformationPgeState extends State<InformationPge> {
                   "assets/felix.jpg",
                   "Gabriel Félix",
                   "Universitário",
-                  Color(0xff7EA1FF),
+                  Cor.corLilas,
                   "26/11/2022",
                   "Gostei muito da recepção e achei o evento incrível",
                   "20",
                   "2"),
-              const Divider(
-                color: Colors.grey,
+              Divider(
+                color: Cor.corCinza,
               ),
               const SizedBox(
                 height: 15,
@@ -372,7 +373,7 @@ class _InformationPgeState extends State<InformationPge> {
                 style: GoogleFonts.montserrat(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
-                  color: const Color(0xff2B4F71),
+                  color: Cor.corEscuroAzul,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -383,8 +384,16 @@ class _InformationPgeState extends State<InformationPge> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  EventoContainer("assets/imagemenu/pesquisacienti.png", "12° Congresso de Pesquisa Científica", "Univem", context),
-                  EventoContainer("assets/imagemenu/pesquisacienti.png", "12° Congresso de Pesquisa Científica", "Univem", context),
+                  EventoContainer(
+                      "assets/imagemenu/pesquisacienti.png",
+                      "12° Congresso de Pesquisa Científica",
+                      "Univem",
+                      context),
+                  EventoContainer(
+                      "assets/imagemenu/pesquisacienti.png",
+                      "12° Congresso de Pesquisa Científica",
+                      "Univem",
+                      context),
                 ],
               ),
             ],
@@ -448,7 +457,7 @@ class _InformationPgeState extends State<InformationPge> {
                             ),
                             Text(dia,
                                 style: GoogleFonts.montserrat(
-                                    fontSize: 13, color: Color(0xff2B4F71))),
+                                    fontSize: 13, color: Cor.corEscuroAzul)),
                           ]),
                     ]),
                 SizedBox(
@@ -456,10 +465,7 @@ class _InformationPgeState extends State<InformationPge> {
                 ),
                 Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                   Container(
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width / 1.4,
+                    width: MediaQuery.of(context).size.width / 1.4,
                     child: Text(coment,
                         style: GoogleFonts.montserrat(fontSize: 14)),
                   ),
@@ -473,14 +479,14 @@ class _InformationPgeState extends State<InformationPge> {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Text(numberlike,
                         style: GoogleFonts.montserrat(
-                            fontSize: 14, color: Color(0xff2B4F71))),
+                            fontSize: 14, color: Cor.corEscuroAzul)),
                   ),
                   Icon(Icons.heart_broken),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(numberDeslike,
                         style: GoogleFonts.montserrat(
-                            fontSize: 14, color: Color(0xff2B4F71))),
+                            fontSize: 14, color: Cor.corEscuroAzul)),
                   ),
                 ]),
               ],
@@ -545,7 +551,7 @@ class _InformationPgeState extends State<InformationPge> {
                             ),
                             Text(dia,
                                 style: GoogleFonts.montserrat(
-                                    fontSize: 13, color: Color(0xff2B4F71))),
+                                    fontSize: 13, color: Cor.corEscuroAzul)),
                           ]),
                     ]),
                 SizedBox(
@@ -567,14 +573,14 @@ class _InformationPgeState extends State<InformationPge> {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Text(numberlike,
                         style: GoogleFonts.montserrat(
-                            fontSize: 14, color: Color(0xff2B4F71))),
+                            fontSize: 14, color: Cor.corEscuroAzul)),
                   ),
                   Icon(Icons.heart_broken),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(numberDeslike,
                         style: GoogleFonts.montserrat(
-                            fontSize: 14, color: Color(0xff2B4F71))),
+                            fontSize: 14, color: Cor.corEscuroAzul)),
                   ),
                 ]),
               ],
@@ -586,56 +592,44 @@ class _InformationPgeState extends State<InformationPge> {
   }
 }
 
-
 EventoContainer(String image, String titulo, String local, context) {
-  return
-
-    Container(
-      width: MediaQuery.of(context).size.width / 2.05,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => InformationPge()),
-                );
-              },
-              child: Image.asset(
-                fit: BoxFit.cover,
-                image,
-                width: MediaQuery.of(context).size.width / 2.5,
-                height: MediaQuery.of(context).size.height / 6,
-              ),
+  return Container(
+    width: MediaQuery.of(context).size.width / 2.05,
+    child: Padding(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => InformationPge()),
+              );
+            },
+            child: Image.asset(
+              fit: BoxFit.cover,
+              image,
+              width: MediaQuery.of(context).size.width / 2.5,
+              height: MediaQuery.of(context).size.height / 6,
             ),
-
-            SizedBox(
-              height: 5,
-            ),
-
-            Text(
-              titulo,
-              textAlign: TextAlign.center,
-              style:
-              GoogleFonts.montserrat(fontSize: 16,  fontWeight: FontWeight.bold),
-            ),
-
-
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              local,
-              style: GoogleFonts.montserrat(fontSize: 15),
-            ),
-          ],
-
-        ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            titulo,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.montserrat(
+                fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            local,
+            style: GoogleFonts.montserrat(fontSize: 15),
+          ),
+        ],
       ),
-    );
+    ),
+  );
 }
-
-
-
-

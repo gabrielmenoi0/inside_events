@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/Drawer_and_AppBar/drawer.dart';
 import 'package:inside_events/QrPage/QrPage.dart';
+import 'package:inside_events/utils/appColors.dart';
 import 'package:like_button/like_button.dart';
 
 class cardRegistro extends StatefulWidget {
@@ -21,6 +22,7 @@ class cardRegistro extends StatefulWidget {
   late Color cor;
 
   late String situacao;
+
   @override
   State<cardRegistro> createState() => _cardRegistroState();
 }
@@ -34,7 +36,7 @@ class _cardRegistroState extends State<cardRegistro> {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
+              color: Cor.corCinza.withOpacity(0.5),
               blurRadius: 6,
               offset: Offset(3, 3))
         ],
@@ -46,7 +48,7 @@ class _cardRegistroState extends State<cardRegistro> {
               height: MediaQuery.of(context).size.height / 3.5,
               width: MediaQuery.of(context).size.width / 1.05,
               decoration: BoxDecoration(
-                color: const Color(0xFFCFE2FF),
+                color: Cor.corBranco,
                 borderRadius: BorderRadius.circular(10.0),
               ),
             ),
@@ -56,7 +58,7 @@ class _cardRegistroState extends State<cardRegistro> {
           top: -10,
           left: 5,
           child: Card(
-            color: const Color(0xFFCFE2FF),
+            color: Cor.corBranco,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
             ),
@@ -87,11 +89,11 @@ class _cardRegistroState extends State<cardRegistro> {
                           borderRadius: BorderRadius.all(Radius.circular(28)),
                         ),
                         elevation: 0,
-                        backgroundColor: const Color(0xffACD7FF)),
+                        backgroundColor: Cor.corAzulClaro),
                     child: Text(
                       'Sobre o evento!',
                       style: GoogleFonts.montserrat(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: Cor.corBranco, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -114,7 +116,7 @@ class _cardRegistroState extends State<cardRegistro> {
                   style: GoogleFonts.montserrat(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF363f93),
+                    color: Cor.corRoxo,
                   ),
                 ),
                 const SizedBox(
@@ -125,7 +127,7 @@ class _cardRegistroState extends State<cardRegistro> {
                   style: GoogleFonts.montserrat(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey),
+                      color: Cor.corCinza),
                 ),
                 const SizedBox(
                   height: 5,
@@ -138,7 +140,7 @@ class _cardRegistroState extends State<cardRegistro> {
                       style: GoogleFonts.montserrat(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF363f93),
+                        color: Cor.corRoxo,
                       ),
                     ),
                     Padding(
@@ -161,7 +163,7 @@ class _cardRegistroState extends State<cardRegistro> {
               child: Text(
                 widget.situacao,
                 style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.bold, color: Colors.white),
+                    fontWeight: FontWeight.bold, color: Cor.corBranco),
               ),
             ),
           ),

@@ -7,6 +7,7 @@ import 'package:inside_events/Pagamento/Removecard1.dart';
 import 'package:inside_events/Pagamento/cardoption1.dart';
 import 'package:inside_events/Pagamento/cardoption2.dart';
 import 'package:inside_events/Pagamento/removecard2.dart';
+import 'package:inside_events/utils/appColors.dart';
 
 class PayPage extends StatefulWidget {
   const PayPage({super.key});
@@ -22,13 +23,14 @@ class _PayPageState extends State<PayPage> {
     'Cartão 2',
   ];
   String? selectedItem = 'Forma de pagamento';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Color(0xff2B4F71)),
+        iconTheme: IconThemeData(color: Cor.corEscuroAzul),
         elevation: 0,
-        backgroundColor: Color(0xffE9EDF8),
+        backgroundColor: Cor.corBrancoFumaca,
         leading: InkWell(
           onTap: () {
             Navigator.of(context).pop();
@@ -41,7 +43,7 @@ class _PayPageState extends State<PayPage> {
         children: [
           Container(
             height: 50,
-            color: const Color(0xffE9EDF8),
+            color: Cor.corBrancoFumaca,
             alignment: Alignment.center,
             child: Container(
               alignment: Alignment.center,
@@ -52,7 +54,7 @@ class _PayPageState extends State<PayPage> {
                   child: DropdownButtonFormField<String>(
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.white,
+                      fillColor: Cor.corBranco,
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none,
@@ -81,8 +83,8 @@ class _PayPageState extends State<PayPage> {
                       Icons.arrow_drop_down,
                     ),
                     iconSize: 30,
-                    iconDisabledColor: const Color(0xff2B4F71),
-                    iconEnabledColor: const Color(0xff2B4F71),
+                    iconDisabledColor: Cor.corEscuroAzul,
+                    iconEnabledColor: Cor.corEscuroAzul,
                     onChanged: (item) => setState(
                       (() => selectedItem = item),
                     ),
@@ -127,7 +129,7 @@ class _PayPageState extends State<PayPage> {
             child: Text(
               '-Remover Cartão',
               style: GoogleFonts.montserrat(
-                  fontSize: 17, color: const Color(0xff2B4F71)),
+                  fontSize: 17, color: Cor.corEscuroAzul),
             ),
           ),
           const SizedBox(
@@ -166,7 +168,7 @@ class _PayPageState extends State<PayPage> {
             child: Text(
               '-Remover Cartão',
               style: GoogleFonts.montserrat(
-                  fontSize: 17, color: const Color(0xff2B4F71)),
+                  fontSize: 17, color: Cor.corEscuroAzul),
             ),
           ),
           SizedBox(
@@ -190,12 +192,12 @@ class _PayPageState extends State<PayPage> {
                     ),
                   ),
                   elevation: 0,
-                  backgroundColor: const Color(0xffACD7FF),
+                  backgroundColor: Cor.corAzulClaro,
                 ),
                 child: Text(
                   'Adicionar mais cartões',
                   style: GoogleFonts.montserrat(
-                      color: Colors.white,
+                      color: Cor.corBranco,
                       fontWeight: FontWeight.w500,
                       fontSize: 20),
                 ),
@@ -214,19 +216,19 @@ class CardBackgrounds {
   static Widget black = Container(
     width: double.maxFinite,
     height: double.maxFinite,
-    color: const Color(0xff0B0B0F),
+    color: Cor.corPreto,
   );
 
   static Widget white = Container(
     width: double.maxFinite,
     height: double.maxFinite,
-    color: const Color(0xffF9F9FA),
+    color: Cor.corBranco,
   );
 
   static Widget purple = Container(
     width: double.maxFinite,
     height: double.maxFinite,
-    color: Colors.deepPurple,
+    color: Cor.corLilasEscuro,
   );
 
   static Widget custom(color) {

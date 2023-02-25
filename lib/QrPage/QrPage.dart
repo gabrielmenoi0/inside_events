@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/InformacoesPage/InformacoesPage.dart';
 import 'package:inside_events/QrPage/aprovado.dart';
 import 'package:inside_events/QrPage/recusado.dart';
+import 'package:inside_events/utils/appColors.dart';
 import 'package:inside_events/utils/determinateLocation.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -40,10 +41,10 @@ class _QrPageState extends State<QrPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Cor.corPreto),
         title: const Text(
           'Scanner de código QR',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Cor.corPreto),
         ),
         centerTitle: true,
         elevation: 0,
@@ -58,11 +59,11 @@ class _QrPageState extends State<QrPage> {
             onScan: (String value) {
               debugPrint(value);
             },
-            borderColor: const Color(0xff2B4F71),
-            errorColor: Colors.red,
+            borderColor: Cor.corEscuroAzul,
+            errorColor: Cor.corVermelho,
             borderWidth: 16,
-            successColor: Colors.green,
-            // overlayColor: const Color(0xffACD7FF),
+            successColor: Cor.corVerde,
+            // overlayColor: Cor.corAzulClaro,
             onDetect: (barcode, args) async {
               if (barcode.rawValue == "1111") {
                 return Navigator.of(context).push(
@@ -72,11 +73,11 @@ class _QrPageState extends State<QrPage> {
                 );
               } else {
                 if (barcode.rawValue != "1111") {
-                 return Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const recusado(),
-                  ),
-                );
+                  return Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const recusado(),
+                    ),
+                  );
                   // navegar
                 }
                 // if (!isDetailsOpen.value) {

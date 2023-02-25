@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:inside_events/introducao/introducaoControle.dart';
+import 'package:inside_events/utils/appColors.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
         statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.dark,
-        systemNavigationBarDividerColor: Colors.white));
+        systemNavigationBarDividerColor: Cor.corBranco));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

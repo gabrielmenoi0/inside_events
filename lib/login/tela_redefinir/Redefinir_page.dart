@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/login/tela_login/login_page.dart';
+import 'package:inside_events/utils/appColors.dart';
 
 // ignore: camel_case_types
 class Redefinir_page extends StatefulWidget {
@@ -25,11 +26,11 @@ class _Redefinir_pageState extends State<Redefinir_page> {
           },
           child: Icon(
             Icons.adaptive.arrow_back,
-            color: const Color(0xff2B4F71),
+            color: Cor.corEscuroAzul,
           ),
         ),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Cor.corBranco,
       body: SingleChildScrollView(
         reverse: true,
         child: Padding(
@@ -43,7 +44,7 @@ class _Redefinir_pageState extends State<Redefinir_page> {
                   style: GoogleFonts.montserrat(
                       fontSize: 24,
                       fontWeight: FontWeight.w500,
-                      color: const Color.fromRGBO(43, 79, 113, 1)),
+                      color: Cor.corAzulPreto),
                 ),
                 const SizedBox(
                   height: 2,
@@ -56,7 +57,7 @@ class _Redefinir_pageState extends State<Redefinir_page> {
                       '   Eita! Esqueceu sua senha ? \n      insira seu endereço de \n          email ou número e \n           enviaremos uma \n      mensagem para você \n                altera-lá !',
                       style: GoogleFonts.inter(
                         fontSize: 18,
-                        color: const Color.fromARGB(255, 0, 0, 0),
+                        color: Cor.corPreto,
                       ),
                     ),
                   ],
@@ -81,16 +82,14 @@ class _Redefinir_pageState extends State<Redefinir_page> {
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                     enabledBorder: const UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                      borderSide: BorderSide(color: Cor.corLilas),
                     ),
                     focusedBorder: const UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                      borderSide: BorderSide(color: Cor.corLilas),
                     ),
                     hintText: ('Digite seu e-mail ou telefone'),
                     labelStyle:
-                        GoogleFonts.inter(color: Colors.black, fontSize: 23),
+                        GoogleFonts.inter(color: Cor.corPreto, fontSize: 23),
                     hintStyle: GoogleFonts.inter(fontSize: 18))),
             const SizedBox(
               height: 25,
@@ -110,12 +109,11 @@ class _Redefinir_pageState extends State<Redefinir_page> {
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 enabledBorder: const UnderlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                  borderSide: BorderSide(color: Cor.corLilas),
                 ),
                 focusedBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color.fromRGBO(126, 161, 255, 1),
+                    color: Cor.corLilas,
                   ),
                 ),
                 hintText: ('Confirme seu e-mail ou telefone'),
@@ -136,7 +134,7 @@ class _Redefinir_pageState extends State<Redefinir_page> {
                       style: GoogleFonts.inter(
                         decoration: TextDecoration.underline,
                         fontSize: 20,
-                        color: const Color.fromARGB(255, 13, 67, 110),
+                        color: Cor.corAzulPreto,
                       ),
                     )),
                   ),

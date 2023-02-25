@@ -5,8 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/login/tela_login/login_page.dart';
 import 'package:flutter/services.dart';
+import 'package:inside_events/utils/appColors.dart';
 
 import '../../MenuPageG/MenuPage.dart';
+
 // ignore: camel_case_types
 class Cadastro_page extends StatefulWidget {
   const Cadastro_page({Key? key}) : super(key: key);
@@ -30,7 +32,7 @@ class _Cadastro_pageState extends State<Cadastro_page> {
           },
           child: Icon(
             Icons.adaptive.arrow_back,
-            color: const Color(0xff2B4F71),
+            color: Cor.corEscuroAzul,
           ),
         ),
       ),
@@ -68,12 +70,10 @@ class _Cadastro_pageState extends State<Cadastro_page> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     enabledBorder: const UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                      borderSide: BorderSide(color: Cor.corLilas),
                     ),
                     focusedBorder: const UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                      borderSide: BorderSide(color: Cor.corLilas),
                     ),
                     hintText: ('Digite seu E-mail'),
                     hintStyle: GoogleFonts.inter(fontSize: 18),
@@ -96,12 +96,10 @@ class _Cadastro_pageState extends State<Cadastro_page> {
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   enabledBorder: const UnderlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                    borderSide: BorderSide(color: Cor.corLilas),
                   ),
                   focusedBorder: const UnderlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                    borderSide: BorderSide(color: Cor.corLilas),
                   ),
                   hintText: ('+55'),
                   hintStyle: GoogleFonts.inter(fontSize: 18),
@@ -126,12 +124,10 @@ class _Cadastro_pageState extends State<Cadastro_page> {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     enabledBorder: const UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                      borderSide: BorderSide(color: Cor.corLilas),
                     ),
                     focusedBorder: const UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                      borderSide: BorderSide(color: Cor.corLilas),
                     ),
                     hintText: ('Digite sua senha'),
                     hintStyle: GoogleFonts.inter(fontSize: 18),
@@ -155,12 +151,10 @@ class _Cadastro_pageState extends State<Cadastro_page> {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     enabledBorder: const UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                      borderSide: BorderSide(color: Cor.corLilas),
                     ),
                     focusedBorder: const UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromRGBO(126, 161, 255, 1)),
+                      borderSide: BorderSide(color: Cor.corLilas),
                     ),
                     hintText: ('Digite sua senha'),
                     hintStyle: GoogleFonts.inter(fontSize: 18),
@@ -305,36 +299,34 @@ class _Cadastro_pageState extends State<Cadastro_page> {
                               Column(
                                 children: [
                                   Center(
-                                    child: TextButton(
-                                      onPressed: () {
-                                        CoolAlert.show(
-                                          context: context,
-                                          type: CoolAlertType.success,
-                                          text:
-                                              ('Confirmamos que é você, \n tudo certo por aqui !'),
-                                          confirmBtnText: 'Prosseguir',
-                                          backgroundColor: Colors.white,
-                                          onConfirmBtnTap: () {
-                                            Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const Login_page(),
-                                              ),
-                                            );
-                                          },
-                                        );
-                                      },
-                                      child: Text(
-                                        'Continuar',
-                                        style: GoogleFonts.inter(
-                                          //decoration: TextDecoration.underline,
-                                          fontSize: 18,
-                                          color: const Color.fromRGBO(
-                                              43, 79, 113, 1),
-                                        ),
+                                      child: TextButton(
+                                    onPressed: () {
+                                      CoolAlert.show(
+                                        context: context,
+                                        type: CoolAlertType.success,
+                                        text:
+                                            ('Confirmamos que é você, \n tudo certo por aqui !'),
+                                        confirmBtnText: 'Prosseguir',
+                                        backgroundColor: Cor.corBranco,
+                                        onConfirmBtnTap: () {
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Login_page(),
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    },
+                                    child: Text(
+                                      'Continuar',
+                                      style: GoogleFonts.inter(
+                                        //decoration: TextDecoration.underline,
+                                        fontSize: 18,
+                                        color: Cor.corAzulPreto,
                                       ),
                                     ),
-                                  )
+                                  )),
                                 ],
                               ),
                               const SizedBox(
@@ -364,17 +356,18 @@ class _Cadastro_pageState extends State<Cadastro_page> {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(28)),
-                        ),
-                        elevation: 0,
-                        shadowColor: Colors.transparent,
-                        backgroundColor: const Color(0xffACD7FF)),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(28)),
+                      ),
+                      elevation: 0,
+                      shadowColor: Colors.transparent,
+                      backgroundColor: Cor.corAzulClaro,
+                    ),
                     child: Text(
                       'ENTRE',
                       style: GoogleFonts.montserrat(
                           fontSize: 25,
-                          color: Colors.white,
+                          color: Cor.corBranco,
                           fontWeight: FontWeight.w500),
                     ),
                   ),

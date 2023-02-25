@@ -2,6 +2,7 @@ import 'package:awesome_card/awesome_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inside_events/Pagamento/Confirmaaopage.dart';
+import 'package:inside_events/utils/appColors.dart';
 
 class Option2 extends StatefulWidget {
   const Option2({super.key});
@@ -17,13 +18,14 @@ class _Option2State extends State<Option2> {
     'Cartão 2',
   ];
   String? selectedItem = 'Forma de pagamento';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Color(0xff2B4F71)),
+        iconTheme: IconThemeData(color: Cor.corEscuroAzul),
         elevation: 0,
-        backgroundColor: Color(0xffE9EDF8),
+        backgroundColor: Cor.corBrancoFumaca,
         leading: InkWell(
           onTap: () {
             Navigator.of(context).pop();
@@ -36,18 +38,21 @@ class _Option2State extends State<Option2> {
         children: [
           Container(
             height: 50,
-            color: const Color(0xffE9EDF8),
+            color: Cor.corBrancoFumaca,
             alignment: Alignment.center,
             child: Container(
               alignment: Alignment.center,
               child: Padding(
-                padding: const EdgeInsets.only(left: 60, right: 60,),
+                padding: const EdgeInsets.only(
+                  left: 60,
+                  right: 60,
+                ),
                 child: SizedBox(
                   height: 35,
                   child: DropdownButtonFormField<String>(
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.white,
+                      fillColor: Cor.corBranco,
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none,
@@ -76,8 +81,8 @@ class _Option2State extends State<Option2> {
                       Icons.arrow_drop_down,
                     ),
                     iconSize: 30,
-                    iconDisabledColor: const Color(0xff2B4F71),
-                    iconEnabledColor: const Color(0xff2B4F71),
+                    iconDisabledColor: Cor.corEscuroAzul,
+                    iconEnabledColor: Cor.corEscuroAzul,
                     onChanged: (item) => setState(
                       (() => selectedItem = item),
                     ),
@@ -124,12 +129,12 @@ class _Option2State extends State<Option2> {
                     ),
                   ),
                   elevation: 0,
-                  backgroundColor: const Color(0xffACD7FF),
+                  backgroundColor: Cor.corAzulClaro,
                 ),
                 child: Text(
                   'Continuar',
                   style: GoogleFonts.montserrat(
-                      color: Colors.white,
+                      color: Cor.corBranco,
                       fontWeight: FontWeight.w500,
                       fontSize: 20),
                 ),
@@ -148,19 +153,19 @@ class CardBackgrounds {
   static Widget black = Container(
     width: double.maxFinite,
     height: double.maxFinite,
-    color: const Color(0xff0B0B0F),
+    color: Cor.corPreto,
   );
 
   static Widget white = Container(
     width: double.maxFinite,
     height: double.maxFinite,
-    color: const Color(0xffF9F9FA),
+    color: Cor.corBranco,
   );
 
   static Widget purple = Container(
     width: double.maxFinite,
     height: double.maxFinite,
-    color: Colors.deepPurple,
+    color: Cor.corLilasEscuro,
   );
 
   static Widget custom(color) {

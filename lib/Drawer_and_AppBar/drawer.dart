@@ -4,6 +4,7 @@ import 'package:inside_events/Configuracao/config.dart';
 import 'package:inside_events/MenuPageG/MenuPage.dart';
 import 'package:inside_events/Perfis/PerfisPage.dart';
 import 'package:inside_events/Registro/registro.dart';
+import 'package:inside_events/utils/appColors.dart';
 import '../QrPage/aprovado.dart';
 
 class DrawerPaginas extends StatefulWidget {
@@ -20,7 +21,7 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
       padding: EdgeInsets.zero,
       children: <Widget>[
         const UserAccountsDrawerHeader(
-          decoration: BoxDecoration(color: Color(0xffe9edf8)),
+          decoration: BoxDecoration(color: Cor.corBrancoFumaca),
           currentAccountPictureSize: Size(80, 80),
           currentAccountPicture: CircleAvatar(
             radius: 50.0,
@@ -30,12 +31,12 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
           ),
           accountName: Text(
             'Graziella',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Cor.corPreto),
             textAlign: TextAlign.center,
           ),
           accountEmail: Text(
             'grazielladev@gmail.com',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Cor.corPreto),
           ),
         ),
         ListTile(
@@ -67,13 +68,10 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
           title: Text('Seu registro', style: GoogleFonts.montserrat()),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) =>
-              registro()),
+              MaterialPageRoute(builder: (_) => registro()),
             );
-
           },
         ),
-
         ListTile(
           leading: const Icon(
             Icons.radar_outlined,
@@ -84,7 +82,7 @@ class _DrawerPaginasState extends State<DrawerPaginas> {
           },
         ),
         const Divider(
-          color: Colors.white,
+          color: Cor.corBranco,
           height: 10,
         ),
         ListTile(

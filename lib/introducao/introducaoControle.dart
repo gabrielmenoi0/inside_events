@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:inside_events/login/tela_login/login_page.dart';
+import 'package:inside_events/utils/appColors.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,20 +29,21 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   PageDecoration pageDecoration = const PageDecoration(
     titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
     bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-    pageColor: Color(0xffffffff),
+    pageColor: Cor.corBranco,
     imagePadding: EdgeInsets.zero,
     contentMargin: EdgeInsets.only(
       top: 110,
     ),
   );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      backgroundColor: const Color(0xffffffff),
+      backgroundColor: Cor.corBranco,
       body: IntroductionScreen(
         key: introKey,
-        globalBackgroundColor: const Color(0xffffffff),
+        globalBackgroundColor: Cor.corBranco,
         // globalHeader: Align(
         //   alignment: Alignment.topLeft,
         //   child: SafeArea(
@@ -66,13 +68,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       width: 70,
                       height: 70,
                       decoration: BoxDecoration(
-                          color: const Color(0xffCBCEDF),
+                          color: Cor.corBranco,
                           borderRadius: BorderRadius.circular(50.0)),
                       child: Text(
                         '1',
                         style: GoogleFonts.montserrat(
                             fontSize: 64,
-                            color: const Color(0xff2B4F71),
+                            color: Cor.corEscuroAzul,
                             fontWeight: FontWeight.w500),
                       ),
                     ),
@@ -83,7 +85,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         style: GoogleFonts.montserrat(
                             fontSize: 36,
                             fontWeight: FontWeight.w500,
-                            color: const Color(0xff2B4F71)),
+                            color: Cor.corEscuroAzul),
                       ),
                     )
                   ],
@@ -121,13 +123,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       width: 70,
                       height: 70,
                       decoration: BoxDecoration(
-                          color: const Color(0xffCBCEDF),
+                          color: Cor.corBranco,
                           borderRadius: BorderRadius.circular(50.0)),
                       child: Text(
                         '2',
                         style: GoogleFonts.montserrat(
                             fontSize: 64,
-                            color: const Color(0xff2B4F71),
+                            color: Cor.corEscuroAzul,
                             fontWeight: FontWeight.w500),
                       ),
                     ),
@@ -138,7 +140,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         style: GoogleFonts.montserrat(
                             fontSize: 36,
                             fontWeight: FontWeight.w500,
-                            color: Color(0xff2B4F71)),
+                            color: Cor.corEscuroAzul),
                       ),
                     )
                   ],
@@ -176,13 +178,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       width: 70,
                       height: 70,
                       decoration: BoxDecoration(
-                          color: const Color(0xffCBCEDF),
+                          color: Cor.corBranco,
                           borderRadius: BorderRadius.circular(50.0)),
                       child: Text(
                         '3',
                         style: GoogleFonts.montserrat(
                             fontSize: 64,
-                            color: const Color(0xff2B4F71),
+                            color: Cor.corEscuroAzul,
                             fontWeight: FontWeight.w500),
                       ),
                     ),
@@ -193,7 +195,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         style: GoogleFonts.montserrat(
                             fontSize: 36,
                             fontWeight: FontWeight.w500,
-                            color: const Color(0xff2B4F71)),
+                            color: Cor.corEscuroAzul),
                       ),
                     )
                   ],
@@ -232,13 +234,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       width: 70,
                       height: 70,
                       decoration: BoxDecoration(
-                          color: const Color(0xffCBCEDF),
+                          color: Cor.corBranco,
                           borderRadius: BorderRadius.circular(50.0)),
                       child: Text(
                         '4',
                         style: GoogleFonts.montserrat(
                             fontSize: 64,
-                            color: const Color(0xff2B4F71),
+                            color: Cor.corEscuroAzul,
                             fontWeight: FontWeight.w500),
                       ),
                     ),
@@ -249,7 +251,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         style: GoogleFonts.montserrat(
                             fontSize: 36,
                             fontWeight: FontWeight.w500,
-                            color: const Color(0xff2B4F71)),
+                            color: Cor.corEscuroAzul),
                       ),
                     )
                   ],
@@ -289,7 +291,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           style: GoogleFonts.montserrat(
             fontSize: 17,
             fontWeight: FontWeight.w500,
-            color: const Color(0xff2B4F71),
+            color: Cor.corEscuroAzul,
           ),
         ),
         next: Padding(
@@ -300,7 +302,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             height: 35,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                color: const Color(0xff2B4F71)),
+                color: Cor.corEscuroAzul),
             child: Padding(
               padding:
                   const EdgeInsets.only(left: 5, right: 5, top: 5, bottom: 5),
@@ -309,7 +311,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 style: GoogleFonts.montserrat(
                   fontSize: 17,
                   fontWeight: FontWeight.w600,
-                  color: const Color(0xffFFFFFF),
+                  color: Cor.corBranco,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -322,7 +324,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           alignment: Alignment.center,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              color: const Color(0xff2B4F71)),
+              color: Cor.corEscuroAzul),
           child: Padding(
             padding:
                 const EdgeInsets.only(left: 5, right: 5, top: 5, bottom: 5),
@@ -331,7 +333,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               style: GoogleFonts.montserrat(
                 fontSize: 17,
                 fontWeight: FontWeight.w600,
-                color: const Color(0xffFFFFFF),
+                color: Cor.corBranco,
               ),
               textAlign: TextAlign.center,
             ),
@@ -346,9 +348,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         dotsDecorator: const DotsDecorator(
           spacing: EdgeInsets.all(6),
           size: Size(12.0, 12.0),
-          color: Color(0xff657A97),
+          color: Cor.cormeioCinza,
           activeSize: Size(15.0, 15.0),
-          activeColor: Color(0xff2B4F71),
+          activeColor: Cor.corEscuroAzul,
           activeShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(50.0),

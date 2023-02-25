@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inside_events/utils/appColors.dart';
 
 class Card1 extends StatefulWidget {
   Card1(
       {Key? key,
-        required this.imagensCard,
-        required this.titulo,
-        required this.descricao,
-        required this.horario})
+      required this.imagensCard,
+      required this.titulo,
+      required this.descricao,
+      required this.horario})
       : super(key: key);
   late String titulo;
   late String descricao;
@@ -32,7 +33,7 @@ class _Card1State extends State<Card1> {
                 height: MediaQuery.of(context).size.height / 4.5,
                 width: MediaQuery.of(context).size.width / 1.15,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFCFE2FF),
+                  color: Cor.corBranco,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
@@ -43,7 +44,7 @@ class _Card1State extends State<Card1> {
             left: 2,
             bottom: 4,
             child: Card(
-              color: const Color(0xFFCFE2FF),
+              color: Cor.corBranco,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
               ),
@@ -80,7 +81,7 @@ class _Card1State extends State<Card1> {
                     style: GoogleFonts.montserrat(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF363f93),
+                      color: Cor.corRoxo,
                     ),
                   ),
                   Text(
@@ -89,15 +90,15 @@ class _Card1State extends State<Card1> {
                     style: GoogleFonts.montserrat(
                         fontSize: 10, fontWeight: FontWeight.w500),
                   ),
-                  const Divider(
-                    color: Color.fromARGB(255, 175, 171, 171),
+                  Divider(
+                    color: Cor.corCinza,
                   ),
                   Text(
                     widget.horario,
                     style: GoogleFonts.montserrat(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF363f93),
+                      color: Cor.corRoxo,
                     ),
                   ),
                   const SizedBox(
@@ -108,14 +109,14 @@ class _Card1State extends State<Card1> {
                       onPressed: () {},
                       style: ButtonStyle(
                         foregroundColor:
-                        MaterialStateProperty.all(const Color(0xFFA1C7FF)),
+                            MaterialStateProperty.all(Cor.corAzulClaro),
                         backgroundColor:
-                        MaterialStateProperty.all(Colors.white),
+                            MaterialStateProperty.all(Cor.corBranco),
                         shape:
-                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
-                            side: const BorderSide(color: Colors.white),
+                            side: const BorderSide(color: Cor.corBranco),
                           ),
                         ),
                       ),
@@ -124,7 +125,7 @@ class _Card1State extends State<Card1> {
                         style: GoogleFonts.montserrat(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF363f93),
+                          color: Cor.corRoxo,
                         ),
                       ),
                     ),
