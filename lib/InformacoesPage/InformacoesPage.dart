@@ -100,7 +100,7 @@ class _InformationPgeState extends State<InformationPge> {
               Padding(
                 padding: const EdgeInsets.only(top: 15),
                 child: Text(
-                  'Hackathon Unimar',
+                  'Hackathon Univem',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(
                       fontSize: 25,
